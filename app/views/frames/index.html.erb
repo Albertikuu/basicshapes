@@ -4,7 +4,9 @@
 
 <!-- Left Column -->
     <div class="three columns left-navigation">
-      
+    
+    <%= button_to "Create Category", new_category_path, method: :get %>
+
     <% @categories.each do |category| %>
     <div class="category-left"><%= link_to category.title, category_path(category) %></div>
     <% end %>

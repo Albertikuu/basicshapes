@@ -1,0 +1,52 @@
+<div class="container">
+
+  <div class="row">
+
+<!-- Left Column -->
+    <div class="three columns left-navigation">
+      
+    <% @categories.each do |category| %>
+    <div class="category-left"><%= link_to category.title, category_path(category) %></div>
+    <% end %>
+
+
+    </div>
+
+<!-- Main body -->
+
+    <div class="eight columns frame">
+
+	<%= form_tag({}, { :class => "create-category", "data-hook" => "category-form" }) do %>
+	  <div>
+	    <label for="Category title">Title</label>
+	    <input type="text" name="category[title]" id="category_title"
+	      class="form-control">
+	  </div>
+
+	  <div>
+	    <label for="Category description">Description</label>
+	    <input type="text" name="category[description]" id="category_description"
+	      class="form-control">
+	  </div>
+
+	  <div data-hook="form-alerts"></div>
+
+	  <button class="btn-category-js">
+	    Save Category
+	  </button>
+	<% end %>
+
+    </div>
+
+<!-- Empty Column -->
+
+    <div class="one column"> Empty Column </div>
+
+
+  </div>
+
+</div>
+
+
+
+
