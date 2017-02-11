@@ -1,5 +1,5 @@
 class FramesController < ApplicationController
-# before_action load_categories
+before_action :load_categories
 	
 	def index
 

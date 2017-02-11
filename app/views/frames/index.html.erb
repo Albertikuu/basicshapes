@@ -5,8 +5,9 @@
 <!-- Left Column -->
     <div class="three columns left-navigation">
       
-    Left Column
-    
+    <% @categories.each do |category| %>
+    <div class="category-left"><%= link_to category.title, category_path(category) %></div>
+    <% end %>
 
 
     </div>
@@ -24,13 +25,7 @@
 
 <!-- Empty Column -->
 
-    <div class="one column"></div>
-
-
-
-
-    Empty Column
-
+    <div class="one column"> Empty Column </div>
 
 
   </div>
