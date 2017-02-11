@@ -1,0 +1,2 @@
+class CatUser < ApplicationRecord
+end
