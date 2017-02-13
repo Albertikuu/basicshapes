@@ -9,9 +9,16 @@ class CategoriesController < ApplicationController
 	end
 
 	def create
-		@category = Category.create!
-  		# render json: params
+		@category = Category.create!(category_params)
+		redirect_to('/')
 	end
+
+
+	private
+
+	  def category_params
+   		 params.permit(:title, :description)
+	  end
 
 
 end
