@@ -31,7 +31,7 @@
 .container {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 1920px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box; }
@@ -170,9 +170,10 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
+  max-width: 100%;
   display: inline-block;
   height: 38px;
-  padding: 0 30px;
+  padding: 0 20px;
   color: #555;
   text-align: center;
   font-size: 11px;
@@ -416,7 +417,9 @@ there.
 
 /* END PROVISIONAL STYLES */
 
-
+.empty {
+  visibility: hidden;
+}
 
 
 /* Larger than mobile */
