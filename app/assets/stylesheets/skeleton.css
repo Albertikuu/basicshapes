@@ -112,6 +112,34 @@
 
 }
 
+/* Fonts
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@font-face {
+  font-family: "DINPro-Regular";
+  src: url(/assets/DINPro-Regular.otf) format("truetype");
+  }
+
+@font-face {
+  font-family: "DINPro-Medium";
+  src: url(/assets/DINPro-Medium.otf) format("truetype");
+  }
+
+@font-face {
+  font-family: "DINPro-Light";
+  src: url(/assets/DINPro-Light.otf) format("truetype");
+  }
+
+@font-face {
+  font-family: "DINPro-Italic";
+  src: url(/assets/DINPro-Italic.otf) format("truetype");
+  }
+
+@font-face {
+  font-family: "DINPro-Bold";
+  src: url(/assets/DINPro-Bold.otf) format("truetype");
+  }
+
 
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -120,12 +148,15 @@ html is set to 62.5% so that all the REM measurements throughout Skeleton
 are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
   font-size: 62.5%; }
+
 body {
-  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  font-size: 1.6em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "DINPro", Helvetica, Arial, sans-serif;
   color: #222; }
+
+
 
 
 /* Typography
