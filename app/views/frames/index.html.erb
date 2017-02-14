@@ -3,16 +3,7 @@
   <div class="row">
 
 <!-- Left Column -->
-    <div class="three columns left-navigation">
-    
-    <%= button_to "Create Category", new_category_path, method: :get %>
-
-    <% @categories.each do |category| %>
-    <div class="category-left"><%= link_to category.title.capitalize, category_path(category.title) %></div>
-    <% end %>
-
-
-    </div>
+  <%= render "frames/side" %>
 
 <!-- Main body -->
 

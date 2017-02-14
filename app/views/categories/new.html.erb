@@ -3,15 +3,10 @@
   <div class="row">
 
 <!-- Left Column -->
-    <div class="three columns left-navigation">
-      
-    <% @categories.each do |category| %>
-    <div class="category-left"><%= link_to category.title, category_path(category) %></div>
-    <% end %>
 
+  <%= render "frames/side" %>
 
-    </div>
-
+  
 <!-- Main body -->
 
     <div class="eight columns frame">
