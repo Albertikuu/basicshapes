@@ -8,6 +8,18 @@
   </head>
 
   <body>
+
+	<% if user_signed_in? %>
+	<p>Logged in as <%= current_user.name  %>!</p>
+	<%= link_to "Logout", destroy_user_method_path, method: 'delete' %>
+
+	<% else %>
+
+	<p>No user is logged in</p>
+	<%= link_to "Login", new_user_session_path %>
+
+	<% end %>
+
     <%= yield %>
   </body>
 </html>
