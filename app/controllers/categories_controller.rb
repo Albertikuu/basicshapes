@@ -14,6 +14,11 @@ class CategoriesController < ApplicationController
 		redirect_to('/')
 	end
 
+	def destroy
+		@category = Category.find_by(title: params[:title]).delete
+		redirect_to('/')
+	end
+
 
 	private
 

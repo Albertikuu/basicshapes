@@ -12,6 +12,7 @@
 
     <h1><%= @category.title.capitalize %></h1>
     <p><%= @category.description %></p>
+    <%= link_to 'Delete this', category_path(@category.title), method: :delete %>
 
 
 
