@@ -2,7 +2,7 @@
 function createCategory(event){
 	event.preventDefault();
     request = $.post("/categories", {
-            title: $('#category_title').val(),
+            title: $('#category_title').val().toLowerCase(),
             description: $('#category_description').val(),
         });
 

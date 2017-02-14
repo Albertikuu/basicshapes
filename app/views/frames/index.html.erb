@@ -8,7 +8,7 @@
     <%= button_to "Create Category", new_category_path, method: :get %>
 
     <% @categories.each do |category| %>
-    <div class="category-left"><%= link_to category.title, category_path(category) %></div>
+    <div class="category-left"><%= link_to category.title.capitalize, category_path(category.title) %></div>
     <% end %>
 
 
