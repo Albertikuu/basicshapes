@@ -10,7 +10,8 @@ class CategoriesController < ApplicationController
 	end
 
 	def create
-		@category = Category.create!(category_params)
+		@category = current_user.categories.create!(category_params)
+    	session[:categories] = current_user.categories
 		redirect_to('/')
 	end
 

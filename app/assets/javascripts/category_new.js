@@ -1,13 +1,13 @@
 
 function createCategory(event){
 	event.preventDefault();
-    request = $.post("/categories", {
+
+    newRequest = $.post("/categories", {
             title: $('#category_title').val().toLowerCase(),
-            description: $('#category_description').val(),
+            description: $('#category_description').val()
         });
 
-	request.fail(console.log('noooope'));
- 	request.done(console.log('yaaaay'))
+	newRequest.fail(console.log('the category request failed'));
+ 	newRequest.done(console.log('the category request was succesful'))
 
 };
-
