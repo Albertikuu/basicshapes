@@ -1,6 +1,8 @@
 <div class="container">
 
   <div class="row">
+<% if user_signed_in? %>
+
 
 <!-- Left Column -->
   <%= render "frames/side" %>
@@ -15,6 +17,24 @@
 
 
     </div>
+<% else %>
+
+
+<!-- Main body -->
+
+    <div class="eleven columns frame">
+
+	
+	<h2>You are not logged in </h2>
+		<%= link_to "Login", new_user_session_path %><br/>
+		<%= link_to "Signup", new_user_registration_path %>
+
+
+    </div>
+
+
+
+<% end %>
 
 <!-- Empty Column -->
 
