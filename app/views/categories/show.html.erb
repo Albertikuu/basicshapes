@@ -12,9 +12,13 @@
 
     <h1><%= @category.title.capitalize %></h1>
     <p><%= @category.description %></p>
+    
+
+    <!-- note: this will need the use of teams -->
+
+    <!-- note: Add amdin authentication here -->
     <%= link_to 'Delete this', category_path(@category.title), method: :delete %>
 
-	<div id="froala_editor"></div>
 
     </div>
 
