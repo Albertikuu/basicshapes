@@ -2,14 +2,16 @@
     <div class="three columns left-navigation">
     
     <%= button_to "Create Category", new_category_path, method: :get %>
-
+    <% if @categories.size == 0 %>
+    <p> You haven't created any category yet! </p>
+    <% end %>
     <% @categories.each do |category| %>
     <div class="category-left"><%= link_to category.title.capitalize, category_path(category.title) %></div>
     <% end %>
 
 	<% unless params[:controller] == "frames" %>
 	<hr />
-	<%= link_to "Guidlines", root_path %>
+	<%= link_to "Guidelines", root_path %>
 	<% end %>
 
     </div>

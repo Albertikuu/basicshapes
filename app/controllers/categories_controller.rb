@@ -10,7 +10,8 @@ class CategoriesController < ApplicationController
 	end
 
 	def create
-		@category = Category.create!(category_params)
+		binding.pry
+		@category = current_user.categories.create!(category_params)
 		redirect_to('/')
 	end
 
