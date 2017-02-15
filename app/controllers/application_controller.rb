@@ -7,12 +7,6 @@ protect_from_forgery with: :null_session
   private
 
 
-	# def load_categories
-
-	# 	current_user ? @categories = current_user.categories : @categories = []
-
-	# end
-
 
 
 end
