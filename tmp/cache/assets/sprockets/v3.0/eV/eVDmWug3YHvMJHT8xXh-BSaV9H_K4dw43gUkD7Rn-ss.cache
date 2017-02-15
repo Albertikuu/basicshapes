@@ -1,5 +1,0 @@
-I"C(function() {
-  $('selector').froalaEditor();
-
-}).call(this);
-:ET
