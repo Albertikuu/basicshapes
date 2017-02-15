@@ -1,15 +1,11 @@
 class ApplicationController < ActionController::Base
-before_action :load_categories
- 
-
-  protect_from_forgery with: :exception
+# before_action :load_categories 
+# before_action :authenticate_user!
+protect_from_forgery with: :null_session
 
 
   private
 
-	def load_categories
-		@categories = Category.all
-	end
 
 
 
