@@ -13772,3 +13772,435 @@ Processing by FramesController#index as HTML
 Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:44:39 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  Rendered frames/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-02-16 18:44:43 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 36ms (Views: 24.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-16 18:44:46 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u9bopD8XskoOzUzV2gXxdvB3EPKEozpGWQcjbRPMaa/WpHSK4qcrOYhTes2qKJeUSXrlR3BejySxlkHyZ55t8A==", "user"=>{"email"=>"mickey@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "mickey@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-16 17:44:46 UTC], ["last_sign_in_at", 2017-02-16 12:40:26 UTC], ["sign_in_count", 3], ["updated_at", 2017-02-16 17:44:46 UTC], ["id", 4]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 150ms (ActiveRecord: 8.9ms)
+
+
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 4]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:44:46 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.4ms)
+  Rendered frames/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories/nulla" for 127.0.0.1 at 2017-02-16 18:44:53 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"nulla"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "nulla"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 4]]
+  Rendered categories/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 34ms (Views: 29.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/categories/add_user/nulla/3" for 127.0.0.1 at 2017-02-16 18:45:04 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"GvQD6sxEz+uPbyOE6co2qBJRkyhshKYZAWlBBzptOhk2BC1OR6USMD40ZLZfqzh8b+m7xioN2QmMjff9DoaYqQ==", "title"=>"nulla", "user_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "nulla"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cat_users" ("user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["category_id", 6], ["created_at", 2017-02-16 17:45:04 UTC], ["updated_at", 2017-02-16 17:45:04 UTC]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:45:04 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (0.9ms)
+  Rendered frames/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2017-02-16 18:45:07 +0100
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"I9TS4+9rFjdWLNt52N6hevwap6lMVEw/XZLr/qGiX58PJPxHZIrL7Od3nEtuv6+ugaKPRwrdMy/Qdl0ElUn9Lw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:45:07 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  Rendered frames/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-02-16 18:45:08 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-16 18:45:10 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Ej8pTdlL9+KnWlXL+MKhl+kqeBkS5smoDGPWhHqQY9lI4ULijBsZzUQfw8PiOMEP/TKFjSKXSYrNfS1ZAhlMg==", "user"=>{"email"=>"pato@donald.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "pato@donald.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-16 17:45:10 UTC], ["last_sign_in_at", 2017-02-16 12:40:17 UTC], ["sign_in_count", 3], ["updated_at", 2017-02-16 17:45:10 UTC], ["id", 3]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 145ms (ActiveRecord: 8.1ms)
+
+
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 3]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:45:10 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (0.8ms)
+  Rendered frames/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories/nulla" for 127.0.0.1 at 2017-02-16 18:46:05 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"nulla"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "nulla"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 3]]
+  Rendered categories/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 38ms (Views: 33.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/categories/nulla" for 127.0.0.1 at 2017-02-16 18:46:08 +0100
+Processing by CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gEqRhDEEbsB0SpsZhsPYtwydidTNvNVSwkx/2OevkcetUOO6MUMrsp+vWIDEEa4dvlG1YjotOfA3CUbFeo1w+Q==", "title"=>"nulla"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "nulla"], ["LIMIT", 1]]
+  [1m[35mSQL (39.9ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 6]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 45ms (ActiveRecord: 40.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:46:08 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (2.9ms)
+  Rendered frames/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:46:11 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.5ms)
+  Rendered frames/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories/nulla" for 127.0.0.1 at 2017-02-16 18:46:16 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"nulla"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "nulla"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.9ms)
+  Rendered categories/show.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    10:     <div class="eight columns frame">
+    11: 
+    12: 
+    13:     <h1><%= @category.title.capitalize %></h1>
+    14:     <p><%= @category.description %></p>
+    15:     
+    16: 
+  
+app/views/categories/show.html.erb:13:in `_app_views_categories_show_html_erb___3892508756835444776_70184634524120'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.8ms)
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:46:20 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (0.9ms)
+  Rendered frames/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:46:41 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (0.8ms)
+  Rendered frames/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/nulla" for 127.0.0.1 at 2017-02-16 18:46:43 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"nulla"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "nulla"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.0ms)
+  Rendered categories/show.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    10:     <div class="eight columns frame">
+    11: 
+    12: 
+    13:     <h1><%= @category.title.capitalize %></h1>
+    14:     <p><%= @category.description %></p>
+    15:     
+    16: 
+  
+app/views/categories/show.html.erb:13:in `_app_views_categories_show_html_erb___3892508756835444776_70184670876380'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.0ms)
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:46:44 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.0ms)
+  Rendered frames/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 18:46:46 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 3]]
+  Rendered categories/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 36ms (Views: 26.5ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/categories/typography" for 127.0.0.1 at 2017-02-16 18:46:49 +0100
+Processing by CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DztOdc2Ec7fn0ZVr78QaLHG8Z85yjvGKBmIhuLaMttAiITxLzcM2xQw0VvKtFmyGw3BbeIUfHSjzJxilK65X7g==", "title"=>"typography"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  [1m[35mSQL (16.5ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 16.9ms)
+
+
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 3]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:46:49 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.0ms)
+  Rendered frames/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2017-02-16 18:46:58 +0100
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yms1eVhfkoP363d1zl9WERV0byfOqXNVnYZHSNNPYvPncUdHWBjX8RwOtOyMjSC7p7hTkTk4n/dow35VTm2DzQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:46:58 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  Rendered frames/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-02-16 18:47:00 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-16 18:47:02 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RbeGFqzxQUDuk6LjzO3X0DkzAVOyeE8mAaKyvqEiWXVVdxM9TsOCincc3EK2OhrxexHGGVN3BLvw7lw5GA0uCg==", "user"=>{"email"=>"albert.ramirez.canalias@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "albert.ramirez.canalias@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-16 17:47:02 UTC], ["last_sign_in_at", 2017-02-16 12:40:11 UTC], ["sign_in_count", 4], ["updated_at", 2017-02-16 17:47:02 UTC], ["id", 1]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 144ms (ActiveRecord: 8.6ms)
+
+
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 1]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 18:47:02 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (0.8ms)
+  Rendered frames/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 20:05:23 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (5.5ms)
+  Rendered frames/index.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 454ms (Views: 439.9ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2017-02-16 20:05:25 +0100
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AGlLfU4uFBQf1wEVXNywrKx7CIK13OSHtp2CbsTUFWW/Ob/Onq3TECsafkCKCvc7ODd2bbrwGEXij6DdrvEw0w=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 20:05:25 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  Rendered frames/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-02-16 20:05:26 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 83ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-16 20:05:28 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OT+U0HhtH1DG7uERBw7Iu751X3ZWuCIJyJw/W2td9UbDHZPOVpzrCzVV8MkV/OnELvkkuXuBVESWQ4rld6KNFw==", "user"=>{"email"=>"lorenzo.ita@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lorenzo.ita@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-16 19:05:28 UTC], ["last_sign_in_at", 2017-02-16 19:05:28 UTC], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", 2017-02-16 19:05:28 UTC], ["id", 2]]
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 185ms (ActiveRecord: 13.7ms)
+
+
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 2]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 20:05:28 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (0.8ms)
+  Rendered frames/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories/brand" for 127.0.0.1 at 2017-02-16 20:09:57 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"brand"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "brand"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 2]]
+  Rendered categories/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 31ms (Views: 27.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/categories/add_user/brand/3" for 127.0.0.1 at 2017-02-16 20:10:01 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"NmLl+AJ/ZtjyUjjGN/Zb22csrhH/8R91P0RsFLifXD2orQOOYvUh427VLfPWeFC8EGrMFOCFXMzrRPk8yM4pDg==", "title"=>"brand", "user_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "brand"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cat_users" ("user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["category_id", 2], ["created_at", 2017-02-16 19:10:01 UTC], ["updated_at", 2017-02-16 19:10:01 UTC]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 32ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 20:10:01 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.4ms)
+  Rendered frames/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 20:10:05 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 2]]
+  Rendered categories/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 20:18:21 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 2]]
+  Rendered categories/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 32ms (Views: 27.4ms | ActiveRecord: 0.7ms)
+
+

@@ -22,6 +22,7 @@ class CategoriesController < ApplicationController
 
 	def destroy
 		@category = Category.find_by(title: params[:title]).delete
+		session[:categories] = current_user.categories
 		redirect_to('/')
 	end
 
