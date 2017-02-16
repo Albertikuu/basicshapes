@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :cat_users
   has_many :categories, through: :cat_users
   
-
 end
