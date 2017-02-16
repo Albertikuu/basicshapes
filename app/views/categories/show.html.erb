@@ -17,8 +17,18 @@
     <!-- note: this will need the use of teams -->
     
     <!-- note: Add amdin authentication here -->
-    <%= link_to 'Delete this', category_path(@category.title), method: :delete %>
+    <p><%= link_to 'Delete this', category_path(@category.title), method: :delete %></p>
+    
+    <p><a href="#" id="addusers-js">Add users to this category</a></p>
 
+    <div id="users-list-js" style="display: none">
+        <ul>
+        <% @all_users.each do |user| %>
+          <% username = user.first_name + " " + user.last_name %>
+         <li> <%= link_to username, category_add_user_path(title: params[:title], user_id: user.id), method: :post %> </li>
+        <% end %>
+        </ul>
+    </div>
 
     </div>
 
@@ -30,3 +40,10 @@
   </div>
 
 </div>
+
+<script>
+  $('#addusers-js').on('click', function(event){
+    event.preventDefault();
+    $('#users-list-js').toggle();
+  });
+</script>

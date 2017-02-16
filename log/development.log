@@ -11348,3 +11348,2427 @@ Processing by FramesController#index as HTML
 Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-02-16 12:36:54 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  Rendered frames/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 360ms (Views: 351.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-02-16 12:36:59 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/categories"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [31 times] (6.9ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.6ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.9ms)
+Started GET "/categories" for 127.0.0.1 at 2017-02-16 12:37:38 +0100
+Processing by CategoriesController#index as HTML
+Completed 406 Not Acceptable in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (CategoriesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.0.1) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
+actionpack (5.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.9ms)
+Started POST "/categories" for 127.0.0.1 at 2017-02-16 12:38:26 +0100
+Processing by CategoriesController#create as */*
+  Parameters: {"name"=>"Football Manager"}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `categories' for nil:NilClass):
+  
+app/controllers/categories_controller.rb:18:in `create'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.2ms)
+Started GET "/categories" for 127.0.0.1 at 2017-02-16 12:38:29 +0100
+Processing by CategoriesController#index as */*
+No template found for CategoriesController#index, rendering head :no_content
+Completed 204 No Content in 24ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 12:38:38 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  Rendered frames/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-02-16 12:38:40 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 52ms (Views: 38.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-16 12:38:42 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g3oaQb3Sgcw5w6Jlp9q5RXibr1kwXVe/jUc582DTOHyW7jBFAkjgLrnfSClzjyxDH4ilhMz6MMA5JeKKPsAMUw==", "user"=>{"email"=>"albert.ramirez.canalias@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "albert.ramirez.canalias@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-16 11:38:42 UTC], ["sign_in_count", 2], ["updated_at", 2017-02-16 11:38:42 UTC], ["id", 1]]
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 186ms (ActiveRecord: 16.2ms)
+
+
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 1]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 12:38:42 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (0.7ms)
+  Rendered frames/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-02-16 12:38:46 +0100
+Processing by CategoriesController#index as */*
+No template found for CategoriesController#index, rendering head :no_content
+Completed 204 No Content in 24ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-02-16 12:38:53 +0100
+Processing by CategoriesController#index as */*
+No template found for CategoriesController#index, rendering head :no_content
+Completed 204 No Content in 24ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-02-16 12:39:09 +0100
+Processing by CategoriesController#index as HTML
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 12:40:49 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (0.8ms)
+  Rendered frames/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 12:40:52 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.7ms)
+  Rendered categories/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 24.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 12:44:22 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.7ms)
+  Rendered categories/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 30.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2017-02-16 12:44:24 +0100
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.8ms)
+  Rendered categories/new.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2017-02-16 12:44:24 +0100
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.9ms)
+  Rendered categories/new.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2017-02-16 12:44:28 +0100
+Processing by CategoriesController#create as */*
+  Parameters: {"title"=>"editing", "description"=>"Everything related to typography"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "editing"], ["description", "Everything related to typography"], ["created_at", 2017-02-16 11:44:28 UTC], ["updated_at", 2017-02-16 11:44:28 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "cat_users" ("user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["category_id", 4], ["created_at", 2017-02-16 11:44:28 UTC], ["updated_at", 2017-02-16 11:44:28 UTC]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 200 OK in 31ms (ActiveRecord: 9.5ms)
+
+
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 1]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 12:44:28 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.1ms)
+  Rendered frames/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 12:52:41 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (0.8ms)
+  Rendered frames/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 12:52:42 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `second_name' for #<User:0x007faa42008b30>):
+    23: 
+    24:     <div id="users-list-js" style="display: none">
+    25:         <% @users.each do |user| %>
+    26:           <%= link_to user.first_name user.second_name, controller: "categories", action: "add_user", id: user.id %>
+    27:         <% end %>
+    28:     </div>
+    29: 
+  
+app/views/categories/show.html.erb:26:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184612031800'
+app/views/categories/show.html.erb:25:in `_app_views_categories_show_html_erb___3892508756835444776_70184612031800'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.7ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 12:52:54 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 0)):
+    23: 
+    24:     <div id="users-list-js" style="display: none">
+    25:         <% @users.each do |user| %>
+    26:           <%= link_to user.first_name user.last_name, controller: "categories", action: "add_user", id: user.id %>
+    27:         <% end %>
+    28:     </div>
+    29: 
+  
+app/views/categories/show.html.erb:26:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184605085860'
+app/views/categories/show.html.erb:25:in `_app_views_categories_show_html_erb___3892508756835444776_70184605085860'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.6ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 12:54:22 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_user", :controller=>"categories", :id=>1, :title=>"digital"}):
+    23: 
+    24:     <div id="users-list-js" style="display: none">
+    25:         <% @users.each do |user| %>
+    26:           <%= link_to user.first_name, controller: "categories", action: "add_user", id: user.id %>
+    27:         <% end %>
+    28:     </div>
+    29: 
+  
+app/views/categories/show.html.erb:26:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184533241240'
+app/views/categories/show.html.erb:25:in `_app_views_categories_show_html_erb___3892508756835444776_70184533241240'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.6ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 12:54:41 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    23: 
+    24:     <div id="users-list-js" style="display: none">
+    25:         <% @users.each do |user| %>
+    26:           <%= link_to (user.first_name user.last_name), controller: "categories", action: "add_user", id: user.id %>
+    27:         <% end %>
+    28:     </div>
+    29: 
+  
+app/views/categories/show.html.erb:26:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184619050000'
+app/views/categories/show.html.erb:25:in `_app_views_categories_show_html_erb___3892508756835444776_70184619050000'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.5ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 12:55:53 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for #<User:0x00000002982f68>):
+    24:     <div id="users-list-js" style="display: none">
+    25:         <% @users.each do |user| %>
+    26:           <% username = user.first_name + " " + user.last_name %>
+    27:           <%= link_to user.username, controller: "categories", action: "add_user", id: user.id %>
+    28:         <% end %>
+    29:     </div>
+    30: 
+  
+app/views/categories/show.html.erb:27:in `block in _app_views_categories_show_html_erb___3892508756835444776_18215720'
+app/views/categories/show.html.erb:25:in `_app_views_categories_show_html_erb___3892508756835444776_18215720'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.5ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 12:58:01 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (30352.1ms)
+Completed 500 Internal Server Error in 30358ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for #<User:0x007faa48784ea8>):
+    25:         <% @users.each do |user| %>
+    26:         <% binding.pry %>
+    27:           <% username = user.first_name + " " + user.last_name %>
+    28:           <%= link_to user.username, controller: "categories", action: "add_user", id: user.id %>
+    29:         <% end %>
+    30:     </div>
+    31: 
+  
+app/views/categories/show.html.erb:28:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184620280020'
+app/views/categories/show.html.erb:25:in `_app_views_categories_show_html_erb___3892508756835444776_70184620280020'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.2ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:00:27 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/lori/projects/basicshapes/app/views/categories/show.html.erb:28: syntax error, unexpected tIVAR, expecting '('
+...append=( link_to user.@username, controller: "categories", a...
+...                               ^
+/home/lori/projects/basicshapes/app/views/categories/show.html.erb:28: syntax error, unexpected ',', expecting ')'
+...name, controller: "categories", action: "add_user", id: user...
+...                               ^
+/home/lori/projects/basicshapes/app/views/categories/show.html.erb:28: syntax error, unexpected ',', expecting ')'
+...ategories", action: "add_user", id: user.id );@output_buffer...
+...                               ^):
+  
+app/views/categories/show.html.erb:28: syntax error, unexpected tIVAR, expecting '('
+app/views/categories/show.html.erb:28: syntax error, unexpected ',', expecting ')'
+app/views/categories/show.html.erb:28: syntax error, unexpected ',', expecting ')'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.4ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:00:38 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (44554.0ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:01:23 +0100
+Completed 500 Internal Server Error in 44558ms (ActiveRecord: 0.4ms)
+
+
+Processing by CategoriesController#show as HTML
+  
+  Parameters: {"title"=>"digital"}
+ActionView::Template::Error (undefined method `username=' for #<User:0x007faa489d1558>):
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+    24:     <div id="users-list-js" style="display: none">
+    25:         <% @users.each do |user| %>
+    26:         <% binding.pry %>
+    27:           <% username = user.first_name + " " + user.last_name %>
+    28:           <%= link_to username, controller: "categories", action: "add_user", id: user.id %>
+    29:         <% end %>
+    30:     </div>
+  Rendering categories/show.html.erb within layouts/application
+  
+  Rendered frames/_side.html.erb (0.7ms)
+app/views/categories/show.html.erb:27:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184670124100'
+app/views/categories/show.html.erb:25:in `_app_views_categories_show_html_erb___3892508756835444776_70184670124100'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (4040.6ms)
+Completed 500 Internal Server Error in 4044ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_user", :controller=>"categories", :id=>1, :title=>"digital"}):
+    25:         <% @users.each do |user| %>
+    26:         <% binding.pry %>
+    27:           <% username = user.first_name + " " + user.last_name %>
+    28:           <%= link_to username, controller: "categories", action: "add_user", id: user.id %>
+    29:         <% end %>
+    30:     </div>
+    31: 
+  
+app/views/categories/show.html.erb:28:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184613861940'
+app/views/categories/show.html.erb:25:in `_app_views_categories_show_html_erb___3892508756835444776_70184613861940'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.4ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.4ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:01:34 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_user", :controller=>"categories", :id=>1, :title=>"digital"}):
+    24:     <div id="users-list-js" style="display: none">
+    25:         <% @users.each do |user| %>
+    26:           <% username = user.first_name + " " + user.last_name %>
+    27:           <%= link_to username, controller: "categories", action: "add_user", id: user.id %>
+    28:         <% end %>
+    29:     </div>
+    30: 
+  
+app/views/categories/show.html.erb:27:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184671811520'
+app/views/categories/show.html.erb:25:in `_app_views_categories_show_html_erb___3892508756835444776_70184671811520'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.3ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:02:15 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (132.0ms)
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x007faa41bcc0d0>:0x007faa42102310>):
+    24:     <div id="users-list-js" style="display: none">
+    25:         <% @users.each do |user| %>
+    26:           <% username = user.first_name + " " + user.last_name %>
+    27:           <%= link_to username, controller: "categories", action: "add_user", method: post,  id: user.id %>
+    28:         <% end %>
+    29:     </div>
+    30: 
+  
+app/views/categories/show.html.erb:27:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184614762140'
+app/views/categories/show.html.erb:25:in `_app_views_categories_show_html_erb___3892508756835444776_70184614762140'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.1ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:02:25 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (2.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_user", :controller=>"categories", :id=>1, :method=>"post", :title=>"digital"}):
+    24:     <div id="users-list-js" style="display: none">
+    25:         <% @users.each do |user| %>
+    26:           <% username = user.first_name + " " + user.last_name %>
+    27:           <%= link_to username, controller: "categories", action: "add_user", method: "post", id: user.id %>
+    28:         <% end %>
+    29:     </div>
+    30: 
+  
+app/views/categories/show.html.erb:27:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184614400220'
+app/views/categories/show.html.erb:25:in `_app_views_categories_show_html_erb___3892508756835444776_70184614400220'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.8ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:03:33 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (12.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 44ms (Views: 33.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:03:40 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 32.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:04:34 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:07:15 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:07:53 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (2.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (11.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 74ms (Views: 68.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:07:54 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:07:56 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:07:57 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 37.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:07:57 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (3.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (15.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 80ms (Views: 72.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:08:04 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:08:05 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 48ms (Views: 46.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:08:15 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:08:16 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:08:17 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:08:29 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:08:30 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:08:35 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:08:36 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (6.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 36.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:08:47 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 39.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:08:49 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:09:02 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 38.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:09:11 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:09:30 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:09:31 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:09:32 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 50ms (Views: 43.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:09:40 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories?id=2&method=post" for 127.0.0.1 at 2017-02-16 13:09:49 +0100
+Processing by CategoriesController#index as HTML
+  Parameters: {"id"=>"2", "method"=>"post"}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories?id=2&method=post" for 127.0.0.1 at 2017-02-16 13:09:49 +0100
+Processing by CategoriesController#index as HTML
+  Parameters: {"id"=>"2", "method"=>"post"}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:11:03 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (12.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 30.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:11:04 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories/add_user/id?id=2&method=post" for 127.0.0.1 at 2017-02-16 13:11:07 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/categories/add_user/id"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [33 times] (6.9ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.9ms)
+Started GET "/categories/add_user/id?id=2&method=post" for 127.0.0.1 at 2017-02-16 13:11:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/categories/add_user/id"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered collection of /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [33 times] (8.2ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.2ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:11:41 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/categories/add_user/id?id=2" for 127.0.0.1 at 2017-02-16 13:11:43 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"6M60H9rbg831IrKIZ+e0tiD3MaoYAFssxF4Fr7b4KiKNT7ZpOOO2KqqDISH2Ta8W+ccmpFC6Sdy+fvw8qXp5vg==", "id"=>"2"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 117941ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `users' for nil:NilClass):
+  
+app/controllers/categories_controller.rb:31:in `add_user'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.0ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:13:45 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 31.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:14:31 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (11.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 31.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/categories/add_user/id?id=3&method=post" for 127.0.0.1 at 2017-02-16 13:14:34 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/categories/add_user/id"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [33 times] (9.0ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.9ms)
+Started GET "/categories/add_user/id?id=3&method=post" for 127.0.0.1 at 2017-02-16 13:15:21 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/categories/add_user/id"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered collection of /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [33 times] (6.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.1ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:15:22 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories/add_user/id" for 127.0.0.1 at 2017-02-16 13:15:24 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/categories/add_user/id"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [33 times] (8.3ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.1ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:15:27 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:15:49 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered categories/show.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/categories/add_user/id" for 127.0.0.1 at 2017-02-16 13:15:51 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"iyIfUJLySXCfjz2rhR9qE4hf1fSCFuULaW0yMFPttSjuox0mcMp8l8AurgIUtXGzUW/C+sqs9/sTTcujTG/mtA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `users' for nil:NilClass):
+  
+app/controllers/categories_controller.rb:31:in `add_user'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.9ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:16:55 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `id' for #<CategoriesController:0x007faa502abcf8>):
+  
+app/controllers/categories_controller.rb:4:in `show'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.4ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:19:32 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms)
+
+
+  
+ArgumentError (Unsupported argument type: #<User:0x007faa42916380> (User)):
+  
+app/controllers/categories_controller.rb:4:in `show'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.2ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:19:49 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+Completed 500 Internal Server Error in 123394ms (ActiveRecord: 3.9ms)
+
+
+  
+ArgumentError (Unsupported argument type: #<User:0x007faa4281b3e0> (User)):
+  
+app/controllers/categories_controller.rb:5:in `show'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.7ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:21:57 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 6128ms (Views: 23.9ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/categories/add_user/id" for 127.0.0.1 at 2017-02-16 13:22:12 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"4GdSzkieo9UzmgJJEQFKSpSqua+9igwm63gO4yo5+bSF5lC4qqaWMmw7keCAq1HqTZquofUwHtaRWPdwNbuqKA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `users' for nil:NilClass):
+  
+app/controllers/categories_controller.rb:31:in `add_user'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.8ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:22:27 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 45ms (Views: 25.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/categories/add_user/id" for 127.0.0.1 at 2017-02-16 13:22:30 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"TT2H++ElS5Ze9gUTN8k9sWGPW8jHSYO9isuM19HwSgwovIWNAx1+cQFXlrqmYyYRuL9Mxo/zkU3w63VEznIZkA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 56832ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `users' for nil:NilClass):
+  
+app/controllers/categories_controller.rb:31:in `add_user'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.9ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:23:30 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (2.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 45ms (Views: 24.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/categories/add_user/id" for 127.0.0.1 at 2017-02-16 13:23:32 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"JzLcKCteZzc6u0AYCXwHfud3KpUwTHTa1e0zdy1zUpFCs95eyWZS0GUa07GY1hzePkc9m3j2ZiqvzcrkMvEBDQ=="}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 28465ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `users' for nil:NilClass):
+  
+app/controllers/categories_controller.rb:32:in `add_user'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.1ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:24:04 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/categories/add_user/id" for 127.0.0.1 at 2017-02-16 13:24:06 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"SfiFRTRfL0Y1d50mi/yqH1T+VU5yrtLGqsLYxC8JSRMseYcz1mcaoWrWDo8aVrG/jc5CQDoUwDbQ4iFXMIsajw=="}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 35782ms (ActiveRecord: 1.9ms)
+
+
+  
+NoMethodError (undefined method `users' for nil:NilClass):
+  
+app/controllers/categories_controller.rb:32:in `add_user'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.1ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:24:44 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/categories/add_user/id" for 127.0.0.1 at 2017-02-16 13:24:46 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"J94jRHXmSRdFQsBsD/iQthZ/14SrFWycyon1uUQrumtCXyEyl9588BrjU8WeUosWz0/AiuOvfmywqQwqW6np9w=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 50762ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `users' for nil:NilClass):
+  
+app/controllers/categories_controller.rb:32:in `add_user'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.7ms)
+Started POST "/categories/add_user/id" for 127.0.0.1 at 2017-02-16 13:25:45 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"J94jRHXmSRdFQsBsD/iQthZ/14SrFWycyon1uUQrumtCXyEyl9588BrjU8WeUosWz0/AiuOvfmywqQwqW6np9w=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:25:49 +0100
+Completed 500 Internal Server Error in 4667ms (ActiveRecord: 0.9ms)
+
+
+Processing by CategoriesController#show as HTML
+  
+  Parameters: {"title"=>"digital"}
+NoMethodError (undefined method `users' for nil:NilClass):
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+app/controllers/categories_controller.rb:32:in `add_user'
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 66ms (Views: 61.9ms | ActiveRecord: 0.8ms)
+
+
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.5ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:25:52 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 38ms (Views: 30.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/categories/add_user/id" for 127.0.0.1 at 2017-02-16 13:25:54 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"EQ+Xl792cL0GloQP2GiILMylIK17l92SSESLGSLbEqB0jpXhXU5FWlk3F6ZJwpOMFZU3ozMtz2IyZHKKPVlBPA=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 42831ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `users' for nil:NilClass):
+  
+app/controllers/categories_controller.rb:32:in `add_user'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.9ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:26:40 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (140.0ms)
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `categories_add_user_id_path' for #<#<Class:0x007faa48b25ad0>:0x007faa48b24770>
+Did you mean?  categories_path):
+    25:         <ul>
+    26:         <% @users.each do |user| %>
+    27:           <% username = user.first_name + " " + user.last_name %>
+    28:          <li> <%= link_to username, categories_add_user_id_path, method: :post, id: user.id %> </li>
+    29:         <% end %>
+    30:         </ul>
+    31:     </div>
+  
+app/views/categories/show.html.erb:28:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184670409160'
+app/views/categories/show.html.erb:26:in `_app_views_categories_show_html_erb___3892508756835444776_70184670409160'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.5ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:26:59 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (162.9ms)
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `categories_add_user_path' for #<#<Class:0x007faa48b25ad0>:0x007faa48729a80>
+Did you mean?  categories_path):
+    25:         <ul>
+    26:         <% @users.each do |user| %>
+    27:           <% username = user.first_name + " " + user.last_name %>
+    28:          <li> <%= link_to username, categories_add_user_path, method: :post, id: user.id %> </li>
+    29:         <% end %>
+    30:         </ul>
+    31:     </div>
+  
+app/views/categories/show.html.erb:28:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184668320400'
+app/views/categories/show.html.erb:26:in `_app_views_categories_show_html_erb___3892508756835444776_70184668320400'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.6ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:27:32 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (130.5ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `category_add_user_path' for #<#<Class:0x007faa48b25ad0>:0x007faa386f35f8>
+Did you mean?  category_path):
+    25:         <ul>
+    26:         <% @users.each do |user| %>
+    27:           <% username = user.first_name + " " + user.last_name %>
+    28:          <li> <%= link_to username, category_add_user_path, method: :post, id: user.id %> </li>
+    29:         <% end %>
+    30:         </ul>
+    31:     </div>
+  
+app/views/categories/show.html.erb:28:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184534909020'
+app/views/categories/show.html.erb:26:in `_app_views_categories_show_html_erb___3892508756835444776_70184534909020'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.5ms)
+Started GET "/categories/digital" for 127.0.0.1 at 2017-02-16 13:27:39 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"digital"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "digital"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2017-02-16 13:27:41 +0100
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.7ms)
+  Rendered categories/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2017-02-16 13:27:45 +0100
+Processing by CategoriesController#create as */*
+  Parameters: {"title"=>"typography", "description"=>"Visualsssss"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "typography"], ["description", "Visualsssss"], ["created_at", 2017-02-16 12:27:45 UTC], ["updated_at", 2017-02-16 12:27:45 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "cat_users" ("user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["category_id", 5], ["created_at", 2017-02-16 12:27:45 UTC], ["updated_at", 2017-02-16 12:27:45 UTC]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 200 OK in 31ms (ActiveRecord: 9.5ms)
+
+
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 1]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:27:45 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.2ms)
+  Rendered frames/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:27:51 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/categories/typography" for 127.0.0.1 at 2017-02-16 13:27:53 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/categories/typography"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered collection of /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [33 times] (10.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.9ms)
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:28:24 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 58ms (Views: 35.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/categories/typography" for 127.0.0.1 at 2017-02-16 13:28:27 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/categories/typography"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [33 times] (10.9ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.7ms)
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:30:10 +0100
+  
+NameError (undefined local variable or method `categories_add_user' for #<ActionDispatch::Routing::Mapper:0x007faa48296540>):
+  
+config/routes.rb:9:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.0ms)
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:30:56 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.1ms)
+  Rendered frames/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:30:57 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.0ms)
+  Rendered frames/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:30:58 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 47ms (Views: 31.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/categories/add_user/typography" for 127.0.0.1 at 2017-02-16 13:31:00 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"zMSjlp5lBcU4FEk3aFEt3+YeicWYbB6opUSBrWdRF0KpRaHgfF0wIme12p75+zZ/Py6ey9DWDFjfZHg+eNNE3g==", "title"=>"typography"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 64589ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (User(#70184631191580) expected, got NilClass(#8142860)):
+  
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:32:05 +0100
+app/controllers/categories_controller.rb:32:in `add_user'
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/lori/projects/basicshapes/app/views/categories/show.html.erb:28: syntax error, unexpected ',', expecting =>
+...ser.id, category_add_user_path, method: :post );@output_buff...
+...                               ^):
+  
+app/views/categories/show.html.erb:28: syntax error, unexpected ',', expecting =>
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.0ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.5ms)
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:32:09 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/home/lori/projects/basicshapes/app/views/categories/show.html.erb:28: syntax error, unexpected ',', expecting =>
+...ser.id, category_add_user_path, method: :post );@output_buff...
+...                               ^):
+  
+app/views/categories/show.html.erb:28: syntax error, unexpected ',', expecting =>
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.4ms)
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:32:10 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (2.3ms)
+  Rendered frames/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 41ms (Views: 37.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:32:11 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/lori/projects/basicshapes/app/views/categories/show.html.erb:28: syntax error, unexpected ',', expecting =>
+...ser.id, category_add_user_path, method: :post );@output_buff...
+...                               ^):
+  
+app/views/categories/show.html.erb:28: syntax error, unexpected ',', expecting =>
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.7ms)
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:33:23 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_user", :controller=>"categories", :title=>"typography"} missing required keys: [:user_id]):
+    25:         <ul>
+    26:         <% @users.each do |user| %>
+    27:           <% username = user.first_name + " " + user.last_name %>
+    28:          <li> <%= link_to username, category_add_user_path, method: :post, user_id: user.id %> </li>
+    29:         <% end %>
+    30:         </ul>
+    31:     </div>
+  
+app/views/categories/show.html.erb:28:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184531419140'
+app/views/categories/show.html.erb:26:in `_app_views_categories_show_html_erb___3892508756835444776_70184531419140'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.8ms)
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:33:32 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.1ms)
+  Rendered frames/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:33:33 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_user", :controller=>"categories", :title=>"typography"} missing required keys: [:user_id]):
+    25:         <ul>
+    26:         <% @users.each do |user| %>
+    27:           <% username = user.first_name + " " + user.last_name %>
+    28:          <li> <%= link_to username, category_add_user_path, method: :post, user_id: user.id %> </li>
+    29:         <% end %>
+    30:         </ul>
+    31:     </div>
+  
+app/views/categories/show.html.erb:28:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184668440240'
+app/views/categories/show.html.erb:26:in `_app_views_categories_show_html_erb___3892508756835444776_70184668440240'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.4ms)
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:35:36 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (3.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"add_user", :controller=>"categories", :title=>#<User id: 2, email: "lorenzo.ita@gmail.com", first_name: "Lorenzo", last_name: "Marini", job_title: "Web Coordinator", location: "Barcelona", created_at: "2017-02-15 13:11:56", updated_at: "2017-02-15 13:11:56">} missing required keys: [:user_id]):
+    25:         <ul>
+    26:         <% @users.each do |user| %>
+    27:           <% username = user.first_name + " " + user.last_name %>
+    28:          <li> <%= link_to username, category_add_user_path(user), method: :post %> </li>
+    29:         <% end %>
+    30:         </ul>
+    31:     </div>
+  
+app/views/categories/show.html.erb:28:in `block in _app_views_categories_show_html_erb___3892508756835444776_70184634656360'
+app/views/categories/show.html.erb:26:in `_app_views_categories_show_html_erb___3892508756835444776_70184634656360'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.0ms)
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:37:18 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/categories/add_user/typography/2" for 127.0.0.1 at 2017-02-16 13:37:25 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"midS+A296IvfVfQpwdvA0eK8rrxfmq8LnlmKWep1y1v/plCO74XdbID0Z4BQcdtxO4y5shcgvfvkeXPK9feYxw==", "title"=>"typography", "user_id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 26676ms (ActiveRecord: 2.3ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (User(#70184613510200) expected, got NilClass(#8142860)):
+  
+app/controllers/categories_controller.rb:32:in `add_user'
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/lori/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.4ms)
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:38:00 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 43ms (Views: 20.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/categories/typography" for 127.0.0.1 at 2017-02-16 13:38:20 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"typography"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 37ms (Views: 18.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/categories/add_user/typography/3" for 127.0.0.1 at 2017-02-16 13:38:22 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"ToKewSMh0PcxlAUTV6vVMRWsn7yhnD8vQWnAdtHYnaIrA5y3wRnlEG41lrrGAc6RzJyIsukmLd87STnlzlrOPg==", "title"=>"typography", "user_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "typography"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cat_users" ("user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["category_id", 5], ["created_at", 2017-02-16 12:38:22 UTC], ["updated_at", 2017-02-16 12:38:22 UTC]]
+  [1m[35m (35.3ms)[0m  [1m[36mcommit transaction[0m
+No template found for CategoriesController#add_user, rendering head :no_content
+Completed 204 No Content in 13440ms (ActiveRecord: 36.5ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2017-02-16 13:39:42 +0100
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ToKewSMh0PcxlAUTV6vVMRWsn7yhnD8vQWnAdtHYnaIrA5y3wRnlEG41lrrGAc6RzJyIsukmLd87STnlzlrOPg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:39:42 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  Rendered frames/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-02-16 13:39:44 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-16 13:39:46 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jENb5v3kgDvSTAWGiXtsOU/wKhSZhDO/Z7AwjSlDQerODTtzbSdhu1yTqR8BkWbrnD+3STFw7tmqYhQqRTI90g==", "user"=>{"email"=>"pato@donald.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "pato@donald.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-16 12:39:46 UTC], ["last_sign_in_at", 2017-02-16 12:39:46 UTC], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", 2017-02-16 12:39:46 UTC], ["id", 3]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 151ms (ActiveRecord: 7.6ms)
+
+
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 3]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:39:46 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.2ms)
+  Rendered frames/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2017-02-16 13:39:51 +0100
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered frames/_side.html.erb (0.7ms)
+  Rendered categories/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2017-02-16 13:39:59 +0100
+Processing by CategoriesController#create as */*
+  Parameters: {"title"=>"nulla", "description"=>"Profondo bnulla"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "nulla"], ["description", "Profondo bnulla"], ["created_at", 2017-02-16 12:39:59 UTC], ["updated_at", 2017-02-16 12:39:59 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "cat_users" ("user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["category_id", 6], ["created_at", 2017-02-16 12:39:59 UTC], ["updated_at", 2017-02-16 12:39:59 UTC]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 200 OK in 23ms (ActiveRecord: 9.0ms)
+
+
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 3]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:39:59 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.1ms)
+  Rendered frames/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories/nulla" for 127.0.0.1 at 2017-02-16 13:40:01 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"nulla"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "nulla"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 3]]
+  Rendered categories/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 50ms (Views: 39.3ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2017-02-16 13:40:05 +0100
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sAMlUpNZHgVlvZ4wwRdpOei9ZKPuVJYaBzFCbVJLCTpcP73z/a9cKp5PfDdoE2gBQj7W1LMW2UPIxyCRNOdjAw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:40:05 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  Rendered frames/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-02-16 13:40:09 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-16 13:40:11 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KuLFzS5ECWd5FNCZCb0ZEOhx7xrILET0Ksm6KwCjy34NoS9uf+x0wdHG+tIttTOZAnYnJyOoZ4QXVu7xE5DXfw==", "user"=>{"email"=>"albert.ramirez.canalias@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "albert.ramirez.canalias@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-16 12:40:11 UTC], ["last_sign_in_at", 2017-02-16 11:38:42 UTC], ["sign_in_count", 3], ["updated_at", 2017-02-16 12:40:11 UTC], ["id", 1]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 150ms (ActiveRecord: 7.7ms)
+
+
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 1]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:40:11 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.2ms)
+  Rendered frames/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2017-02-16 13:40:14 +0100
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RKcVWVdtjy6zT4FajrtnE3BFlYjWQyfM6MzrAhj7cPs3H6Er/ehYICMd7jsRnI+Mlljv7NOhiQtAEyRBi7ga7A=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:40:14 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  Rendered frames/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-02-16 13:40:15 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-16 13:40:17 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gz2E2YIIYbh/NoamCj8U1HoVmx5HLa5l6WMtJJBT65qV4VypI/3q/YoydOeGE9FiTIIdg2fymbv/P9giokJq2A==", "user"=>{"email"=>"pato@donald.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "pato@donald.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-16 12:40:17 UTC], ["sign_in_count", 2], ["updated_at", 2017-02-16 12:40:17 UTC], ["id", 3]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 148ms (ActiveRecord: 9.2ms)
+
+
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 3]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:40:17 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (0.8ms)
+  Rendered frames/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories/nulla" for 127.0.0.1 at 2017-02-16 13:40:19 +0100
+Processing by CategoriesController#show as HTML
+  Parameters: {"title"=>"nulla"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "nulla"], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered frames/_side.html.erb (1.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != ?)[0m  [["id", 3]]
+  Rendered categories/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/categories/add_user/nulla/4" for 127.0.0.1 at 2017-02-16 13:40:21 +0100
+Processing by CategoriesController#add_user as HTML
+  Parameters: {"authenticity_token"=>"tvShMMBWups/iE60y7xhf0hL1GCXJNV8RqOlP9We4PG+s1os2rzzDIYrMl/QQa87HO/lEm7jrSYOitjkL5Gyvg==", "title"=>"nulla", "user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."title" = ? LIMIT ?[0m  [["title", "nulla"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cat_users" ("user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 4], ["category_id", 6], ["created_at", 2017-02-16 12:40:21 UTC], ["updated_at", 2017-02-16 12:40:21 UTC]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:40:21 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (1.5ms)
+  Rendered frames/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2017-02-16 13:40:23 +0100
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ga8eUCj5rb7WSZ9yVOMeMqKXNy8gTZjLuDWD9zZxtI6J6OVMMhPkKW/q45lPHtB29jMGXdmK4JHwHP4szH7mwQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:40:23 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  Rendered frames/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-02-16 13:40:24 +0100
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-02-16 13:40:26 +0100
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GKV982BKwBzsWhwuHLUXBvym/zlJRO4T4gkIRaCc5xwz80aRDeL/gt5P5rxKyPnhH1uEEoNrmDk9NV7oBRY6zA==", "user"=>{"email"=>"mickey@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "mickey@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-16 12:40:26 UTC], ["sign_in_count", 2], ["updated_at", 2017-02-16 12:40:26 UTC], ["id", 4]]
+  [1m[35m (23.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 170ms (ActiveRecord: 23.8ms)
+
+
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "cat_users" ON "categories"."id" = "cat_users"."category_id" WHERE "cat_users"."user_id" = ?[0m  [["user_id", 4]]
+Started GET "/" for 127.0.0.1 at 2017-02-16 13:40:27 +0100
+Processing by FramesController#index as HTML
+  Rendering frames/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered frames/_side.html.erb (0.8ms)
+  Rendered frames/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.2ms)
+
+
