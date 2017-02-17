@@ -8,9 +8,9 @@
     <div class="category-left"><%= link_to category["title"].capitalize, category_path(category["title"]) %></div>
     <% end %>
 
-	<% unless params[:controller] == "frames" %>
-	<hr />
-	<%= link_to "Guidelines", root_path %>
-	<% end %>
+    <% unless params[:controller] == "frames" %>
+    <hr />
+    <%= link_to "Guidelines", root_path %>
+    <% end %>
 
     </div>
