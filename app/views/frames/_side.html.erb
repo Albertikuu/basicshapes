@@ -1,5 +1,6 @@
 
     <div class="three columns left-navigation">
+    <h4>Your dashboard</h4>
     <%= button_to "Create Category", new_category_path, method: :get %>
     <% if session[:categories] == 0 %>
     <p> You haven't created any category yet! </p>

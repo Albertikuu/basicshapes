@@ -3,10 +3,10 @@ class UsersController < ApplicationController
 
 
 	def show
-
+		@users = User.all
 		@user = User.find(params[:id])
-		render :show
-
+		@user_fullname = @user.first_name + ' ' + @user.last_name
+		@other_categories = Category.all - @user.categories
 	end
 
 

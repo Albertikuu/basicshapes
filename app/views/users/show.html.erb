@@ -1,0 +1,60 @@
+<div class="container">
+
+  <div class="row">
+
+<!-- Left Column -->
+  <%= render "frames/side" %>
+
+<!-- Main body -->
+
+    <div class="eight columns frame">
+
+
+    <h1><%= @user_fullname.capitalize %></h1>
+    <h3><%= @user.job_title %></h3>
+    <p><%= @user.location %></p>
+    
+
+    <!-- note: this will need the use of teams -->
+    
+    <!-- note: Add amdin authentication here -->
+  
+	<hr/>
+	
+	<h4><%= @user.first_name %> is active in:</h4>
+	<ul>
+	<% @user.categories.each do |category| %>
+	<li><%= link_to category.title.capitalize, category_path(category.title) %></li>
+	<% end %>
+	</ul>
+
+	<hr/>
+
+
+    <p><a href="#" id="addusers-js">Add this user to a category</a></p>
+
+    <div id="category-list-js" style="display: none">
+        <ul>
+        <% @other_categories.each do |cat| %>
+         <li> <%= link_to cat.title, category_add_user_path(title: cat.title, user_id: @user.id), method: :post %> </li>
+        <% end %>
+        </ul>
+    </div>
+
+    </div>
+
+<!-- Empty Column -->
+
+    <div class="one column empty"> Empty Column </div>
+
+
+  </div>
+
+</div>
+
+<script>
+  $('#addusers-js').on('click', function(event){
+    event.preventDefault();
+    $('#category-list-js').toggle();
+  });
+</script>

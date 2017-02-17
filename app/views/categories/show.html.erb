@@ -30,6 +30,16 @@
         </ul>
     </div>
 
+    <hr/>
+
+    <h4>Users in this category:</h4>
+
+    <ul>
+    <% @category.users.each do |u| %>
+    <% username = u.first_name + " " + u.last_name %>
+    <li><%= link_to username, user_path(u) %></li>
+    <% end %>
+
     </div>
 
 <!-- Empty Column -->

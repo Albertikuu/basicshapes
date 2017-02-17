@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
 	def add_user
 		user = User.find_by(id: params[:user_id])
 		Category.find_by(title: params[:title]).users << user
-		redirect_to('/')
+		redirect_to(:back)
 	end
 
 
