@@ -6,5 +6,9 @@ class User < ApplicationRecord
 
   has_many :cat_users
   has_many :categories, through: :cat_users
+
+  def full_name
+  	self.first_name + ' ' + self.last_name
+  end
   
 end

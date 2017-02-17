@@ -10,9 +10,10 @@
     <div class="eight columns frame">
 
 
-    <h1><%= @user_fullname.capitalize %></h1>
+    <h1><%= @user.full_name %> <% if current_user == @user %>(you)<% end %></h1>
     <h3><%= @user.job_title %></h3>
     <p><%= @user.location %></p>
+
     
 
     <!-- note: this will need the use of teams -->
@@ -21,7 +22,7 @@
   
 	<hr/>
 	
-	<h4><%= @user.first_name %> is active in:</h4>
+	<p><%= @user.first_name %> is active in:</p>
 	<ul>
 	<% @user.categories.each do |category| %>
 	<li><%= link_to category.title.capitalize, category_path(category.title) %></li>
