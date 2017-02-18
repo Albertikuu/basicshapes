@@ -12,13 +12,13 @@
 
     <h1><%= @category.title.capitalize %></h1>
     <p><%= @category.description %></p>
-    
+
 
     <!-- note: this will need the use of teams -->
-    
+
     <!-- note: Add amdin authentication here -->
     <p><%= link_to 'Delete this', category_path(@category.title), method: :delete %></p>
-    
+
     <p><a href="#" id="addusers-js">Add users to this category</a></p>
 
     <div id="users-list-js" style="display: none">

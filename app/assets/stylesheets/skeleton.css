@@ -500,10 +500,15 @@ body {
 nav {
   background-color: #FFF;
   box-shadow: 0px 1px #EEEEF0;
-  /*padding-left: 42px;
-  padding-right: 42px;
-  padding-top: 16px;
-  padding-bottom: 16px;*/
+  padding: 16px 42px 16px 42px;
+}
+
+.nav-row {
+  max-width: 1920px;
+  max-height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Anchor */
@@ -544,6 +549,8 @@ button {
 .btn--secondary {
   background-color: #EBEDF0;
   color: #000F28;
+  border: 1px solid #E6E6E6;
+  box-sizing: border-box;
 }
 
 .btn--disabled {
@@ -552,18 +559,19 @@ button {
   box-shadow: none;
 }
 
-/* CONTAINER */
+/* P */
 
-/*.container-flex {
-  display: flex;
-  justify-content: space-around;
-}*/
+p, a {
+  margin-bottom: 0px;
+}
 
-/* LOGIN */
+/* CARD */
 
-/*.login {
-  display: inline-block;
-}*/
+.frame {
+  background-color: #FFF;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #E6E6E6;
+}
 
 
 /* Larger than mobile */

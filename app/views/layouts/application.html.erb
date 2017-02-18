@@ -9,20 +9,29 @@
 
   <body>
 
-  <nav class="container-flex">
-    <%= render :partial => 'svg/basicshapes-logo' %>
-    <% if user_signed_in? %>
+  <nav>
 
-    	<p>Logged in as <%= current_user.first_name  %>!</p>
-    	<%= link_to "Logout", destroy_user_session_path, method: 'delete' %>
+    <div class="nav-row">
+      <%= render :partial => 'svg/basicshapes-logo' %>
+      <% if user_signed_in? %>
 
-  	<% else %>
+      	<p>Logged in as <%= current_user.first_name  %>!</p>
+      	<%= link_to "Logout", destroy_user_session_path, method: 'delete', class: "btn  btn--secondary" %>
 
-    	<p>No user is logged in</p>
-    	<%= link_to "Login", new_user_session_path, class: "btn  btn--primary" %>
+    	<% else %>
 
-  	<% end %>
+      	<p>No user is logged in</p>
+
+        <div class="">
+          <%= link_to "Login", new_user_session_path, class: "btn  btn--primary" %>
+        </div>
+
+    	<% end %>
+    </div>
+
   </nav>
+
     <%= yield %>
+
   </body>
 </html>
