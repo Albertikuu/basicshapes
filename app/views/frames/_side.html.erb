@@ -1,16 +1,17 @@
 
     <div class="three columns left-navigation">
-    <h4>Your dashboard</h4>
+    
+     <h4>Your dashboard</h4>
     <%= button_to "Create Category", new_category_path, method: :get %>
     <% if session[:categories] == 0 %>
-    <p> You haven't created any category yet! </p>
+         <p> You haven't created any category yet! </p>
     <% end %>
     <% session[:categories].each do |category| %>
-    <div class="category-left"><%= link_to category["title"].capitalize, category_path(category["title"]) %></div>
+         <div class="category-left"><%= link_to category["title"].capitalize, category_path(category["title"]) %></div>
     <% end %>
 
     <% unless params[:controller] == "frames" %>
-    <hr />
+         <hr />
     <%= link_to "Guidelines", root_path %>
     <% end %>
 
