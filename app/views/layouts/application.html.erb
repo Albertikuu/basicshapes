@@ -8,19 +8,21 @@
   </head>
 
   <body>
-  
-	<% if user_signed_in? %>
-  
-  	<p>Logged in as <%= current_user.first_name  %>!</p>
-  	<%= link_to "Logout", destroy_user_session_path, method: 'delete' %>
 
-	<% else %>
+  <nav class="container-flex">
+    <%= render :partial => 'svg/basicshapes-logo' %>
+    <% if user_signed_in? %>
 
-  	<p>No user is logged in</p>
-  	<%= link_to "Login", new_user_session_path %>
+    	<p>Logged in as <%= current_user.first_name  %>!</p>
+    	<%= link_to "Logout", destroy_user_session_path, method: 'delete' %>
 
-	<% end %>
+  	<% else %>
 
+    	<p>No user is logged in</p>
+    	<%= link_to "Login", new_user_session_path, class: "btn  btn--primary" %>
+
+  	<% end %>
+  </nav>
     <%= yield %>
   </body>
 </html>

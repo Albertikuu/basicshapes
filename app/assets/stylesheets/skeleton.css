@@ -490,10 +490,39 @@ there.
 
 /* STYLEGUIDE */
 
+/* BODY */
+
+body {
+  background-color: #F4F5F8;
+}
+
+/* NAVS */
+
+nav {
+  background-color: #FFF;
+  box-shadow: 0px 1px #EEEEF0;
+  /*padding-left: 42px;
+  padding-right: 42px;
+  padding-top: 16px;
+  padding-bottom: 16px;*/
+}
+
+/* Anchor */
+
+a {
+  text-decoration: none;
+}
+
 /* BUTTONS */
 
 button {
   box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1);
+}
+
+.btn {
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1);
+  padding: 5px 16px 6px 16px;
+  border-radius: 4px;
 }
 
 .btn--big {
@@ -523,6 +552,19 @@ button {
   color: #BFBFBF;
   box-shadow: none;
 }
+
+/* CONTAINER */
+
+/*.container-flex {
+  display: flex;
+  justify-content: space-around;
+}*/
+
+/* LOGIN */
+
+/*.login {
+  display: inline-block;
+}*/
 
 
 /* Larger than mobile */
