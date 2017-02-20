@@ -9,24 +9,24 @@
 
   <body>
 
-  <nav>
+  <nav class="container-flex">
 
     <div class="nav-row">
       <%= render :partial => 'svg/basicshapes-logo' %>
       <% if user_signed_in? %>
 
-        <p>Logged in as <%= current_user.first_name  %>!</p>
-        <%= link_to "Logout", destroy_user_session_path, method: 'delete', class: "btn  btn--secondary" %>
+      	<p>Logged in as <%= current_user.first_name  %>!</p>
+      	<%= link_to "Logout", destroy_user_session_path, method: 'delete', class: "btn  btn--secondary" %>
 
-      <% else %>
+    	<% else %>
 
-        <p>No user is logged in</p>
+      	<p>No user is logged in</p>
 
         <div class="">
           <%= link_to "Login", new_user_session_path, class: "btn  btn--primary" %>
         </div>
 
-      <% end %>
+    	<% end %>
     </div>
 
   </nav>

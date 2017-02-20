@@ -1,18 +1,23 @@
 
-    <div class="three columns left-navigation">
-    
-     <h4>Your dashboard</h4>
-    <%= button_to "Create Category", new_category_path, method: :get %>
-    <% if session[:categories] == 0 %>
-         <p> You haven't created any category yet! </p>
-    <% end %>
-    <% session[:categories].each do |category| %>
-         <div class="category-left"><%= link_to category["title"].capitalize, category_path(category["title"]) %></div>
-    <% end %>
+    <div class="three columns">
 
-    <% unless params[:controller] == "frames" %>
-         <hr />
-    <%= link_to "Guidelines", root_path %>
-    <% end %>
+    <div>
+
+        <div class="icons"><%= render :partial => 'svg/guidelines' %></div>
+        <%= link_to "Guidelines control", root_path %>
+    </div>
+
+    <hr class="divider">
+
+      <%= button_to "Create Category", new_category_path, method: :get, class: "btn btn--primary create" %>
+      <% if session[:categories] == 0 %>
+      <p> You haven't created any category yet! </p>
+      <% end %>
+
+      <% session[:categories].each do |category| %>
+      <div class="category-left list"> <div class="icons"><%= render :partial => 'svg/folder' %></div> <%= link_to category["title"].capitalize, category_path(category["title"]) %></div>
+      <% end %>
+
+    <hr class="divider">
 
     </div>

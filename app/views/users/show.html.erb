@@ -14,14 +14,14 @@
     <h3><%= @user.job_title %></h3>
     <p><%= @user.location %></p>
 
-    
+
 
     <!-- note: this will need the use of teams -->
-    
+
     <!-- note: Add amdin authentication here -->
-  
+
 	<hr/>
-	
+
 	<p><%= @user.first_name %> is active in:</p>
 	<ul>
 	<% @user.categories.each do |category| %>
@@ -43,11 +43,6 @@
     </div>
 
     </div>
-
-<!-- Empty Column -->
-
-    <div class="one column empty"> Empty Column </div>
-
 
   </div>
 
