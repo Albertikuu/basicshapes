@@ -15,7 +15,7 @@
       <% end %>
 
       <% session[:categories].each do |category| %>
-      <div class="category-left list"> <div class="icons"><%= render :partial => 'svg/folder' %></div> <%= link_to category["title"].capitalize, category_path(category["title"]) %></div>
+      <div class="category-left list"> <div class="icons"><%= render :partial => 'svg/folder' %></div> <%= link_to category["title"].capitalize, category_display_path(category['team_id'], category['title']) %></div>
       <% end %>
 
     <hr class="divider">

@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-digital, brand = Category.create! ([{title: 'digital', description: 'Guidelines for digital products'}, {title: 'brand', description: 'Brand identity and logos'}])
+digital, brand = Category.create! ([{title: 'digital', description: 'Guidelines for digital products', team_id: '2'}, {title: 'brand', description: 'Brand identity and logos', team_id: '1'}])
 albert, lorenzo = User.create!([
 	{first_name: 'Albert', last_name: 'Ramirez', email: 'albert.ramirez.canalias@gmail.com', job_title: 'Designer', location: 'Barcelona', password: 'ironhack', password_confirmation: 'ironhack'},
 	{first_name: 'Lorenzo', last_name: 'Marini', email: 'lorenzo.ita@gmail.com', job_title: 'Web Coordinator', location: 'Barcelona', password: 'ironhack', password_confirmation: 'ironhack'},

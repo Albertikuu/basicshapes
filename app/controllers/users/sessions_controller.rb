@@ -8,6 +8,7 @@ class Users::SessionsController < Devise::SessionsController
   def create
     super
     session[:categories] = current_user.categories
+    session[:teams] = current_user.categories
   end
 
 end 

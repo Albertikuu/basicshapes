@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   	resources :categories, param: :title, only: [:index, :show]
   end 
 
+  get ':team_name/:title', to: 'categories#show', as: 'category_display'
+
   post '/categories/add_user/:title/:user_id', as: 'category_add_user', to: 'categories#add_user'
   root 'frames#index'
 

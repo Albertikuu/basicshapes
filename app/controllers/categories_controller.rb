@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
 
 	def show 
 		@all_users = User.where.not(id: current_user.id)
-		@category = Category.find_by(title: params[:title])		
+		@category = Category.find_by(title: params[:title])	
 	end
 
 	def index
@@ -33,10 +33,11 @@ class CategoriesController < ApplicationController
 	end
 
 
+
 	private
 
 	  def category_params
-   		 params.permit(:title, :description)
+   		 params.permit(:title, :description, :team_id)
 	  end
 
 
