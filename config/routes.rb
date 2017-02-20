@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   
   resources :users
   resources :categories, param: :title, except: [:index, :show]
-  resources :teams, param: :name do
+  resources :teams, except: [:show], param: :name do
   	resources :categories, param: :title, only: [:index, :show]
   end 
 
+  get ':team_name', to: 'teams#show'
   get ':team_name/:title', to: 'categories#show', as: 'category_display'
 
   post '/categories/add_user/:title/:user_id', as: 'category_add_user', to: 'categories#add_user'

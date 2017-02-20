@@ -22,8 +22,8 @@ CatUser.create!(user_id: '2', category_id:'1')
 CatUser.create!(user_id: '3', category_id:'1')
 
 
-Team.create!(name: 'Disneyland')
-Team.create!(name: 'Basicshapes')
+Team.create!(name: 'disneyland')
+Team.create!(name: 'basicshapes')
 
 Participation.create!(user_id: '1', team_id: '1')
 Participation.create!(user_id: '2', team_id: '1')
