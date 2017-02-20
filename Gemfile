@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'font-awesome-rails'
 
+# heroku static
+gem 'rails_12factor', group: :production
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
