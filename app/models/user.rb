@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
 	has_many :cat_users
 	has_many :categories, through: :cat_users
+	has_many :teams, through: :participations
 
 	def full_name
 		self.first_name + ' ' + self.last_name

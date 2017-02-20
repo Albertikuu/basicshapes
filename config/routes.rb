@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   	controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
   
   resources :users
-  resources :categories, param: :title #, except: :index
+  resources :teams, param: :name, except: :index do
+  	resources :categories, param: :title #, except: :index
+  end 
+
   post '/categories/add_user/:title/:user_id', as: 'category_add_user', to: 'categories#add_user'
   root 'frames#index'
 

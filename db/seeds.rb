@@ -21,3 +21,13 @@ CatUser.create!(user_id: '2', category_id:'2')
 CatUser.create!(user_id: '2', category_id:'1')
 CatUser.create!(user_id: '3', category_id:'1')
 
+
+Team.create!(name: 'Disneyland')
+Team.create!(name: 'Basicshapes')
+
+Participation.create!(user_id: '1', team_id: '1')
+Participation.create!(user_id: '2', team_id: '1')
+Participation.create!(user_id: '3', team_id: '1')
+Participation.create!(user_id: '4', team_id: '1')
+Participation.create!(user_id: '1', team_id: '2')
+Participation.create!(user_id: '2', team_id: '2')
