@@ -10,13 +10,6 @@
   <body>
 
   <nav class="container-flex">
-    <%= render :partial => 'svg/basicshapes-logo' %>
-    <% if user_signed_in? %>
-
-    	<p>Logged in as <%= current_user.first_name  %>!</p>
-    	<%= link_to "Logout", destroy_user_session_path, method: 'delete' %>
-
-  	<% else %>
 
     <div class="nav-row">
       <%= render :partial => 'svg/basicshapes-logo' %>
@@ -38,11 +31,6 @@
 
   </nav>
 
-    	<p>No user is logged in</p>
-    	<%= link_to "Login", new_user_session_path, class: "btn  btn--primary" %>
-
-  	<% end %>
-  </nav>
     <%= yield %>
 
   </body>
