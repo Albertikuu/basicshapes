@@ -619,6 +619,10 @@ p, a {
   margin: 0;
 }
 
+.dropdown p {
+  display: inline-block;
+}
+
 .dropdown .icons{
   display: inline-block;
   float: none;
