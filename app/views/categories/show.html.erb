@@ -20,7 +20,7 @@
     <p><%= link_to 'Delete this', category_path(@category.title), method: :delete %></p>
     <p><a href="#" id="addusers-js">Add users to this category</a></p>
 
-    <div id="users-list-js" style="display: none">
+    <div id="list-js" style="display: none">
         <ul>
         <% @team_users.each do |user| %>
          <li> <%= link_to user.full_name, category_add_user_path(title: params[:title], user_id: user.id), method: :post %> </li>
@@ -48,9 +48,4 @@
 
 </div>
 
-<script>
-  $('#addusers-js').on('click', function(event){
-    event.preventDefault();
-    $('#users-list-js').toggle();
-  });
-</script>
+
