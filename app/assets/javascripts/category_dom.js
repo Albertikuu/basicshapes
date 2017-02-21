@@ -1,4 +1,4 @@
-$('document').ready(function() {
+document.addEventListener("turbolinks:load", function() {
 
 $('.btn-category-js').on('click', createCategory)
 
