@@ -37,7 +37,6 @@ before_action :authenticate_user!
 	end
 
 
-
 	private
 
 	  def category_params

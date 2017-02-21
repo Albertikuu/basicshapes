@@ -4,7 +4,9 @@
     <div>
 
       <% current_user.teams.each do |team| %> 
-       <div class="category-left list"> <div class="icons"><%= render :partial => 'svg/folder' %></div> <%= link_to team.name.capitalize, team.name %></div>
+       <div class="category-left list"> <div class="icons"><%= render :partial => 'svg/folder' %></div> 
+       <%= link_to team.name.capitalize, team.name, :method => :post %>
+       </div>
       <% end %>
 
     <hr class="divider">

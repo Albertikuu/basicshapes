@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end 
 
   get ':team_name', to: 'teams#show'
+  post ':team_name', to: 'teams#change_session'
   get ':team_name/:title', to: 'categories#show', as: 'category_display'
 
   post '/categories/add_user/:title/:user_id', as: 'category_add_user', to: 'categories#add_user'

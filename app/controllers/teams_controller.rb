@@ -14,5 +14,11 @@ before_action :authenticate_user!
 		end
 	end
 
+	def change_session
+		session[:current_team] = Team.find_by(name: params[:team_name])
+        session[:categories] = Team.find_by(name: params[:team_name]).categories
+ 		redirect_to(:back)
+	end
+
 
 end
