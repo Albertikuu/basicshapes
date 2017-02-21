@@ -1,8 +1,8 @@
 class CategoriesController < ApplicationController
 
-	def show 
+	def show
 		@all_users = User.where.not(id: current_user.id)
-		@category = Category.find_by(title: params[:title])		
+		@category = Category.find_by(title: params[:title])
 	end
 
 	def index

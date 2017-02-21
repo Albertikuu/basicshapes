@@ -11,7 +11,6 @@
 
     <div class="eight columns frame">
 
-
     Main Body
 
 
@@ -22,17 +21,24 @@
 
 <!-- Main body -->
 
-    <div class="eleven columns frame">
+    <div class="card--center">
 
+      <div class="six columns frame">
 
-	<h2>You are not logged in </h2>
-		<%= link_to "Login", new_user_session_path %><br/>
-		<%= link_to "Signup", new_user_registration_path %>
+      	<h3>Welcome to Basic Shapes</h3>
 
+        <p class="description description--center">Basic shapes offers a new way to create documentation for design and marketing, ofering a seamless collaboration between teams.</p>
+
+        <div class="actions">
+
+          <%= link_to "Login", new_user_session_path, class: "btn  btn--primary" %>
+        	<%= link_to "Signup", new_user_registration_path, class: "btn  btn--secondary btn--separation" %>
+
+        </div>
+
+      </div>
 
     </div>
-
-
 
 <% end %>
 

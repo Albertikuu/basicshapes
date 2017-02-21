@@ -21,11 +21,15 @@
     <p><a href="#" id="addusers-js">Add users to this category</a></p>
 
     <div id="users-list-js" style="display: none">
+
         <ul>
+
         <% @all_users.each do |user| %>
          <li> <%= link_to user.full_name, category_add_user_path(title: params[:title], user_id: user.id), method: :post %> </li>
         <% end %>
+
         </ul>
+        
     </div>
 
     <hr/>
@@ -33,11 +37,12 @@
     <h4>Users in this category:</h4>
 
     <ul>
-    <% @category.users.each do |u| %>
-    <li><%= link_to u.full_name, user_path(u) %></li>
-    <% end %>
 
-    </div>
+      <% @category.users.each do |u| %>
+      <li><%= link_to u.full_name, user_path(u) %></li>
+      <% end %>
+
+    </ul>
 
 <!-- Empty Column -->
 

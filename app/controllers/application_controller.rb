@@ -1,8 +1,15 @@
 class ApplicationController < ActionController::Base
-# before_action :load_categories 
+# before_action :load_categories
 # before_action :authenticate_user!
 protect_from_forgery with: :null_session
 
+  # def is_signed_in?
+  #    if !user_signed_in?
+  #       redirect_to somewhere
+  #    else
+  #       redirect_to
+  #    end
+  # end
 
   private
 
