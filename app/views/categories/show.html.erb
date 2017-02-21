@@ -22,7 +22,7 @@
 
     <div id="users-list-js" style="display: none">
         <ul>
-        <% @all_users.each do |user| %>
+        <% @team_users.each do |user| %>
          <li> <%= link_to user.full_name, category_add_user_path(title: params[:title], user_id: user.id), method: :post %> </li>
         <% end %>
         </ul>
