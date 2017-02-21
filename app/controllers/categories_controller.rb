@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 before_action :authenticate_user!
+skip_before_action :verify_authenticity_token, only: :create
+
 
 	def show 
 		current_team = Team.find_by(id: session[:current_team]["id"])

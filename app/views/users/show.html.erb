@@ -25,7 +25,7 @@
 	<p><%= @user.first_name %> is active in:</p>
 	<ul>
 	<% @user.categories.each do |category| %>
-	<li><%= link_to category.title.capitalize, category_path(category.title) %></li>
+	<li><%= link_to "#{category.title.capitalize}, in #{category.team["name"].capitalize}", category_display_path(category.team["name"], category['title']) %></li>
 	<% end %>
 	</ul>
 

@@ -26,7 +26,7 @@
           <p> You don't have any active category in this team yet! </p>
           <% end %>
           <% session[:categories].each do |category| %>
-          <div class="category-left list"> <div class="icons"><%= render :partial => 'svg/folder' %></div> <%= link_to category["title"].capitalize, category_display_path(category['team_id'], category['title']) %></div>
+          <div class="category-left list"> <div class="icons"><%= render :partial => 'svg/folder' %></div> <%= link_to category["title"].capitalize, category_display_path(session[:current_team]["name"], category['title']) %></div>
           <% end %>
       <% else %>
         <p>No team selected</p>

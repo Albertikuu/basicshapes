@@ -1,4 +1,3 @@
-
 function createCategory(event){
 	event.preventDefault();
 	$team_id = parseInt($('#category_team').val());
