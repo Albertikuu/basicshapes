@@ -8,7 +8,7 @@
       <% current_user.teams.each do |team| %> 
        <div class="category-left list <% if team.name == session[:current_team]["name"] %> prov_selected <% end %>" > 
        <div class="icons"><%= render :partial => 'svg/folder' %></div> 
-        <%= link_to team.name.capitalize, team.name, :method => :post %>
+        <%= link_to team.name.capitalize, "/#{team.name}", :method => :post %>
        </div>
       <% end %>
 
