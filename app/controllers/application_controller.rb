@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-# before_action :load_categories
-# before_action :authenticate_user!
+# before_action :load_categories 
 protect_from_forgery with: :null_session
 
   # def is_signed_in?

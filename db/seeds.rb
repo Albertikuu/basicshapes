@@ -7,7 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-digital, brand = Category.create! ([{title: 'digital', description: 'Guidelines for digital products'}, {title: 'brand', description: 'Brand identity and logos'}])
+
+Team.create!(name: 'disneyland')
+Team.create!(name: 'basicshapes')
+
+digital, brand = Category.create! ([{title: 'digital', description: 'Guidelines for digital products', team_id: 2}, {title: 'brand', description: 'Brand identity and logos', team_id: 1}])
+
 albert, lorenzo = User.create!([
 	{first_name: 'Albert', last_name: 'Ramirez', email: 'albert.ramirez.canalias@gmail.com', job_title: 'Designer', location: 'Barcelona', password: 'ironhack', password_confirmation: 'ironhack'},
 	{first_name: 'Lorenzo', last_name: 'Marini', email: 'lorenzo.ita@gmail.com', job_title: 'Web Coordinator', location: 'Barcelona', password: 'ironhack', password_confirmation: 'ironhack'},
@@ -19,5 +24,12 @@ CatUser.create!(user_id: '1', category_id:'1')
 CatUser.create!(user_id: '1', category_id:'2')
 CatUser.create!(user_id: '2', category_id:'2')
 CatUser.create!(user_id: '2', category_id:'1')
-CatUser.create!(user_id: '3', category_id:'1')
+CatUser.create!(user_id: '3', category_id:'2')
 
+
+Participation.create!(user_id: '1', team_id: '1')
+Participation.create!(user_id: '2', team_id: '1')
+Participation.create!(user_id: '3', team_id: '1')
+Participation.create!(user_id: '4', team_id: '1')
+Participation.create!(user_id: '1', team_id: '2')
+Participation.create!(user_id: '2', team_id: '2')

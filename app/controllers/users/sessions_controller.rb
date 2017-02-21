@@ -6,8 +6,14 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def create
+
     super
-    session[:categories] = current_user.categories
+
+    unless session[:current_team]
+	    session[:categories] = current_user.categories.where(team_id: current_user.teams.first.id)
+	    session[:current_team] = current_user.teams.first
+	end
+
   end
 
 end 

@@ -1,8 +1,13 @@
 class CategoriesController < ApplicationController
+before_action :authenticate_user!
 
-	def show
-		@all_users = User.where.not(id: current_user.id)
-		@category = Category.find_by(title: params[:title])
+	def show 
+		current_team = Team.find_by(id: session[:current_team]["id"])
+		@category = Category.find_by(title: params[:title])	
+		@team_users = current_team.users.select {|user| user.categories.exclude?(@category)}
+		unless @category.users.include?(current_user)
+			redirect_to('/')
+		end
 	end
 
 	def index
@@ -16,13 +21,13 @@ class CategoriesController < ApplicationController
 
 	def create
 		@category = current_user.categories.create!(category_params)
-    	session[:categories] = current_user.categories
+	    session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])	
 		redirect_to('/')
 	end
 
 	def destroy
 		@category = Category.find_by(title: params[:title]).delete
-		session[:categories] = current_user.categories
+	    session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])	
 		redirect_to('/')
 	end
 
@@ -36,8 +41,7 @@ class CategoriesController < ApplicationController
 	private
 
 	  def category_params
-   		 params.permit(:title, :description)
+   		 params.permit(:title, :description, :team_id)
 	  end
-
 
 end
