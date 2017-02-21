@@ -3,9 +3,8 @@ before_action :authenticate_user!
 
 	def show 
 		current_team = Team.find_by(id: session[:current_team]["id"])
-		binding.pry
-		@team_users = current_team.users.where.not(id: current_user.id)
 		@category = Category.find_by(title: params[:title])	
+		@team_users = current_team.users.select {|user| user.categories.exclude?(@category)}
 		unless @category.users.include?(current_user)
 			redirect_to('/')
 		end
