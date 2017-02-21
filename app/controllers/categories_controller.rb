@@ -4,6 +4,7 @@ before_action :authenticate_user!
 	def show 
 		@all_users = User.where.not(id: current_user.id)
 		@category = Category.find_by(title: params[:title])	
+		# binding.pry
 		unless @category.users.include?(current_user)
 			redirect_to('/')
 		end
