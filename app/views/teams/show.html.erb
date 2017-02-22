@@ -1,7 +1,6 @@
 <div class="container">
 
   <div class="row">
-<% if user_signed_in? %>
 
 
 <!-- Left Column -->
@@ -14,27 +13,24 @@
 
     <h1><%= @team.name.capitalize %></h1>
 
+    <h4> Categories in this team </h4>
+
+      <ul>
+        <% @team.categories.each do |c| %>
+        <li><%= link_to c.title.capitalize, category_display_path(@team.name, c.title)%></li>
+        <% end %>
+      </ul>
+
+    <h4>Users in this team</h4>
+      <ul>
+        <% @team.users.each do |u| %>
+        <li><%= link_to u.full_name, user_path(u)%></li>
+        <% end %>
+      </ul>
 
     </div>
 
-<% else %>
 
-
-<!-- Main body -->
-
-    <div class="eleven columns frame">
-
-
-	<h2>You are not logged in </h2>
-		<%= link_to "Login", new_user_session_path %><br/>
-		<%= link_to "Signup", new_user_registration_path %>
-
-
-    </div>
-
-
-
-<% end %>
 
 
   </div>

@@ -1,0 +1,66 @@
+<div class="container">
+
+  <div class="row">
+
+<!-- Left Column -->
+
+  <%= render "frames/side" %>
+
+
+<!-- Main body -->
+
+    <div class="eight columns frame">
+
+    <div>
+      <h6 class="breadcrumb">Create a new Team</h6>
+      <p class="description">Teams share categories, members and the Guidlines Control. To start using Basicshapes, create a Team and add your colleagues or friends to it to start working on your documentation.</p>
+    </div>
+
+	  <%= form_tag({}, { :class => "create-team"}) do %>
+	  <div>
+
+	    <label for="Team name" >Team</label>
+	    <input type="text" name="team[title]" id="team_name"
+	      class="form-control">
+
+	  </div>
+<!--
+	  <div>
+	    <label for="Category description">Description</label>
+	    <input type="text" name="team[description]" id="category_description"
+	      class="form-control">
+	  </div>
+
+    <div>
+      <textarea class="froala"></textarea>
+    </div>
+-->
+
+
+    <div>
+      <label for="participants">Invite Team Members</label>
+       <input type="text" name="participants" id="participants-invite-js" 
+       placeholder="Add one or more email addresses, separated by a comma"
+	   class="form-control">
+
+    </div>
+
+    <div class="actions">
+
+      <button class="btn btn--primary btn--right btn-teams-js">
+  	    Save
+  	  </button>
+
+    </div>
+
+	<% end %>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script type="text/javascript">
+	$('.btn-teams-js').on('click', createTeam)
+</script>
