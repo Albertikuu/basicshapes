@@ -35,18 +35,7 @@
       <textarea class="froala"></textarea>
     </div>
 -->
-
-
-    <div>
-      <label for="Category team_id">Team</label>
-        <select name="category[team]" id="category_team" class="form-control">
-         <% current_user.teams.each do |team| %> 
-          <option value="<%= team.id %>"><%= team.name %></option>
-         <% end %>
-        </select>
-
-    </div>
-
+          <input type="hidden" name="category[team]" id="category_team" value="<%= session[:current_team]['id'] %>">
     <div class="actions">
 
       <button class="btn btn--primary btn--right btn-category-js">
