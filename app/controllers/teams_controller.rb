@@ -8,9 +8,11 @@ skip_before_action :verify_authenticity_token, only: :create
 	end
 
 	def show 
+
 		@team = Team.find_by(name: params[:team_name])
-		binding.pry
+	
 		unless @team.users.include?(current_user)
+			flash[:alert] = "You are not part of this group"
 			redirect_to('/')
 		end
 	end
