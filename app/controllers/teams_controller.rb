@@ -41,9 +41,9 @@ skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
 	end
 
 	def remove_member
-		binding.pry
 		user = User.find_by(id: params[:user_id])
-		Team.find_by(name: params[:team_name]).participations.where(user_id: user.id).delete
+		a = Team.find_by(name: params[:team_name]).participations.where(user_id: params[:user_id])
+		binding.pry
 		redirect_to(:back)
 	end
 
