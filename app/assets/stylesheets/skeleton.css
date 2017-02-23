@@ -433,6 +433,10 @@ there.
 
 /* BODY */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #F4F5F8;
 }
@@ -519,7 +523,7 @@ p, a {
   padding: 1.6rem;
   margin-bottom: 3.2rem;
   background-color: #FFF;
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  border-radius: 4px;
   border: 1px solid #E6E6E6;
 }
 
@@ -539,7 +543,7 @@ p, a {
 .icons {
   width: 1.6rem;
   float: left;
-  padding-right: 1.6rem;
+  margin-right: 0.8rem;
 }
 
 /* DIVIDER */
@@ -590,14 +594,69 @@ p, a {
   margin: 0;
 }
 
-/* DROPDOWN */
+/* MENU */
+
 .menu {
   position: relative;
   z-index: 100;
 }
 
+.menu--big {
+  position: relative;
+  z-index: 100;
+}
+
+.menu__text {
+  padding-left: 0.8rem;
+}
+
+.menu__button {
+  padding-bottom: 0.8rem;
+}
+
+.menu__button:hover {
+  cursor: pointer;
+}
+
+.menu--big ul {
+  display: none;
+  text-align: left;
+}
+
+.menu.sidebar ul {
+  display: none;
+  list-style: none;
+}
+
 .menu ul {
   display: none;
+  text-align: left;
+}
+
+.menu--big:hover {
+  width: 16rem;
+  text-align: right;
+}
+
+.menu:hover {
+  width: 16rem;
+  text-align: right;
+}
+
+.menu--big:hover .menu__button {
+  text-align: left;
+}
+
+.menu--big:hover ul {
+  width: 24.0rem;
+  list-style: none;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0.8rem;
+  background: white;
+  border-radius: 0.8rem;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .menu:hover ul {
@@ -612,11 +671,19 @@ p, a {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.dropdown {
+  padding: 1.6rem;
+}
+
 .dropdown li {
   display: inline-block;
   width: 100%;
-  padding: 1.6rem;
+  padding-bottom: 1.6rem;
   margin: 0;
+}
+
+.dropdown li:last-child {
+  padding-bottom: 0;
 }
 
 .dropdown p {
@@ -634,6 +701,36 @@ p, a {
   display: inline-block;
   padding-right: 0.8rem;
 }
+
+/* STRUCTURE */
+
+.title {
+  font-size: 2.8rem;
+}
+
+.info {
+  padding-left: 0px;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.info--right {
+  text-align: right;
+}
+
+/* COMMIT */
+
+.commit__image {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.commit__description {
+  margin-top: 1.6rem;
+}
+
+
 
 /* Larger than mobile */
 @media (min-width: 400px) {}
