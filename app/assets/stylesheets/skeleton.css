@@ -433,6 +433,10 @@ there.
 
 /* BODY */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #F4F5F8;
 }
@@ -591,13 +595,63 @@ p, a {
 }
 
 /* DROPDOWN */
+
 .menu {
   position: relative;
   z-index: 100;
 }
 
+.menu--big {
+  position: relative;
+  z-index: 100;
+}
+
+.menu__text {
+  padding-left: 0.8rem;
+}
+
+.menu__button {
+  padding-bottom: 0.8rem;
+}
+
+.menu__button:hover {
+  cursor: pointer;
+}
+
+.menu--big ul {
+  display: none;
+  text-align: left;
+}
+
 .menu ul {
   display: none;
+  text-align: left;
+}
+
+.menu--big:hover {
+  width: 16rem;
+  text-align: right;
+}
+
+.menu:hover {
+  width: 16rem;
+  text-align: right;
+}
+
+.menu--big:hover .menu__button {
+  text-align: left;
+}
+
+.menu--big:hover ul {
+  width: 24.0rem;
+  list-style: none;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0.8rem;
+  background: white;
+  border-radius: 0.8rem;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .menu:hover ul {
@@ -612,11 +666,19 @@ p, a {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.dropdown {
+  padding: 1.6rem;
+}
+
 .dropdown li {
   display: inline-block;
   width: 100%;
-  padding: 1.6rem;
+  padding-bottom: 1.6rem;
   margin: 0;
+}
+
+.dropdown li:last-child {
+  padding-bottom: 0;
 }
 
 .dropdown p {
