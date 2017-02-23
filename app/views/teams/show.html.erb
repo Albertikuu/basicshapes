@@ -28,6 +28,10 @@
         <% end %>
       </ul>
 
+      <% if flash %>
+      <em><%= flash[:error] %></em>
+      <% end %>
+
     </div>
 
   </div>
