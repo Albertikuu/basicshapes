@@ -33,17 +33,22 @@ skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
 		
 		params[:members].each do |email|
 			member = User.find_by(email: email)
-		# binding.pry
 			@team.users << member
 		end
 
 		redirect_to('/')
 	end
 
+	def destroy
+		@team = Team.find_by(name: params[:name]).delete
+	    session[:current_team] = current_user.teams.first
+		redirect_to('/')
+	end
+
+
 	def remove_member
 		@team = Team.find_by(name: params[:team_name])
 		if @team.participations.size <= 1
-			binding.pry
 			flash[:error] = "The team needs at least one participant"
 		else
 		participation = @team.participations.where(user_id: params[:user_id])

@@ -28,7 +28,7 @@ skip_before_action :verify_authenticity_token, only: :create
 	end
 
 	def destroy
-		@category = Category.find_by(title: params[:title]).delete
+		Category.find_by(title: params[:title]).delete
 	    session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])	
 		redirect_to('/')
 	end

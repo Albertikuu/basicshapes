@@ -17,7 +17,7 @@
     <!-- note: this will need the use of teams -->
 
     <!-- note: Add amdin authentication here -->
-    <p><%= link_to 'Delete this', category_path(@category.title), method: :delete %></p>
+    <p><%= link_to 'Delete this', category_path(@category.title), method: :delete,data: {confirm: "Are you sure? She'll never come back.."}  %></p>
     <p><a href="#" id="addusers-js">Add users to this category</a></p>
 
     <div id="list-js" style="display: none">

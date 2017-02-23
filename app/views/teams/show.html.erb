@@ -32,6 +32,9 @@
       <em><%= flash[:error] %></em>
       <% end %>
 
+      <p><%= link_to 'Delete permanently this team', team_path(@team.name), method: :delete, data: {confirm: "If you delete the team, all your private and public pages will be lost forever. Are you sure you want to continue"}  %></p>
+
+
     </div>
 
   </div>
