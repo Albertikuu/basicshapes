@@ -1,0 +1,28 @@
+<div class="container">
+
+  <div class="row">
+
+
+<!-- Left Column -->
+  <%= render "frames/side" %>
+
+<!-- Main body -->
+
+    <div class="eight columns frame">
+
+
+    <h1>Find Teams</h1>
+
+   			<p>Here we have to think of a function for looking for teams and ask to join. How do we make the notification afterwards? Only email or also notitification system? Probably need both</p>
+			<hr />
+   			<ul>
+   				<% @teams.each do |team| %>
+   				<li><%= team.name %></li>
+   				<% end %>
+   			</ul>
+
+    </div>
+
+  </div>
+
+</div>

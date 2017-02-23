@@ -6,7 +6,7 @@
 <div class="three columns">
      <!-- the following teams menu can probs be changed with Javascript / Ajax Calls -->
 
-  <% if current_user.teams.size != 0 %>
+  <% if current_user.teams.size != 0 && session[:current_team] %>
         <div class="menu sidebar">
             <ul>                 
                   <% current_user.teams.each do |team| %>
@@ -38,7 +38,7 @@
         <%= link_to "Team details", "/#{session[:current_team]['name']}" %>
 
 
-  <% end %>
+ 
     <hr class="divider">
 
       <%= button_to "Create Category", new_category_path, method: :get, class: "btn btn--primary create" %>
@@ -49,9 +49,16 @@
           <% session[:categories].each do |category| %>
           <div class="category-left list"> <div class="icons"><%= render :partial => 'svg/folder' %></div> <%= link_to category["title"].capitalize, category_display_path(session[:current_team]["name"], category['title']) %></div>
           <% end %>
-      <% else %>
+     
         <p>No team selected</p>
       <% end %>
 
+    <% else %>
+
+      <p>To start using Basicshapes, you must create a Team or find one to join!</p>
+      <hr class="divider">
+      <%= button_to "Create a Team", new_team_path, method: :get, class: "btn btn--primary create" %>
+
+    <% end %>   
 </div>
 

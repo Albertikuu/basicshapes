@@ -1,6 +1,8 @@
 class TeamsController < ApplicationController
 before_action :authenticate_user!
 skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
+skip_before_action :find_teams
+
 
 	def index
 		@teams = Team.all
@@ -25,12 +27,14 @@ skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
 	end
 
 	def new
-		@team = Team.find_by(name: session['current_team']['names'])
+		@team = Team.new
+		# @team = Team.find_by(name: session['current_team']['names'])
 	end
 
 	def create
 		@team = current_user.teams.create!(team_params)
-		
+		session[:current_team] = @team
+		session[:categories] = []
 		params[:members].each do |email|
 			member = User.find_by(email: email)
 			@team.users << member
@@ -55,6 +59,10 @@ skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
 		Participation.delete(participation[0].id)
 		end
 		redirect_to(:back)
+	end
+
+	def find
+		@teams = Team.all 
 	end
 
 
