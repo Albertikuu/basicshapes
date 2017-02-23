@@ -9,40 +9,67 @@
 
     <div class="eight columns frame">
 
+      <div class="row">
 
-      <h6 class="breadcrumb"><%= @category.title.capitalize %></h6>
-      <p class="description"><%= @category.description %></p>
+        <div class="six columns">
+          <h6 class="breadcrumb"><%= @category.title.capitalize %></h6>
+        </div>
+
+        <div class="six columns">
+          settings
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="twelve columns">
 
 
-    <!-- note: this will need the use of teams -->
+          <p class="description"><%= @category.description %></p>
 
-    <!-- note: Add amdin authentication here -->
-    <p><%= link_to 'Delete this', category_path(@category.title), method: :delete %></p>
-    <p><a href="#" id="addusers-js">Add users to this category</a></p>
 
-    <div id="list-js" style="display: none">
+        <!-- note: this will need the use of teams -->
+
+        <!-- note: Add amdin authentication here -->
+
+          <ul class="dropdown">
+
+            <li>
+              <%= render :partial => 'svg/profile' %><%= link_to 'Delete this', category_path(@category.title), method: :delete, class: "menu__text" %>
+            </li>
+
+            <li>
+              <a href="#" id="addusers-js"><%= render :partial => 'svg/profile' %><span class="menu__text">Add users to this category</span></a>
+            </li>
+
+          </ul>
+
+        <div id="list-js" style="display: none">
+            <ul>
+            <% @team_users.each do |user| %>
+             <li> <%= link_to user.full_name, category_add_user_path(title: params[:title], user_id: user.id), method: :post %> </li>
+            <% end %>
+
+            </ul>
+
+        </div>
+
+        <hr/>
+
+        <h4>Users in this category:</h4>
+
         <ul>
 
-        <% @team_users.each do |user| %>
-         <li><%= render :partial => 'svg/settings' %><%= link_to user.full_name, category_add_user_path(title: params[:title], user_id: user.id), method: :post, class: "menu__text" %> </li>
-        <% end %>
+          <% @category.users.each do |u| %>
+          <li><%= link_to u.full_name, user_path(u) %></li>
+          <% end %>
 
         </ul>
 
+      </div>
+
     </div>
-
-    <hr/>
-
-    <h4>Users in this category:</h4>
-
-    <ul>
-
-      <% @category.users.each do |u| %>
-      <li><%= link_to u.full_name, user_path(u) %></li>
-      <% end %>
-
-    </ul>
-
 <!-- Empty Column -->
 
     <div class="one column empty"> Empty Column </div>

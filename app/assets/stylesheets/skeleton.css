@@ -523,7 +523,7 @@ p, a {
   padding: 1.6rem;
   margin-bottom: 3.2rem;
   background-color: #FFF;
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  border-radius: 4px;
   border: 1px solid #E6E6E6;
 }
 
@@ -543,7 +543,7 @@ p, a {
 .icons {
   width: 1.6rem;
   float: left;
-  margin-right: 1.6rem;
+  margin-right: 0.8rem;
 }
 
 /* DIVIDER */
@@ -594,7 +594,7 @@ p, a {
   margin: 0;
 }
 
-/* DROPDOWN */
+/* MENU */
 
 .menu {
   position: relative;
@@ -621,6 +621,11 @@ p, a {
 .menu--big ul {
   display: none;
   text-align: left;
+}
+
+.menu.sidebar ul {
+  display: none;
+  list-style: none;
 }
 
 .menu ul {
@@ -696,6 +701,32 @@ p, a {
   display: inline-block;
   padding-right: 0.8rem;
 }
+
+/* STRUCTURE */
+
+.title {
+  font-size: 2.8rem;
+}
+
+.info {
+  padding-left: 0px;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+/* COMMIT */
+
+.commit__image {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.commit__description {
+  margin-top: 1.6rem;
+}
+
+
 
 /* Larger than mobile */
 @media (min-width: 400px) {}
