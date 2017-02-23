@@ -543,7 +543,7 @@ p, a {
 .icons {
   width: 1.6rem;
   float: left;
-  padding-right: 1.6rem;
+  margin-right: 1.6rem;
 }
 
 /* DIVIDER */
