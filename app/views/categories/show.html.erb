@@ -22,12 +22,13 @@
 
     <div id="list-js" style="display: none">
         <ul>
+
         <% @team_users.each do |user| %>
-         <li> <%= link_to user.full_name, category_add_user_path(title: params[:title], user_id: user.id), method: :post %> </li>
+         <li><%= render :partial => 'svg/settings' %><%= link_to user.full_name, category_add_user_path(title: params[:title], user_id: user.id), method: :post, class: "menu__text" %> </li>
         <% end %>
 
         </ul>
-        
+
     </div>
 
     <hr/>
@@ -50,5 +51,3 @@
   </div>
 
 </div>
-
-
