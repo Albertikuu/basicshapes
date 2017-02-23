@@ -1,50 +1,44 @@
 <style>
 .prov_selected a {text-decoration: underline;}
 </style>
-    <div class="three columns">
+    
 
-    <div>
-      <!-- the following teams menu can probs be changed with Javascript / Ajax Calls -->
+<div class="three columns">
+     <!-- the following teams menu can probs be changed with Javascript / Ajax Calls -->
 
-      <div class="menu sidebar">
+  <% if current_user.teams.size != 0 %>
+        <div class="menu sidebar">
+            <ul>                 
+                  <% current_user.teams.each do |team| %>
+                  <li class="<% if team.name == session[:current_team]["name"] %> prov_selected <% end %>">
+                    <%= link_to team.name.capitalize, "/#{team.name}", :method => :post %>
+                  </li>
+                  <% end %>
+            </ul>
+        </div>
 
-        <ul>
+        <% current_user.teams.each do |team| %>
 
-          <% current_user.teams.each do |team| %>
+         <div class="category-left list <% if team.name == session[:current_team]["name"] %> prov_selected <% end %>" >
+             <div class="icons"><%= render :partial => 'svg/folder' %></div>
+              <%= link_to team.name.capitalize, "/#{team.name}", :method => :post %>
+         </div>
 
-          <li class="<% if team.name == session[:current_team]["name"] %> prov_selected <% end %>">
+        <% end %>
 
-            <%= link_to team.name.capitalize, "/#{team.name}", :method => :post %>
 
-          </li>
+        <hr class="divider">
 
-          <% end %>
+        <div class="icons"><%= render :partial => 'svg/guidelines' %></div>
+        <%= link_to "Guidelines control", root_path %>
 
-        </ul>
+        <br />
 
-      </div>
+        <div class="icons"><%= render :partial => 'svg/guidelines' %></div>
+        <%= link_to "Team details", "/#{session[:current_team]['name']}" %>
 
-      <% current_user.teams.each do |team| %>
 
-       <div class="category-left list <% if team.name == session[:current_team]["name"] %> prov_selected <% end %>" >
-       <div class="icons"><%= render :partial => 'svg/folder' %></div>
-        <%= link_to team.name.capitalize, "/#{team.name}", :method => :post %>
-       </div>
-
-      <% end %>
-
-      <hr class="divider">
-
-      <div class="icons"><%= render :partial => 'svg/guidelines' %></div>
-      <%= link_to "Guidelines control", root_path %>
-
-      <br />
-
-      <div class="icons"><%= render :partial => 'svg/guidelines' %></div>
-      <%= link_to "Team details", "/#{session[:current_team]['name']}" %>
-
-    </div>
-
+  <% end %>
     <hr class="divider">
 
       <%= button_to "Create Category", new_category_path, method: :get, class: "btn btn--primary create" %>
@@ -59,4 +53,5 @@
         <p>No team selected</p>
       <% end %>
 
-    </div>
+</div>
+

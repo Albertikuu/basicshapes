@@ -46,11 +46,16 @@
           <%= f.label :password_confirmation %>
           <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
         </div>
-
+        
+         <label for="avatar">Upload a profile picture</label>
+          <%= f.file_field :avatar %>  
+         
         <div class="actions">
           <%= f.submit "Sign up", class: "btn  btn--primary" %>
         </div>
       <% end %>
+
+
 <!--
       <%= render "users/shared/links" %>
  -->

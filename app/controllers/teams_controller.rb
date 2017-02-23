@@ -25,7 +25,7 @@ skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
 	end
 
 	def new
-
+		@team = Team.find_by(name: session['current_team']['names'])
 	end
 
 	def create
@@ -61,7 +61,7 @@ skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
 	private
 
 	def team_params
-		params.permit(:name)
+		params.permit(:name, :logo)
 	end
 
 
