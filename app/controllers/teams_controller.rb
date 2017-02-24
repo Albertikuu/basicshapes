@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 before_action :authenticate_user!
 skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
-skip_before_action :find_teams
+# skip_before_action :find_teams
 
 
 	def index
@@ -28,7 +28,6 @@ skip_before_action :find_teams
 
 	def new
 		@team = Team.new
-		# @team = Team.find_by(name: session['current_team']['names'])
 	end
 
 	def create
@@ -55,8 +54,8 @@ skip_before_action :find_teams
 		if @team.participations.size <= 1
 			flash[:error] = "The team needs at least one participant"
 		else
-		participation = @team.participations.where(user_id: params[:user_id])
-		Participation.delete(participation[0].id)
+			participation = @team.participations.where(user_id: params[:user_id])
+			Participation.delete(participation[0].id)
 		end
 		redirect_to(:back)
 	end

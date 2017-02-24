@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 before_action :authenticate_user!
+before_action :find_teams
+include Find_teams
 skip_before_action :verify_authenticity_token, only: :create
 
 
@@ -42,8 +44,8 @@ skip_before_action :verify_authenticity_token, only: :create
 
 	private
 
-	  def category_params
-   		 params.permit(:title, :description, :team_id)
-	  end
+	def category_params
+		params.permit(:title, :description, :team_id)
+	end
 
 end
