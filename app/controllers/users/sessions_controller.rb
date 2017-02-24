@@ -17,7 +17,6 @@ class Users::SessionsController < Devise::SessionsController
   	    session[:current_team] = current_user.teams.first
       end
 	  end
-
   end
 
 end 
