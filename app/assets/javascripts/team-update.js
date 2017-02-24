@@ -1,8 +1,9 @@
 function removeMember(event){
 	event.preventDefault;
+	debugger;
     request = $.post("/teams/remove_member", {
             user_id: event.currentTarget.id,
-            team_name: event.currentTarget.dataset.team
+            team_slug: event.currentTarget.dataset.team
         });
 
 	request.fail(console.log('the category request failed'));

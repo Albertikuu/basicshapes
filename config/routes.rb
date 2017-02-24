@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :categories, param: :title_slug, except: [:index, :show]
-  resources :teams, param: :name , except: [:index, :show]
+  resources :teams, param: :team_slug , except: [:index, :show]
   post '/teams/remove_member', to: 'teams#remove_member'
   get '/teams/find', to: 'teams#find'
   get '/api/teams', to: 'teams#index'

@@ -37,7 +37,7 @@
     <div id="list-js" style="display: none">
         <ul>
         <% @other_categories.each do |cat| %>
-         <li> <%= link_to cat.title, category_add_user_path(title_slug: cat.title, user_id: @user.id), method: :post %> </li>
+         <li> <%= link_to cat.title, category_add_user_path(title: cat.title, user_id: @user.id), method: :post %> </li>
         <% end %>
         </ul>
     </div>
