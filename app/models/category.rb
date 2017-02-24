@@ -5,4 +5,6 @@ class Category < ApplicationRecord
 
 	validates_presence_of :title
 
+#validates uniqueness of name within team.categories
+
 end
