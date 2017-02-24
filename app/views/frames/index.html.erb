@@ -11,6 +11,7 @@
 
     <div class="eight columns">
 
+
       <ul>
 
         <div class="frame">
@@ -20,7 +21,9 @@
           <div class="row">
 
             <div class="six columns breadcrumb info">
-              <%= "#{session[:current_team]['created_at'].to_time.strftime("%A, %d %B %Y")}" %>
+
+              <%= "#{session[:current_team]['created_at'].to_time.strftime("%A ,%d %B %Y")}" %>
+
             </div>
 
             <div class="six columns breadcrumb info info--right">

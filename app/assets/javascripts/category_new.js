@@ -7,8 +7,11 @@ function createCategory(event){
             team_id: $team_id
         });
 
-	request.fail(console.log('the category request failed'));
- 	request.done(console.log('the category request was succesful'))
-
+	request.fail(function(error){
+		console.log('error')
+	});
+ 	request.success(function(data){
+ 		console.log('the category request was succesful', data)
+ 	});
 };
 
