@@ -8,10 +8,11 @@
 
 
 
-Team.create!(name: 'disneyland')
-Team.create!(name: 'basicshapes')
+Team.create!(name: 'disneyland', slug: 'disneyland')
+Team.create!(name: 'basicshapes', slug: 'basicshapes')
+Team.create!(name: 'iron hackers', slug: 'iron-hackers')
 
-digital, brand = Category.create! ([{title: 'digital', description: 'Guidelines for digital products', team_id: 2}, {title: 'brand', description: 'Brand identity and logos', team_id: 1}])
+digital, brand = Category.create! ([{title: 'digital', description: 'Guidelines for digital products', team_id: 2, slug: 'digital'}, {title: 'brand', description: 'Brand identity and logos', team_id: 1, slug: 'brand'}])
 
 albert, lorenzo = User.create!([
 	{first_name: 'Albert', last_name: 'Ramirez', email: 'albert.ramirez.canalias@gmail.com', job_title: 'Designer', location: 'Barcelona', password: 'ironhack', password_confirmation: 'ironhack'},

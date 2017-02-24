@@ -7,4 +7,14 @@ class Category < ApplicationRecord
 
 #validates uniqueness of name within team.categories
 
+
+	 # def url
+		# 	@team_url = self.title.gsub(' ','-')
+	 # end
+
+	 # def namespaced
+		# 	self.title.gsub('-',' ')
+	 # end
+
+
 end

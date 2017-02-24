@@ -11,7 +11,7 @@ skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
 
 	def show 
 
-		@team = Team.find_by(name: params[:team_name])
+		@team = Team.find_by(slug: params[:team_slug])
 	
 		unless @team.users.include?(current_user)
 			flash[:alert] = "You are not part of this group"
@@ -20,7 +20,7 @@ skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
 	end
 
 	def change_session
-		new_team = Team.find_by(name: params[:team_name])
+		new_team = Team.find_by(slug: params[:team_slug])
 		session[:current_team] = new_team
 	    session[:categories] = current_user.categories.where(team_id: new_team.id)
  		redirect_to('/')
@@ -38,11 +38,13 @@ skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
 			member = User.find_by(email: email)
 			@team.users << member
 		end
-
+		@team.slug = @team.name.gsub(' ','-')
+		@team.save
 		redirect_to('/')
 	end
 
 	def destroy
+		binding.pry
 		@team = Team.find_by(name: params[:name]).delete
 	    session[:current_team] = current_user.teams.first
 		redirect_to('/')
