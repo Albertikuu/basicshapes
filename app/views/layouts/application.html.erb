@@ -28,15 +28,12 @@
           <%= render :partial => 'svg/profile' %>
           <ul class="dropdown">
             <li>
-              <%= link_to destroy_user_session_path, method: 'delete' do %>
-              <span class="icons">
-                <%= render :partial => 'svg/folder' %>
-              </span>
-              <p>Logout</p>
-              <% end %>
+              <%= link_to 'My profile', user_path(current_user) %>
             </li>
             <li>
-              <%= link_to 'My profile', user_path(current_user) %>
+              <%= link_to destroy_user_session_path, method: 'delete' do %>
+              <span class="red-link">Logout</span>
+              <% end %>
             </li>
           </ul>
         </div>

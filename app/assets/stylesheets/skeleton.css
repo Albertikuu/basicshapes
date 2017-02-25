@@ -441,6 +441,14 @@ body {
   background-color: #F4F5F8;
 }
 
+.red-link {
+  color: #F33040;
+}
+
+.red-link:hover {
+  color: #CC2836;
+}
+
 /* NAVS */
 
 nav {
@@ -548,15 +556,15 @@ p, a {
 /* DIVIDER */
 
 .divider {
-  margin-top: 1.6rem;
-  margin-bottom: 1.6rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
   border-color: #EEEEF0;
 }
 
 /* CATEGORY */
 
 .list {
-  padding-bottom: 1.6rem;
+  padding-bottom: 0.8rem;
 }
 
 /* BREADCRUMB */
@@ -672,7 +680,7 @@ p, a {
   top: 100%;
   right: 0;
   background: white;
-  border-radius: 0.8rem;
+  border-radius: 0.4rem;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -683,7 +691,7 @@ p, a {
 .dropdown li {
   display: inline-block;
   width: 100%;
-  padding-bottom: 1.6rem;
+  padding-bottom: 0.8rem;
   margin: 0;
 }
 
