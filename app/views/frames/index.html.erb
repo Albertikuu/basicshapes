@@ -11,14 +11,38 @@
 
     <div class="eight columns">
 
-
       <ul>
 
         <div class="frame main-container">
 
+          <div class="guidelines-row">
+
+            <p class="title">Welcome to Basic Shapes</p>
+
+            <div class="six columns breadcrumb info">
+
+              <%= "#{session[:current_team]['created_at'].to_time.strftime("%A ,%d %B %Y")}" %>
+
+            </div>
+
+            <div class="six columns breadcrumb info info--right">
+              <%= link_to ("#{session[:current_team]['name']}").capitalize, "/#{session[:current_team]['name']}" %>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <img src="/assets/welcome.png" alt="" class="commit__image">
+
+            <p class="commit__description">Basic shapes offers a new way to create documentation for design and marketing, ofering a seamless collaboration between teams.</p>
+          </div>
+
+        </div>
 
 
-          <div class="row guidelines-row">
+        <div class="frame main-container">
+
+          <div class="guidelines-row">
 
             <p class="title">Welcome to Basic Shapes</p>
 
