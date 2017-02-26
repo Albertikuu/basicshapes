@@ -617,6 +617,7 @@ p, a {
 
 .actions {
   text-align: right;
+  margin-top: 1.6rem;
 }
 
 .actions input {
@@ -735,8 +736,9 @@ p, a {
   padding-right: 0.8rem;
 }
 
-#category_description {
+#category-description {
   height: 24rem;
+  margin-bottom: 1.6rem;
 }
 
 /* STRUCTURE */

@@ -67,5 +67,15 @@
         $('textarea').froalaEditor({}) });
     </script>
 
+    <script>
+      $(function() {
+        $('div#froala-editor').froalaEditor({
+          toolbarInline: true,
+          charCounterCount: false,
+          toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'color', 'emoticons', '-', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'indent', 'outdent', '-', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo']
+        })
+      });
+  </script>
+
   </body>
 </html>
