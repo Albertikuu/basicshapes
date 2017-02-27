@@ -8,32 +8,32 @@
 
 <!-- Main body -->
 
-    <div class="eight columns frame">
+    <div class="eight columns frame main-container">
 
+      <div class="row">
+        <h1 id="team_name"><%= @team.name.capitalize %></h1>
 
-    <h1 id="team_name"><%= @team.name.capitalize %></h1>
+        <h4> Categories in this team </h4>
 
-    <h4> Categories in this team </h4>
+          <ul>
+            <% @team.categories.each do |c| %>
+            <li><%= link_to c.title.capitalize, category_display_path(@team.name, c.title)%></li>
+            <% end %>
+          </ul>
 
-      <ul>
-        <% @team.categories.each do |c| %>
-        <li><%= link_to c.title.capitalize, category_display_path(@team.name, c.title)%></li>
-        <% end %>
-      </ul>
+        <h4>Users in this team</h4>
+          <ul>
+            <% @team.users.each do |u| %>
+            <li><%= link_to u.full_name, user_path(u)%> <a class="remove-member-js" id="<%= u.id %>" data-team="<%= @team.name %>">(x)</a></li>
+            <% end %>
+          </ul>
 
-    <h4>Users in this team</h4>
-      <ul>
-        <% @team.users.each do |u| %>
-        <li><%= link_to u.full_name, user_path(u)%> <a class="remove-member-js" id="<%= u.id %>" data-team="<%= @team.name %>">(x)</a></li>
-        <% end %>
-      </ul>
+          <% if flash %>
+          <em><%= flash[:error] %></em>
+          <% end %>
 
-      <% if flash %>
-      <em><%= flash[:error] %></em>
-      <% end %>
-
-      <p><%= link_to 'Delete permanently this team', team_path(@team.name), method: :delete, data: {confirm: "If you delete the team, all your private and public pages will be lost forever. Are you sure you want to continue"}  %></p>
-
+          <p><%= link_to 'Delete permanently this team', team_path(@team.name), method: :delete, data: {confirm: "If you delete the team, all your private and public pages will be lost forever. Are you sure you want to continue"}  %></p>
+      </div>
 
     </div>
 
