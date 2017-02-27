@@ -749,6 +749,18 @@ p, a {
   margin-bottom: 1.6rem;
 }
 
+.checkbox {
+  display: inline-block;
+  margin: 0;
+}
+
+.checkbox-label {
+  display: inline-block;
+  padding-left: 0.8rem;
+  margin: 0;
+  padding-top: 0.4rem;
+}
+
 /* STRUCTURE */
 
 .guidelines-row {
