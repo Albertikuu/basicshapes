@@ -626,8 +626,12 @@ p, a {
 
 /* MENU */
 
-.main-nav {
-
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
 }
 
 .menu {
