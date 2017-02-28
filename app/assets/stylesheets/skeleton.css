@@ -896,6 +896,12 @@ p, a {
   background-color: #F4F5F8;
 }
 
+.pages-list > .add-page > .mini-card:hover {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1), 0 0 0 1px #e6e6e6;
+  background-color: #FFF;
+  border: none;
+}
+
 /*.pages-list > li:first-child {
   margin-left: 0;
 }*/
