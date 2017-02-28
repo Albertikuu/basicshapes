@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :users
   resources :pages, param: :page_slug, except: [:index, :show]
   resources :categories, param: :title_slug, except: [:index, :show]
-  resources :teams, param: :team_slug , except: [:index, :show]
+  resources :teams, param: :team_slug, except: [:index, :show]
+  resources :commits, except: [:index, :show, :new]
+  get '/commits/:page_id/:version_id/new', to: 'commits#new'
   post '/teams/remove_member', to: 'teams#remove_member'
   get '/teams/find', to: 'teams#find'
   get '/api/teams', to: 'teams#index'
