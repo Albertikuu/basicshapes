@@ -1,0 +1,54 @@
+<div class="container">
+
+  <div class="row">
+
+<!-- Left Column -->
+
+  <%= render "frames/side" %>
+
+
+<!-- Main body -->
+
+    <div class="eight columns frame main-container">
+
+    <div class="create-category-row">
+      <h6 class="breadcrumb">Create category</h6>
+      <p class="description">Categories are the main sections of your guidelines. In this block you will add pages with the different content you want to show in your guidelines.</p>
+    </div>
+
+	  <%= form_tag({}, { :class => "create-category"}) do %>
+	  <div>
+
+	    <label for="Category title" >Title</label>
+	    <input type="text" name="category[title]" id="category_title"
+	      class="form-control">
+
+	  </div>
+
+	  <div>
+	    <label for="Category description">Description</label>
+	    <textarea type="text" name="category[description]" id="category-description"
+	      class="form-control"></textarea>
+	  </div>
+
+
+    <div>
+      <textarea class="froala"></textarea>
+    </div>
+
+     <!-- <     <input type="hidden" id="" value="<%= session[:current_team]['id'] %>"> -->
+    <div class="actions">
+
+      <button class="btn btn--primary btn--right btn-category-js">
+  	    Create Page
+  	  </button>
+
+    </div>
+
+	<% end %>
+
+    </div>
+
+  </div>
+
+</div>

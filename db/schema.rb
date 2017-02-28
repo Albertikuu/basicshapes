@@ -36,6 +36,9 @@ ActiveRecord::Schema.define(version: 20170224114210) do
   create_table "commits", force: :cascade do |t|
     t.string   "title"
     t.string   "message"
+    t.integer  "user_id"
+    t.integer  "page_id"
+    t.integer  "version_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -45,10 +48,11 @@ ActiveRecord::Schema.define(version: 20170224114210) do
   end
 
   create_table "pages", force: :cascade do |t|
-    t.string   "short_name"
-    t.boolean  "is_public?", default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "slug"
+    t.integer  "category_id"
+    t.boolean  "is_public?",  default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "participations", force: :cascade do |t|
@@ -100,6 +104,8 @@ ActiveRecord::Schema.define(version: 20170224114210) do
     t.string   "title"
     t.string   "description"
     t.string   "content"
+    t.integer  "page_id"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

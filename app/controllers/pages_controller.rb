@@ -13,8 +13,18 @@ class PagesController < ApplicationController
 	end
 
 	def show
-		page = Page.find_by()
+		page = Page.find_by(slug: params[:slug])
 		@page = page.versions.last
 	end
 
+	private
+
+	def page_params
+		params.permit(:slug, :category_id)
+	end
+
+	def version_params
+		params.permit(:title, :description, :content, :user_id, :page_id)
+	end
+	
 end
