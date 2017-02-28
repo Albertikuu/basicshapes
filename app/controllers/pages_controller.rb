@@ -5,15 +5,21 @@ class PagesController < ApplicationController
 	end
 
 	def create
+		binding.pry
 		@page = Page.create!(page_params)
-		@version = Version.create!(version_params)
-		@page.title = @version.title 
-		@page.description = @version.description
+		binding.pry
+		@page.slug.downcase.gsub!(' ','-')
+		@version = @page.versions.create!(version_params)
+		binding.pry
+		redirect_to('/')
+		# @page.title = @version.title 
+		# @page.description = @version.description
 		#redirect to commit#new
 	end
 
 	def show
-		page = Page.find_by(slug: params[:slug])
+		binding.pry
+		page = Page.find_by(slug: params[:page_slug])
 		@page = page.versions.last
 	end
 

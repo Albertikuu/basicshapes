@@ -21,6 +21,12 @@
             <% end %>
           </ul>
 
+        <h4>Users in this team</h4>
+          <ul>
+            <% @team.users.each do |u| %>
+            <li><%= link_to u.full_name, user_path(u)%> <a class="remove-member-js" id="<%= u.id %>" data-team="<%= @team.name %>">(x)</a></li>
+            <% end %>
+          </ul>
 
     <h4>Users in this team</h4>
       <ul>

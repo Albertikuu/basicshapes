@@ -1,5 +1,6 @@
 function createTeam(event){
 	event.preventDefault();
+	debugger;
 
 	var participants = new Array();
 	participants = $('#participants-invite-js').val().split(',');
