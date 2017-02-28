@@ -12,7 +12,6 @@ skip_before_action :verify_authenticity_token, only: :create
 		unless @category.users.include?(current_user)
 			redirect_to('/')
 		end
-		binding.pry
 	end
 
 	def index
