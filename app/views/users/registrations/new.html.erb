@@ -2,60 +2,62 @@
 
   <div class="card--center">
 
-   <div class="six columns frame">
+   <div class="six columns frame main-container">
 
-      <h3>Sign up</h3>
+       <div class="row">
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
+         <h3>Sign up</h3>
 
-        <div class="field">
-          <%= f.label :first_name %>
-          <%= f.text_field :first_name, autofocus: true, class:"form-control" %>
-        </div>
+         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+           <%= devise_error_messages! %>
 
-        <div class="field">
-          <%= f.label :last_name %>
-          <%= f.text_field :last_name, autofocus: true, class:"form-control" %>
-        </div>
+           <div class="field">
+             <%= f.label :first_name %>
+             <%= f.text_field :first_name, autofocus: true, class:"form-control" %>
+           </div>
 
-        <div class="field">
-          <%= f.label :job_title %>
-          <%= f.text_field :job_title, autofocus: true, class:"form-control" %>
-        </div>
+           <div class="field">
+             <%= f.label :last_name %>
+             <%= f.text_field :last_name, autofocus: true, class:"form-control" %>
+           </div>
 
-        <div class="field">
-          <%= f.label :location %>
-          <%= f.text_field :location, autofocus: true, class:"form-control" %>
-        </div>
+           <div class="field">
+             <%= f.label :job_title %>
+             <%= f.text_field :job_title, autofocus: true, class:"form-control" %>
+           </div>
 
-        <div class="field">
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, class:"form-control" %>
-        </div>
+           <div class="field">
+             <%= f.label :location %>
+             <%= f.text_field :location, autofocus: true, class:"form-control" %>
+           </div>
 
-        <div class="field field--info">
-          <%= f.label :password %><span class="breadcrumb">(<%= @minimum_password_length %> characters minimum)</span>
-          <% if @minimum_password_length %>
-          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-          <% end %>
+           <div class="field">
+             <%= f.label :email %>
+             <%= f.email_field :email, autofocus: true, class:"form-control" %>
+           </div>
 
-        </div>
+           <div class="field field--info">
+             <%= f.label :password %><span class="breadcrumb">(<%= @minimum_password_length %> characters minimum)</span>
+             <% if @minimum_password_length %>
+             <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+             <% end %>
 
-        <div class="field">
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
-        </div>
-        
-         <label for="avatar">Upload a profile picture</label>
-          <%= f.file_field :avatar %>  
-         
-        <div class="actions">
-          <%= f.submit "Sign up", class: "btn  btn--primary" %>
-        </div>
-      <% end %>
+           </div>
 
+           <div class="field">
+             <%= f.label :password_confirmation %>
+             <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
+           </div>
 
+            <label for="avatar">Upload a profile picture</label>
+             <%= f.file_field :avatar %>
+
+           <div class="actions">
+             <%= f.submit "Sign up", class: "btn  btn--primary" %>
+           </div>
+         <% end %>
+
+       </div>
 <!--
       <%= render "users/shared/links" %>
  -->

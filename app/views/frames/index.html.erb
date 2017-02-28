@@ -11,28 +11,58 @@
 
     <div class="eight columns">
 
-
       <ul>
 
-        <div class="frame">
+        <div class="frame main-container">
 
-          <p class="title">Welcome to Basic Shapes</p>
+          <div class="guidelines-row">
 
-          <div class="row">
+            <p class="title">Welcome to Basic Shapes</p>
 
             <div class="six columns breadcrumb info">
+
               <%= "#{session[:current_team]['created_at'].to_time.strftime("%A ,%d %B %Y")}" %>
+
             </div>
 
-            <div class="six columns breadcrumb info info--right">
-              <%= link_to "#{session[:current_team]['name']}", "/#{session[:current_team]['name']}" %>
+            <div class="six columns info info--right">
+              <%= link_to ("#{session[:current_team]['name']}").capitalize, "/#{session[:current_team]['name']}" %>
             </div>
 
           </div>
 
-          <img src="/assets/welcome.png" alt="" class="commit__image">
+          <div class="row">
+            <img src="/assets/welcome.png" alt="" class="commit__image">
 
-          <p class="commit__description">Basic shapes offers a new way to create documentation for design and marketing, ofering a seamless collaboration between teams.</p>
+            <p class="commit__description">Basic shapes offers a new way to create documentation for design and marketing, ofering a seamless collaboration between teams.</p>
+          </div>
+
+        </div>
+
+
+        <div class="frame main-container">
+
+          <div class="guidelines-row">
+
+            <p class="title">Welcome to Basic Shapes</p>
+
+            <div class="six columns breadcrumb info">
+
+              <%= "#{session[:current_team]['created_at'].to_time.strftime("%A ,%d %B %Y")}" %>
+
+            </div>
+
+            <div class="six columns info info--right">
+              <%= link_to ("#{session[:current_team]['name']}").capitalize, "/#{session[:current_team]['name']}" %>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <img src="/assets/welcome.png" alt="" class="commit__image">
+
+            <p class="commit__description">Basic shapes offers a new way to create documentation for design and marketing, ofering a seamless collaboration between teams.</p>
+          </div>
 
         </div>
 

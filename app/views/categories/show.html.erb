@@ -7,60 +7,116 @@
 
 <!-- Main body -->
 
-    <div class="eight columns frame">
+    <div class="eight columns frame main-container">
 
-      <div class="row">
+      <div class="row category-header">
 
         <div class="six columns">
-          <h6 class="breadcrumb"><%= @category.title.capitalize %></h6>
+          <h6 class="category-title"><%= @category.title.capitalize %></h6>
         </div>
 
-        <div class="six columns">
-          settings
+        <div class="six columns category-title info--right">
+          <%= link_to 'Delete category', category_path(@category.title), method: :delete, class: "menu__text" %>
+        </div>
+
+        <div class="twelve columns">
+
+          <p class="categories-description"><%= @category.description %></p>
+
         </div>
 
       </div>
 
-      <div class="row">
+      <div class="main-container row--dark">
 
-        <div class="twelve columns">
+        <div class="row">
+
+          <ul class="pages-list">
+
+            <li class="card-general add-page">
+              <div class="mini-card">
+                <h2 class="title">Add page</h2>
+                <p class="description">Create new pages</p>
+              </div>
+            </li>
+
+            <li class="card-general">
+              <div class="mini-card">
+                <h2 class="title">Brand</h2>
+                <p class="description">Visual identity</p>
+
+                <div class="mini-card-info">
+                  <p class="versions">3 versions</p>
+                  <p class="commits">2 commits</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="card-general">
+              <div class=" mini-card">
+                <h2 class="title">Brand</h2>
+                <p class="description">Visual identity</p>
+
+                <div class="mini-card-info">
+                  <p class="versions">3 versions</p>
+                  <p class="commits">2 commits</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="card-general">
+              <div class=" mini-card">
+                <h2 class="title">Brand</h2>
+                <p class="description">Visual identity</p>
+
+                <div class="mini-card-info">
+                  <p class="versions">3 versions</p>
+                  <p class="commits">2 commits</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="card-general">
+              <div class=" mini-card">
+                <h2 class="title">Brand</h2>
+                <p class="description">Visual identity</p>
+
+                <div class="mini-card-info">
+                  <p class="versions">3 versions</p>
+                  <p class="commits">2 commits</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+        </div>
 
 
-          <p class="description"><%= @category.description %></p>
+
+      </div>
+
 
 
         <!-- note: Add amdin authentication here -->
 
-          <ul class="dropdown">
+      <div class="row">
 
-            <li>
-              <%= render :partial => 'svg/profile' %><%= link_to 'Delete this', category_path(@category.title), method: :delete, class: "menu__text" %>
-            </li>
-
-            <li>
-              <a href="#" id="addusers-js"><%= render :partial => 'svg/profile' %><span class="menu__text">Add users to this category</span></a>
-            </li>
-
-          </ul>
-
-        <div id="list-js" style="display: none">
-            <ul>
-            <% @team_users.each do |user| %>
-             <li> <%= link_to user.full_name, category_add_user_path(title: params[:title], user_id: user.id), method: :post %> </li>
-            <% end %>
-
-            </ul>
-
-        </div>
-
-        <hr/>
-
-        <h4>Users in this category:</h4>
-
-        <ul>
+        <ul class="users-list">
 
           <% @category.users.each do |u| %>
-          <li><%= link_to u.full_name, user_path(u) %></li>
+          <li class="user"><%= link_to u.first_char, user_path(u) %></li>
+          <% end %>
+
+        </ul>
+
+        <ul class="add-user">
+
+          <li>
+            <a href="#" id="addusers-js"><span class="menu__text">Add users</span></a>
+          </li>
+
+          <% @team_users.each do |user| %>
+           <li> <%= link_to user.full_name, category_add_user_path(title: params[:title], user_id: user.id), method: :post %> </li>
           <% end %>
 
         </ul>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
     <title>Basicshapes</title>
@@ -18,7 +18,7 @@
 
   <body>
 
-  <nav class="container-flex">
+  <nav class="container-flex top-nav">
 
     <div class="nav-row">
       <%= render :partial => 'svg/basicshapes-logo' %>
@@ -28,15 +28,12 @@
           <%= render :partial => 'svg/profile' %>
           <ul class="dropdown">
             <li>
-              <%= link_to destroy_user_session_path, method: 'delete' do %>
-              <span class="icons">
-                <%= render :partial => 'svg/folder' %>
-              </span>
-              <p>Logout</p>
-              <% end %>
+              <%= link_to 'My profile', user_path(current_user) %>
             </li>
             <li>
-              <%= link_to 'My profile', user_path(current_user) %>
+              <%= link_to destroy_user_session_path, method: 'delete' do %>
+              <span class="red-link">Logout</span>
+              <% end %>
             </li>
           </ul>
         </div>
@@ -67,8 +64,18 @@
     <!-- Initialize the editor. -->
     <script>
       $(function() {
-        $('textarea').froalaEditor({}) });
+        $('.froala').froalaEditor({}) });
     </script>
+
+    <script>
+      $(function() {
+        $('div#froala-editor').froalaEditor({
+          toolbarInline: true,
+          charCounterCount: false,
+          toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'color', 'emoticons', '-', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'indent', 'outdent', '-', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo']
+        })
+      });
+  </script>
 
   </body>
 </html>

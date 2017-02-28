@@ -7,20 +7,31 @@
 
 <!-- Main body -->
 
-    <div class="eight columns frame">
+    <div class="eight columns frame main-container">
 
+      <div class="row row-no-border">
 
-    <h1><%= @user.full_name %> <% if current_user == @user %>(you)<% end %></h1>
-    <h3><%= @user.job_title %></h3>
-    <p><%= @user.location %></p>
+        <div class="six columns breadcrumb">
+          <p>Profile</p>
+        </div>
 
+        <div class="six columns breadcrumb info--right">
+          <p>Edit (needs ruby)</p>
+        </div>
 
+      </div>
 
-    <!-- note: this will need the use of teams -->
+        <div class="row row-no-border">
 
-    <!-- note: Add amdin authentication here -->
+          <div class="three columns profile-image">
+            <p>Image</p>
+          </div>
 
-	<hr/>
+          <div class="eight columns main-user-info">
+            <h1><%= @user.full_name %> <% if current_user == @user %>(you)<% end %></h1>
+            <h3><%= @user.job_title %></h3>
+          </div>
+        </div>
 
 	<p><%= @user.first_name %> is active in:</p>
 	<ul>
@@ -28,22 +39,43 @@
 	<li><%= link_to "#{category.title.capitalize}, in #{category.team["name"].capitalize}", category_display_path(category.team["slug"], category['slug']) %></li>
 	<% end %>
 	</ul>
+        <div class="row">
 
-	<hr/>
+            <ul class="twelve columns user-list-info">
+              <li><img><%= @user.location %></li>
+              <li><img><%= @user.email %></li>
+              <li><img>Joined on <%= @user.created_at.to_time.strftime("%b %d, %Y") %></li>
+            </ul>
 
+        </div>
 
-    <p><a href="#" id="addusers-js">Add this user to a category</a></p>
+        <div class="row">
 
-    <div id="list-js" style="display: none">
-        <ul>
-        <% @other_categories.each do |cat| %>
-         <li> <%= link_to cat.title, category_add_user_path(title: cat.title, user_id: @user.id), method: :post %> </li>
-        <% end %>
-        </ul>
+          <p><%= @user.first_name %> is active in:</p>
+          <ul>
+          <% @user.categories.each do |category| %>
+          <li><%= link_to "#{category.title.capitalize}, in #{category.team["name"].capitalize}", category_display_path(category.team["name"], category['title']) %></li>
+          <% end %>
+          </ul>
+            <p><a href="#" id="addusers-js">Add this user to a category</a></p>
+
+            <div id="list-js" style="display: none">
+                <ul>
+                <% @other_categories.each do |cat| %>
+                 <li> <%= link_to cat.title, category_add_user_path(title: cat.title, user_id: @user.id), method: :post %> </li>
+                <% end %>
+                </ul>
+            </div>
+
+        </div>
+
     </div>
 
+
+            <!-- note: this will need the use of teams -->
+
+            <!-- note: Add amdin authentication here -->
+
+      </div>
     </div>
-
-  </div>
-
 </div>

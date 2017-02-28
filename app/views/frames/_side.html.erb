@@ -1,14 +1,14 @@
 <style>
 .prov_selected a {text-decoration: underline;}
 </style>
-    
 
-<div class="three columns">
+
+<div class="three columns main-nav">
      <!-- the following teams menu can probs be changed with Javascript / Ajax Calls -->
 
   <% if current_user.teams.size != 0 && session[:current_team] %>
         <div class="menu sidebar">
-            <ul>                 
+            <ul>
                   <% current_user.teams.each do |team| %>
                   <li class="<% if team.name == session[:current_team]["name"] %> prov_selected <% end %>">
                     <%= link_to team.name.capitalize, "/#{team.slug}", :method => :post %>
@@ -29,16 +29,20 @@
 
         <hr class="divider">
 
-        <div class="icons"><%= render :partial => 'svg/guidelines' %></div>
-        <%= link_to "Guidelines control", root_path %>
+        <div class="list">
+          <span class="icons"><%= render :partial => 'svg/guidelines' %></span>
+          <%= link_to "Guidelines control", root_path %>
+        </div>
 
-        <br />
+        <div class="list">
+          <span class="icons"><%= render :partial => 'svg/guidelines' %></span>
+          <%= link_to "Team details", "/#{session[:current_team]['name']}" %>
+        </div>
 
         <div class="icons"><%= render :partial => 'svg/guidelines' %></div>
         <%= link_to "Team details", "/#{session[:current_team]['slug']}" %>
 
 
- 
     <hr class="divider">
 
       <%= button_to "Create Category", new_category_path, method: :get, class: "btn btn--primary create" %>
@@ -58,6 +62,5 @@
       <hr class="divider">
       <%= button_to "Create a Team", new_team_path, method: :get, class: "btn btn--primary create" %>
 
-    <% end %>   
+    <% end %>
 </div>
-

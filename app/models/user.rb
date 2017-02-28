@@ -18,5 +18,9 @@ class User < ApplicationRecord
 	def full_name
 		self.first_name + ' ' + self.last_name
 	end
-  
+
+  def first_char
+    self.first_name.chars.first + ' ' + self.last_name.chars.first
+  end
+
 end
