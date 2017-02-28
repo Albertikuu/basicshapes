@@ -7,6 +7,7 @@ event.preventDefault();
 $('#list-js').toggle();
 })
 
+$('.remove-member-js').on('click', removeMember)
 
 
 });

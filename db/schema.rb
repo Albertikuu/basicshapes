@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170223171334) do
+ActiveRecord::Schema.define(version: 20170224114210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,25 @@ ActiveRecord::Schema.define(version: 20170223171334) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "team_id"
+    t.string   "slug"
+  end
+
+  create_table "commits", force: :cascade do |t|
+    t.string   "title"
+    t.string   "message"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "short_name"
+    t.boolean  "is_public?", default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "participations", force: :cascade do |t|
@@ -49,6 +68,7 @@ ActiveRecord::Schema.define(version: 20170223171334) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "slug"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,6 +94,14 @@ ActiveRecord::Schema.define(version: 20170223171334) do
     t.datetime "avatar_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "versions", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "content"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

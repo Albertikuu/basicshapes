@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 before_action :authenticate_user!
 skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
-skip_before_action :find_teams
+before_action :select_team, except: [:create, :new]
 
 
 	def index
@@ -10,9 +10,6 @@ skip_before_action :find_teams
 	end
 
 	def show
-
-		@team = Team.find_by(name: params[:team_name])
-
 		unless @team.users.include?(current_user)
 			flash[:alert] = "You are not part of this group"
 			redirect_to('/')
@@ -20,15 +17,13 @@ skip_before_action :find_teams
 	end
 
 	def change_session
-		new_team = Team.find_by(name: params[:team_name])
-		session[:current_team] = new_team
-	    session[:categories] = current_user.categories.where(team_id: new_team.id)
+		session[:current_team] = @team
+	    session[:categories] = current_user.categories.where(team_id: @team.id)
  		redirect_to('/')
 	end
 
 	def new
 		@team = Team.new
-		# @team = Team.find_by(name: session['current_team']['names'])
 	end
 
 	def create
@@ -39,24 +34,25 @@ skip_before_action :find_teams
 			member = User.find_by(email: email)
 			@team.users << member
 		end
-
+		@team.slug = @team.name.gsub(' ','-')
+		@team.save
 		redirect_to('/')
 	end
 
 	def destroy
-		@team = Team.find_by(name: params[:name]).delete
+		binding.pry
+		@team.delete
 	    session[:current_team] = current_user.teams.first
 		redirect_to('/')
 	end
 
 
 	def remove_member
-		@team = Team.find_by(name: params[:team_name])
 		if @team.participations.size <= 1
 			flash[:error] = "The team needs at least one participant"
 		else
-		participation = @team.participations.where(user_id: params[:user_id])
-		Participation.delete(participation[0].id)
+			participation = @team.participations.where(user_id: params[:user_id])
+			Participation.delete(participation[0].id)
 		end
 		redirect_to(:back)
 	end
@@ -70,6 +66,10 @@ skip_before_action :find_teams
 
 	def team_params
 		params.permit(:name, :logo)
+	end
+
+	def select_team
+		@team = Team.find_by(slug: params[:team_slug])
 	end
 
 

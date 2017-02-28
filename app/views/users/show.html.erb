@@ -33,6 +33,12 @@
           </div>
         </div>
 
+	<p><%= @user.first_name %> is active in:</p>
+	<ul>
+	<% @user.categories.each do |category| %>
+	<li><%= link_to "#{category.title.capitalize}, in #{category.team["name"].capitalize}", category_display_path(category.team["slug"], category['slug']) %></li>
+	<% end %>
+	</ul>
         <div class="row">
 
             <ul class="twelve columns user-list-info">
