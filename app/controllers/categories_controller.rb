@@ -3,9 +3,9 @@ before_action :authenticate_user!
 skip_before_action :verify_authenticity_token, only: :create
 
 
-	def show 
+	def show
 		current_team = Team.find_by(id: session[:current_team]["id"])
-		@category = Category.find_by(title: params[:title])	
+		@category = Category.find_by(title: params[:title])
 		@team_users = current_team.users.select {|user| user.categories.exclude?(@category)}
 		unless @category.users.include?(current_user)
 			redirect_to('/')
@@ -23,13 +23,13 @@ skip_before_action :verify_authenticity_token, only: :create
 
 	def create
 		@category = current_user.categories.create!(category_params)
-	    session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])	
+	    session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])
 		redirect_to('/')
 	end
 
 	def destroy
 		Category.find_by(title: params[:title]).delete
-	    session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])	
+	    session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])
 		redirect_to('/')
 	end
 

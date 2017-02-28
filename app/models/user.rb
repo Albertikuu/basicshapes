@@ -4,7 +4,7 @@ class User < ApplicationRecord
  	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-    has_attached_file :avatar, styles: { medium: "160x160>", thumb: "64x64>", mini: "32x32>" }, default_url: "/images/:style/missing.png"
+    has_attached_file :avatar, styles: { medium: "96x96>", thumb: "64x64>", mini: "32x32>" }, default_url: "missing_:style.png"
   	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 	validates_presence_of :first_name, :last_name

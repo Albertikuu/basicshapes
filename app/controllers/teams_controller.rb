@@ -9,10 +9,10 @@ skip_before_action :find_teams
 		render json: @teams
 	end
 
-	def show 
+	def show
 
 		@team = Team.find_by(name: params[:team_name])
-	
+
 		unless @team.users.include?(current_user)
 			flash[:alert] = "You are not part of this group"
 			redirect_to('/')
@@ -62,7 +62,7 @@ skip_before_action :find_teams
 	end
 
 	def find
-		@teams = Team.all 
+		@teams = Team.all
 	end
 
 

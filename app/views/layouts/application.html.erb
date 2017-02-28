@@ -25,7 +25,9 @@
       <% if user_signed_in? %>
 
         <div class="menu">
-          <%= render :partial => 'svg/profile' %>
+          <!-- <div class="image-nav"> -->
+            <%= image_tag current_user.avatar.url(:medium), class: "image-nav"%>
+          <!-- </div> -->
           <ul class="dropdown">
             <li>
               <%= link_to 'My profile', user_path(current_user) %>

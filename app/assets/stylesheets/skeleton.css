@@ -466,6 +466,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+
+.image-nav {
+  border-radius: 50%;
+  width: 3.2rem;
+  height: 3.2rem;
 }
 
 /* Anchor */
@@ -641,8 +648,11 @@ p, a {
 }
 
 .menu {
+  position: absolute;
   position: relative;
   z-index: 100;
+  top: 0.2rem;
+  height: 3.8rem;
 }
 
 .menu--big {
