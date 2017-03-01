@@ -16,9 +16,11 @@
 
           <% current_user.teams.each do |team| %>
 
-           <li class="category-left list <% if team.name == session[:current_team]["name"] %> prov_selected <% end %>" >
-               <%= render :partial => 'svg/folder' %>
-                <%= link_to team.name.capitalize, "/#{team.slug}", :method => :post %>
+           <li class="category-left list <% if team.name == session[:current_team]["name"] %> prov_selected <% end %>">
+                <%= link_to "/#{team.slug}",  :method => :post do %>
+                  <%= render :partial => 'svg/folder' %>
+                  <span><%= team.name.capitalize %></span>
+                <% end %>
            </li>
         <% end %>
 
@@ -33,13 +35,19 @@
         <div class="menu-options">
 
           <div class="list">
-            <%= render :partial => 'svg/guidelines'%>
-            <%= link_to "Team details", "/#{session[:current_team]['slug']}" %>
+
+            <%= link_to "/#{session[:current_team]['slug']}" do %>
+              <%= render :partial => 'svg/guidelines'%>
+              <span>Team details</span>
+            <% end %>
           </div>
 
           <div class="list">
-            <%= render :partial => 'svg/guidelines' %>
-            <%= link_to "Guidelines control", root_path %>
+
+            <%= link_to root_path do %>
+              <%= render :partial => 'svg/guidelines' %>
+              <span>Commits</span>
+            <% end %>
           </div>
 
         </div>

@@ -570,7 +570,6 @@ p, a {
   height: 2.0rem;
   width: 2.0rem;
   float: left;
-  margin-right:1.6rem;
 }
 
 /* DIVIDER */
@@ -587,10 +586,16 @@ p, a {
   padding-bottom: 0.8rem;
 }
 
+.list > a {
+  padding-left: 1.6rem;
+  width: 100%;
+}
+
 .list > a:hover {
   font-weight: 500;
   color: #000F28;
   letter-spacing: normal;
+
 }
 
 /* BREADCRUMB */
@@ -769,6 +774,7 @@ p, a {
 
 .menu-side > span {
   cursor: pointer;
+  padding-left: 1.6rem;
 }
 
 .menu-side:hover {
@@ -780,6 +786,14 @@ p, a {
   width: 100%;
   padding-bottom: 0.8rem;
   margin: 0;
+}
+
+.dropdown li > a {
+  padding: 0;
+}
+
+.dropdown li > a > span{
+  padding-left: 1.6rem;
 }
 
 .menu-side ul {
