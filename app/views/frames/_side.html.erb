@@ -41,7 +41,7 @@
           <% session[:categories].each do |category| %>
           <div class="category-left list"> <div class="icons"><%= render :partial => 'svg/folder' %></div> <%= link_to category["title"].capitalize, category_display_path(session[:current_team]["slug"], category['slug']) %></div>
           <% end %>
-     
+
       <% end %>
 
     <% else %>

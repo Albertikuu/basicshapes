@@ -21,7 +21,7 @@
 
             <div class="six columns breadcrumb info">
 
-              <%= "#{session[:current_team]['created_at'].to_time.strftime("%A ,%d %B %Y")}" %>
+                <span class="icons"><%= render :partial => 'svg/calendar' %></span><%= "#{session[:current_team]['created_at'].to_time.strftime("%A ,%d %B %Y")}" %>
 
             </div>
 
