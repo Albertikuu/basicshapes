@@ -9,6 +9,7 @@ skip_before_action :verify_authenticity_token, only: :create
 		current_team = Team.find_by(id: session[:current_team]["id"])
 		@category = Category.find_by(slug: params[:title_slug])
 		@team_users = current_team.users.select {|user| user.categories.exclude?(@category)}
+		session[:current_category] = @category
 		unless @category.users.include?(current_user)
 			redirect_to('/')
 		end

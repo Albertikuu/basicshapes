@@ -40,7 +40,6 @@ before_action :select_team, except: [:create, :new]
 	end
 
 	def destroy
-		binding.pry
 		@team.delete
 	    session[:current_team] = current_user.teams.first
 		redirect_to('/')

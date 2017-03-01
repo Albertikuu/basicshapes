@@ -36,10 +36,29 @@
             <li class="card-general add-page">
               <div class="mini-card">
                 <h2 class="title">Add page</h2>
-                <p class="description">Create new pages</p>
+                <p class="description"><%= link_to 'Create new pages', new_page_path %></p>
+
               </div>
             </li>
+            <% if @category.pages.length > 0 %>
+                <% @category.pages.each do |page| %>
 
+                  <li class="card-general">
+                    <div class="mini-card">
+                      <h2 class="title"><%= page.versions.last.title %></h2>
+                      <p class="description"><%= page.versions.last.description %></p>
+
+                      <div class="mini-card-info">
+                        <p class="versions"><%= page.versions.length %> versions</p>
+                        <p class="commits"><%= page.commits.length %> commits</p>
+                      </div>
+                    </div>
+                  </li>          
+
+                <% end %>
+            <% end %>
+            
+            <!-- 
             <li class="card-general">
               <div class="mini-card">
                 <h2 class="title">Brand</h2>
@@ -86,7 +105,9 @@
                   <p class="commits">2 commits</p>
                 </div>
               </div>
-            </li>
+            </li> -->
+
+            
           </ul>
 
         </div>
