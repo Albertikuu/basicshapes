@@ -1,5 +1,5 @@
 class VersionsController < ApplicationController
-before_action: :current_page
+before_action :current_page
 
 # page#create should be used instead?
 
