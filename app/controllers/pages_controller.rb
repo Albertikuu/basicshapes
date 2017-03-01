@@ -5,8 +5,9 @@ class PagesController < ApplicationController
 	end
 
 	def create
-		page = Page.create!(page_params)
-		page.slug.downcase.gsub!(' ','-')
+		page = Page.new(page_params)
+		page.slug = page.slug.downcase.gsub!(' ','-')
+		page.save
 		version = page.versions.create!(version_params)
 		session[:linked_version] = version
 		redirect_to("/commits/#{page.id}/#{version.id}/new")

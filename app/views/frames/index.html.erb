@@ -17,8 +17,8 @@
         <div class="frame main-container">
 
           <div class="guidelines-row">
-
-            <p class="title"><%= commit.title %></p>
+            <!-- Albert, can we change this to h2 or h3? -instead of p? -->
+            <p class="title"><%= link_to commit.title, page_display_path(session[:current_team]['slug'], commit.page.category.slug, commit.page.slug) %></p>
 
             <div class="six columns breadcrumb info">
 
