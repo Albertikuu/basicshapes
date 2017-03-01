@@ -18,7 +18,7 @@
 
            <li class="category-left list <% if team.name == session[:current_team]["name"] %> prov_selected <% end %>" >
                <%= render :partial => 'svg/folder' %>
-                <%= link_to team.name.capitalize, "/#{team.slug}", :method => :post %>
+                <%= link_to team.name.capitalize, change_session_path(team.slug), :method => :post %>
            </li>
         <% end %>
 
