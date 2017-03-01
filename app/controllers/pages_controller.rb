@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 	end
 
 	def create
-		page = Page.new(page_params)
+		page = Page.create!(page_params)
 		page.slug = page.slug.downcase.gsub!(' ','-')
 		page.save
 		version = page.versions.create!(version_params)
