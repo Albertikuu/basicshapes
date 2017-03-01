@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170224114210) do
 
   create_table "commits", force: :cascade do |t|
     t.string   "title"
-    t.string   "message"
+    t.text     "message"
     t.integer  "user_id"
     t.integer  "page_id"
     t.integer  "version_id"

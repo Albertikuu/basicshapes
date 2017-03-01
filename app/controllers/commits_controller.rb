@@ -6,11 +6,11 @@ class CommitsController < ApplicationController
 	end
 
 	def create
-		binding.pry
 		#cannot upload image through Ajax, fix that (maybe a save image button in a pop up?)
 		@commit = Commit.create!(commit_params)
 		redirect_to('/')
 	end
+
 
 	private
 
