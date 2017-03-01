@@ -11,7 +11,38 @@
 
     <div class="eight columns">
 
-      <ul>
+    <% if @commits.length > 0 %>
+    <% @commits.each do |commit| %>
+
+        <div class="frame main-container">
+
+          <div class="guidelines-row">
+            <!-- Albert, can we change this to h2 or h3? -instead of p? -->
+            <p class="title"><%= link_to commit.title, page_display_path(session[:current_team]['slug'], commit.page.category.slug, commit.page.slug) %></p>
+
+            <div class="six columns breadcrumb info">
+
+              <%= "#{commit.created_at.to_time.strftime("%A ,%d %B %Y")}" %>
+
+            </div>
+
+            <div class="six columns info info--right">
+              <%= link_to ("#{session[:current_team]['name']}").capitalize, "/#{session[:current_team]['slug']}" %>
+            </div>
+
+          </div>
+          <div class="row">
+            <% if commit.image_file_name %>
+                 <%= image_tag commit.image.url, class: "commit__image" %>
+            <% end %>
+            <%= commit.message.html_safe %>
+          </div>
+
+        </div>        
+
+    <% end %>
+    <% end %>
+
 
         <div class="frame main-container">
 
@@ -38,9 +69,6 @@
           </div>
 
         </div>
-
-      </ul>
-
 
     </div>
 

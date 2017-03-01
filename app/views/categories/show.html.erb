@@ -45,7 +45,7 @@
 
                   <li class="card-general">
                     <div class="mini-card">
-                      <h2 class="title"><%= page.versions.last.title %></h2>
+                      <h2 class="title"><%= link_to page.versions.last.title, page_display_path(session[:current_team]['slug'],@category.slug,page.slug) %></h2>
                       <p class="description"><%= page.versions.last.description %></p>
 
                       <div class="mini-card-info">
