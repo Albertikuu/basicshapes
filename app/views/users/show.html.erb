@@ -36,9 +36,9 @@
         <div class="row">
 
             <ul class="twelve columns user-list-info">
-              <li><span class="icons"><%= render :partial => 'svg/folder' %></span><%= @user.location %></li>
+              <li><%= render :partial => 'svg/folder' %><%= @user.location %></li>
               <li><img><%= @user.email %></li>
-              <li><img>Joined on <%= @user.created_at.to_time.strftime("%b %d, %Y") %></li>
+              <li><%= render :partial => 'svg/calendar' %>Joined on <%= @user.created_at.to_time.strftime("%b %d, %Y") %></li>
             </ul>
 
         </div>

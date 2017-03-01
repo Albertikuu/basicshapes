@@ -484,6 +484,10 @@ a {
 
 /* BUTTONS */
 
+.create {
+  margin-top: 1.6rem;
+}
+
 .create:hover {
   background-color: #3143A6;
 }
@@ -562,9 +566,11 @@ p, a {
 /* ICONS */
 
 .icons {
-  width: 1.6rem;
+  margin-top: 0.1rem;
+  height: 2.0rem;
+  width: 2.0rem;
   float: left;
-  margin-right: 0.8rem;
+  margin-right:1.6rem;
 }
 
 /* DIVIDER */
@@ -647,6 +653,10 @@ p, a {
 .main-nav {
 }
 
+.menu-options {
+  margin-top: 1.6rem;
+}
+
 .menu {
   position: absolute;
   position: relative;
@@ -675,11 +685,6 @@ p, a {
 .menu--big ul {
   display: none;
   text-align: left;
-}
-
-.menu.sidebar ul {
-  display: none;
-  list-style: none;
 }
 
 .menu ul {
@@ -749,6 +754,50 @@ p, a {
   float: none;
 }
 
+/* MENU SIDE */
+
+.menu-side {
+  position: absolute;
+  position: relative;
+  z-index: 100;
+  top: 0.2rem;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  margin-left: -0.8rem;
+  margin-right: -0.8rem;
+}
+
+.menu-side > span {
+  cursor: pointer;
+}
+
+.menu-side:hover {
+  box-shadow: none;
+}
+
+.dropdown li {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 0.8rem;
+  margin: 0;
+}
+
+.menu-side ul {
+  display: none;
+  list-style: none;
+}
+
+.menu-side:hover ul {
+  list-style: none;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: -0.8rem;
+  background: white;
+  border-radius: 0.4rem;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* FIELD */
 
 .field--info label{
@@ -785,6 +834,8 @@ p, a {
 
 .info {
   padding-left: 0px;
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
 }
 
 .info--right {
