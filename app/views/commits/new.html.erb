@@ -16,7 +16,7 @@
       <p class="description">Let your team know of the latest updates. Add a message and, optionally, a screenshot of the changes.</p>
     </div>
 
-	  <%= form_tag({}, { :class => "create-page"}) do %>
+	  <%= form_tag({ :class => "create-page"}, html: { multipart: true }) do %>
 	  <div>
 
 	    <label for="Commit title" >Title</label>
@@ -29,9 +29,6 @@
           <input type="hidden" id="commit_user" value="<%= current_user.id %>">
           <input type="hidden" id="linked_version" value="<%= params[:version_id] %>">
           <input type="hidden" id="linked_page" value="<%= params[:page_id] %>">
-          <label for="image">Upload a picture (optional)</label>
-		  <input id="commit_image" type="file">
-
 	    <div>
 	      <textarea class="froala"></textarea>
 	    </div>

@@ -9,7 +9,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:categories] = []
   end
 
-
   private
 
   def sign_up_params

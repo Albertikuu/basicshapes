@@ -16,7 +16,7 @@
         </div>
 
         <div class="six columns breadcrumb info--right">
-          <p>Edit (needs ruby)</p>
+          <p>Edit (needs back-end)</p>
         </div>
 
       </div>
@@ -24,7 +24,9 @@
         <div class="row row-no-border">
 
           <div class="three columns profile-image">
-            image
+            <% if current_user.avatar %>
+              <%= image_tag @user.avatar.url(:medium) %>
+            <% end %> 
           </div>
 
           <div class="eight columns main-user-info">
@@ -42,7 +44,15 @@
             </ul>
 
         </div>
-
+              <% if current_user == @user %>
+                <hr />
+                  <label for="user" >Uplaod a new profile picture</label>
+                  <%= form_for @user, url: user_picture_path, html: { multipart: true } do |form| %>
+                    <%= form.file_field :avatar %>
+                    <%= form.submit "Save", class: "btn  btn--primary" %>
+                  <% end %>  
+                <hr />
+              <% end %>
         <div class="row">
 
           <p><%= @user.first_name %> is active in:</p>
@@ -65,10 +75,6 @@
 
     </div>
 
-
-            <!-- note: this will need the use of teams -->
-
-            <!-- note: Add amdin authentication here -->
 
       </div>
     </div>

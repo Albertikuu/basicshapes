@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   	controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
   
   resources :users
+  patch '/users/:id', to: 'users#update', as: 'user_picture'
   resources :pages, param: :page_slug, except: [:index, :show]
   resources :categories, param: :title_slug, except: [:index, :show]
   resources :teams, param: :team_slug, except: [:index, :show]
