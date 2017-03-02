@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 20170224114210) do
   create_table "categories", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "is_public?",  default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "team_id"
     t.string   "slug"
   end
