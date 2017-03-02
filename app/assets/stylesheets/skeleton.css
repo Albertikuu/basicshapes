@@ -569,8 +569,7 @@ p, a {
   margin-top: 0.1rem;
   height: 2.0rem;
   width: 2.0rem;
-  float: left;
-  margin-right:1.6rem;
+  margin-right: 1.6rem;
 }
 
 /* DIVIDER */
@@ -587,10 +586,16 @@ p, a {
   padding-bottom: 0.8rem;
 }
 
+.list > a {
+  width: 100%;
+  display: inline-block;
+}
+
 .list > a:hover {
   font-weight: 500;
   color: #000F28;
   letter-spacing: normal;
+
 }
 
 /* BREADCRUMB */
@@ -782,6 +787,10 @@ p, a {
   margin: 0;
 }
 
+.dropdown li > a {
+  padding: 0;
+}
+
 .menu-side ul {
   display: none;
   list-style: none;
@@ -930,6 +939,60 @@ p, a {
   font-size: 1.4rem;
 }
 
+.new-users {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0;
+}
+
+.new-users:hover > ul {
+  width: 16.0rem;
+  list-style: none;
+  display: block;
+  position: absolute;
+  background: white;
+  border-radius: 0.4rem;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.new-users ul {
+  display: none;
+}
+
+.add-user {
+  display: inline-block;
+  margin: 0;
+  list-style: none;
+}
+
+.add-user li {
+  margin: 0;
+}
+
+.users {
+  padding: 1.6rem;
+}
+
+.users li {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 0.8rem;
+  margin: 0;
+}
+
+.users li:last-child {
+  padding-bottom: 0;
+}
+
+.users p {
+  display: inline-block;
+}
+
+.users .icons{
+  display: inline-block;
+  float: none;
+}
+
 /* CARDS */
 
 .row > .pages-list {
@@ -1040,16 +1103,6 @@ p, a {
   margin-right: 0.4rem;
   box-sizing: border-box;
   border: 1px solid #e6e6e6;
-}
-
-.add-user {
-  display: inline-block;
-  margin: 0;
-  list-style: none;
-}
-
-.add-user li {
-  margin: 0;
 }
 
 /* USER */

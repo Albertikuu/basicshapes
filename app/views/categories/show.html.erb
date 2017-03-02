@@ -40,7 +40,7 @@
 
               </div>
             </li>
-            <!-- <% if @category.pages.length > 0 %> -->
+            <% if @category.pages.length > 0 %>
                 <% @category.pages.each do |page| %>
 
                   <li class="card-general">
@@ -55,59 +55,8 @@
                     </div>
                   </li>
 
-                <!-- <% end %> -->
+                <% end %>
             <% end %>
-
-            <!--
-            <li class="card-general">
-              <div class="mini-card">
-                <h2 class="title">Brand</h2>
-                <p class="description">Visual identity</p>
-
-                <div class="mini-card-info">
-                  <p class="versions">3 versions</p>
-                  <p class="commits">2 commits</p>
-                </div>
-              </div>
-            </li>
-
-            <li class="card-general">
-              <div class=" mini-card">
-                <h2 class="title">Brand</h2>
-                <p class="description">Visual identity</p>
-
-                <div class="mini-card-info">
-                  <p class="versions">3 versions</p>
-                  <p class="commits">2 commits</p>
-                </div>
-              </div>
-            </li>
-
-            <li class="card-general">
-              <div class=" mini-card">
-                <h2 class="title">Brand</h2>
-                <p class="description">Visual identity</p>
-
-                <div class="mini-card-info">
-                  <p class="versions">3 versions</p>
-                  <p class="commits">2 commits</p>
-                </div>
-              </div>
-            </li>
-
-            <li class="card-general">
-              <div class=" mini-card">
-                <h2 class="title">Brand</h2>
-                <p class="description">Visual identity</p>
-
-                <div class="mini-card-info">
-                  <p class="versions">3 versions</p>
-                  <p class="commits">2 commits</p>
-                </div>
-              </div>
-            </li> -->
-
-
           </ul>
 
         </div>
@@ -130,18 +79,23 @@
 
         </ul>
 
-        <ul class="add-user">
+        <% if session[:categories] == 0 %>
 
-          <li>
-            <a href="#" id="addusers-js"><span class="menu__text">Add users</span></a>
-          </li>
+          <div class="new-users">
 
-          <% @team_users.each do |user| %>
-           <li> <%= link_to user.full_name, category_add_user_path(title: params[:title], user_id: user.id), method: :post %> </li>
-          <% end %>
+            <a href="#" id="addusers-js"><span><%= render :partial => 'svg/add' %></span></a>
 
-        </ul>
+            <ul class="users">
 
+              <% @team_users.each do |user| %>
+               <li> <%= link_to user.full_name, category_add_user_path(title: params[:title], user_id: user.id), method: :post %> </li>
+              <% end %>
+
+            </ul>
+
+          </div>
+
+        <% end %>
       </div>
 
     </div>
