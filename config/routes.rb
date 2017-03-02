@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   	path_names: {sign_in: 'login', sign_up: 'signup'}, 
   	controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
   
-  # namespace :assets do
-  #   :assets
-  # end
+  namespace :assets do
+    :assets
+  end
   resources :users
   patch '/users/:id', to: 'users#update', as: 'user_picture'
   resources :pages, param: :page_slug, except: [:index, :show]
