@@ -1,5 +1,4 @@
 function createCommit(event){
-	debugger;
 	event.preventDefault();
     request = $.post("/commits", {
     	version_id: $('#linked_version').val(),

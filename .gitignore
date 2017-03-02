@@ -39,3 +39,7 @@ Thumbs.db
 
 
 /tmp
+
+/public/system/users
+/public/system/commits
+/public/system/teams

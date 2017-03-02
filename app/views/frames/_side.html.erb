@@ -6,32 +6,31 @@
 <div class="three columns main-nav">
      <!-- the following teams menu can probs be changed with Javascript / Ajax Calls -->
 
-    <div class="menu-side">
+    <% if current_user.teams.size != 0 && session[:current_team] %>
 
-      <span><%= render :partial => 'svg/guidelines' %><%= session[:current_team]["name"].capitalize %></span>
+      <div class="menu-side">
 
-      <ul class="dropdown">
+        <span><%= render :partial => 'svg/guidelines' %><%= session[:current_team]["name"].capitalize %></span>
 
-        <% if current_user.teams.size != 0 && session[:current_team] %>
+        <ul class="dropdown">
 
-          <% current_user.teams.each do |team| %>
+              <% current_user.teams.each do |team| %>
 
-           <li class="category-left list <% if team.name == session[:current_team]["name"] %> prov_selected <% end %>">
-                <%= link_to "/#{team.slug}",  :method => :post do %>
-                  <%= render :partial => 'svg/folder' %><span><%= team.name.capitalize %></span>
-                <% end %>
-           </li>
-        <% end %>
+                 <li class="category-left list <% if team.name == session[:current_team]["name"] %> prov_selected <% end %>">
+                      <%= link_to change_session_path(team.slug),  :method => :post do %>
+                        <%= render :partial => 'svg/folder' %><span><%= team.name.capitalize %></span>
+                      <% end %>
+                 </li>
+              <% end %>
+        </ul>
 
-      </ul>
-
-    </div>
-
+      </div>
 
 
-        <!-- <hr class="divider"> -->
 
-        <div class="menu-options">
+          <!-- <hr class="divider"> -->
+
+      <div class="menu-options">
 
           <div class="list">
 
@@ -49,32 +48,40 @@
             <% end %>
           </div>
 
-        </div>
-
-
-    <!-- <hr class="divider"> -->
+      </div>
 
       <%= button_to "Create Category", new_category_path, method: :get, class: "btn btn--primary create" %>
+
       <% if session[:current_team] %>
+
           <% if session[:categories] == 0 %>
+
           <p> You don't have any active category in this team yet! </p>
-          <% end %>
-          <% session[:categories].each do |category| %>
-          <div class="category-left list">
-            <%= link_to session[:current_team]["slug"] do%>
-            <%= render :partial => 'svg/folder' %>
-            <span><%= category["title"].capitalize %></span>
-            <% end %>
-          </div>
+
           <% end %>
 
-      <% end %>
+          <% session[:categories].each do |category| %>
+
+            <div class="category-left list">
+
+              <%= link_to category_display_path(session[:current_team]["slug"], category['slug']) do%>
+              <%= render :partial => 'svg/folder' %>
+              <span><%= category["title"].capitalize %></span>
+
+              <% end %>
+
+            </div>
+
+          <% end %>
+
+        <% end %>
 
     <% else %>
 
-      <p>To start using Basicshapes, you must create a Team or find one to join!</p>
-      <hr class="divider">
-      <%= button_to "Create a Team", new_team_path, method: :get, class: "btn btn--primary create" %>
+        <p>To start using Basicshapes, you must create a Team or find one to join!</p>
+          <hr class="divider">
+        <%= button_to "Create a Team", new_team_path, method: :get, class: "btn btn--primary create" %>
 
     <% end %>
+
 </div>

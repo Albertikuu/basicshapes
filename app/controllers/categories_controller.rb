@@ -17,7 +17,10 @@ skip_before_action :verify_authenticity_token, only: :create
 
 	def index
 		if session[:categories]
-			render json: session[:categories]
+			# format.html { redirect_to @company, notice: 'Company was successfully updated.' }
+       		# format.json {}
+      		render json: session[:categories]
+			
 		end
 	end
 

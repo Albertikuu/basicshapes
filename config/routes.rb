@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   	controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
   
   resources :users
+  patch '/users/:id', to: 'users#update', as: 'user_picture'
   resources :pages, param: :page_slug, except: [:index, :show]
   resources :categories, param: :title_slug, except: [:index, :show]
   resources :teams, param: :team_slug, except: [:index, :show]
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
   get '/teams/find', to: 'teams#find'
   get '/api/teams', to: 'teams#index'
   get ':team_slug', to: 'teams#show'
-  post ':team_slug', to: 'teams#change_session'
+  post ':team_slug', to: 'teams#change_session', as: 'change_session'
   get ':team_slug/:title_slug', to: 'categories#show', as: 'category_display'
   get ':team_slug/:title_slug/:page_slug', to: 'pages#show', as: 'page_display'
 
