@@ -1,6 +1,19 @@
 class PagesController < ApplicationController
 	skip_before_action :verify_authenticity_token, only: :create
 
+	def index
+		binding.pry
+		# format.html { redirect_to @company, notice: 'Company was successfully updated.' }
+   		# format.json {}
+   		team = Team.find_by(slug: params[:team_slug])
+   		updated_pages = []
+   			team.pages.each do |p|
+   				updated_pages << p.versions.last
+   			end
+  		render json: updated_pages
+	end
+
+
 	def new
 		@page = Page.new
 	end

@@ -16,12 +16,11 @@ skip_before_action :verify_authenticity_token, only: :create
 	end
 
 	def index
-		if session[:categories]
+   		team = Team.find_by(slug: params[:team_slug])
+
 			# format.html { redirect_to @company, notice: 'Company was successfully updated.' }
        		# format.json {}
-      		render json: session[:categories]
-			
-		end
+      	render json: team.categories
 	end
 
 	def new

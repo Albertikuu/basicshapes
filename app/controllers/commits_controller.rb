@@ -3,7 +3,11 @@ class CommitsController < ApplicationController
 
 
 	def index
-		render :json
+   		commits = []
+   		current_user.teams.each do |t|
+   			commits << t.commits
+   		end
+		render json: commits
 	end
 
 	def new

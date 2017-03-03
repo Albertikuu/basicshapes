@@ -34,7 +34,7 @@
 
           <div class="list">
 
-            <%= link_to "/#{session[:current_team]['slug']}" do %>
+            <%= link_to show_team_path(session[:current_team]['slug']) do %>
               <%= render :partial => 'svg/guidelines'%>
               <span>Team details</span>
             <% end %>
