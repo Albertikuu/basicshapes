@@ -23,7 +23,7 @@ class PagesController < ApplicationController
 		@page.slug = @page.slug.downcase.gsub!(' ','-')
 		@page.save
 		session[:page] = @page
-		create_version(@page)
+		first_version(@page)
 		# @page.title = @version.title 
 		# @page.description = @version.description
 		#redirect to commit#new
@@ -37,7 +37,11 @@ class PagesController < ApplicationController
 
 	def create_version
 		page = Page.find_by(slug: params[:page_slug])
-		version = page.versions.create!(version_params)
+		
+		unless page.versions.last.title == version_params['title'] && page.versions.last.description == version_params['description'] && page.versions.last.content == version_params['content']	
+			version = page.versions.create!(version_params)
+		end
+		
 		redirect_to(:back)
 	end
 
