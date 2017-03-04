@@ -5,7 +5,7 @@ function createPage(event){
     	slug: $('#version_title').val(),
         title: $('#version_title').val(),
         description: $('#version_description').val(),
-    	content: $('.fr-element').html(),
+    	content: $('#page_content').html(),
     	user_id: $('#version_user').val()
         });
 

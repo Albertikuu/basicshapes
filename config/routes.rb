@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :teams, param: :team_slug, except: [:index, :show]
   resources :commits, except: [:index, :show, :new]
  
-  get '/commits/:page_id/:version_id/new', to: 'commits#new'
+  get '/commits/:page_id/:version_id/new', to: 'commits#new', as: 'new_commit'
  
   post '/teams/remove_member', to: 'teams#remove_member'
   get '/teams/find', to: 'teams#find'

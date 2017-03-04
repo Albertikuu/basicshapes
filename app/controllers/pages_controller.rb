@@ -19,20 +19,25 @@ class PagesController < ApplicationController
 	end
 
 	def create
-		page = Page.create!(page_params)
-		page.slug = page.slug.downcase.gsub!(' ','-')
-		page.save
-		version = page.versions.create!(version_params)
-		session[:linked_version] = version
-		redirect_to("/commits/#{page.id}/#{version.id}/new")
+		@page = Page.create!(page_params)
+		@page.slug = @page.slug.downcase.gsub!(' ','-')
+		@page.save
+		create_version(@page)
 		# @page.title = @version.title 
 		# @page.description = @version.description
 		#redirect to commit#new
 	end
 
+	def create_version(page)
+		version = page.versions.create!(version_params)
+		session[:linked_version] = version
+		redirect_to(new_commit_path(@page.id, version.id))
+	end
+
 	def show
 		page = Page.find_by(slug: params[:page_slug])
 		@page = page.versions.last
+		binding.pry
 	end
 
 	private
