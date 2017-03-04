@@ -21,6 +21,7 @@
 
         <button id="edit-page" class="disappear_on_edit">Edit</button>
         <button id="save-page" style="display: none" class="show_on_edit">Save</button>
+        <%= link_to "Commit", new_commit_path(@page.page.id, @page.id), :class => 'disappear_on_edit' %>
 
         <input type="hidden" value="<%= current_user.id %>" id="version_user">
         
