@@ -10,12 +10,23 @@
 
     <div class="eight columns frame main-container">
 
-      <div class="row">
-        <h1 id="page_title"><%= @page.title.capitalize %></h1>
+      <div class="row" id="page">
 
-        <h4> <%= @page.description %></h4>
+        <h1 id="page_title" class="disappear_on_edit"><%= @page.title.capitalize %></h1>
+        <input type="text" value="<%= @page.title.capitalize %>" class="show_on_edit" id="version_title" style="display: none">
+       
+        <h4 id="page_description" class="disappear_on_edit"> <%= @page.description %></h4>
+        <input type="text" value="<%= @page.description %>" class="show_on_edit" id="version_description" style="display: none">
+        <input type="hidden" value="<%= params[:page_slug] %>" id="page_slug">
 
-        <!-- to modify a page, pages#update and create new version -->
+        <button id="edit-page" class="disappear_on_edit">Edit</button>
+        <button id="save-page" style="display: none" class="show_on_edit">Save</button>
+
+        <input type="hidden" value="<%= current_user.id %>" id="version_user">
+        
+        <div class="fr-view" id="page_content">
+            <%= @page.content.html_safe %>
+        </div>
 
       </div>
 
@@ -24,3 +35,16 @@
   </div>
 
 </div>
+
+
+<!-- <script>
+
+  $('#edit-page').on('click', function(){
+      $('div.fr-view').froalaEditor({
+      toolbarInline: true,
+      charCounterCount: false,
+      toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'color', 'emoticons', '-', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'indent', 'outdent', '-', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo']
+    })
+  })
+
+</script> -->

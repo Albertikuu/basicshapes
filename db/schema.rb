@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224114210) do
+ActiveRecord::Schema.define(version: 20170303164706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 20170224114210) do
   create_table "categories", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "is_public?",  default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "team_id"
     t.string   "slug"
   end
@@ -62,6 +63,15 @@ ActiveRecord::Schema.define(version: 20170224114210) do
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_participations_on_team_id", using: :btree
     t.index ["user_id"], name: "index_participations_on_user_id", using: :btree
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+    t.index ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
   end
 
   create_table "teams", force: :cascade do |t|

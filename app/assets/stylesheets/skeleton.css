@@ -556,6 +556,26 @@ p, a {
   border: 1px solid #E6E6E6;
 }
 
+
+/* EDIT */
+
+.pre-edit {
+  border: 1px solid grey;
+  webkit-box-shadow: 1px 1px 0 0 rgba(122,122,122,0.5);
+  box-shadow: 1px 1px 0 0 rgba(122,122,122,0.5);
+  border-radius: 3px;
+}
+
+input.show_on_edit {
+  width: 100%;
+  font-size: 3.0rem;
+  line-height: 1.2;
+  letter-spacing: -.1rem;
+  margin-bottom: 12px;
+  height: auto;
+}
+
+
 /* This is used to center card or pop-ups */
 
 .card--center {

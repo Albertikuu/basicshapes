@@ -14,10 +14,11 @@
         <div class="six columns breadcrumb">
           <p>Profile</p>
         </div>
-
+        <% if current_user == @user %>
         <div class="six columns breadcrumb info--right">
-          <p>Edit (needs back-end)</p>
+          <p><%= link_to 'Edit', edit_user_registration_path %></p>
         </div>
+        <% end %>
 
       </div>
 

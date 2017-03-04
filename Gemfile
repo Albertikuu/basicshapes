@@ -38,9 +38,11 @@ gem "paperclip", "~> 5.0.0"
 gem 'font-awesome-rails'
 gem "wysiwyg-rails"
 gem 'inline_svg'
+
 # heroku static
 gem 'rails_12factor', group: :production
 
+gem 'activerecord-session_store'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

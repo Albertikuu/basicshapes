@@ -2,6 +2,14 @@ class CommitsController < ApplicationController
 	skip_before_action :verify_authenticity_token, only: :create
 
 
+	def index
+   		commits = []
+   		current_user.teams.each do |t|
+   			commits << t.commits
+   		end
+		render json: commits
+	end
+
 	def new
 	end
 
