@@ -452,9 +452,11 @@ body {
   color: #CC2836;
 }
 
-.fr-view {
+.fr-wrapper {
   height: 20rem;
 }
+
+
 
 /* NAVS */
 
@@ -590,11 +592,14 @@ input.show_on_edit {
 /* ICONS */
 
 .icons {
-  margin-top: 0.1rem;
   height: 2.0rem;
   width: 2.0rem;
   margin-right: 1.6rem;
 
+}
+
+.icons svg {
+  margin-right: 0;
 }
 
 /* DIVIDER */
@@ -623,6 +628,24 @@ input.show_on_edit {
 
 }
 
+.menu-options > .list > a > span {
+  line-height: normal;
+  position: absolute;
+  top: 4;
+}
+
+.category-left > .list > a {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+.category-left > .list > a > span {
+  line-height: normal;
+  position: absolute;
+  top: 0;
+}
+
 /* BREADCRUMB */
 
 .create-category-row > .breadcrumb {
@@ -648,7 +671,7 @@ input.show_on_edit {
 /* DESCRIPTION */
 
 .description {
-  color: #000F28;
+  color: #636A71;
   font-size: 1.4rem;
 }
 
@@ -975,6 +998,7 @@ input.show_on_edit {
   display: inline-block;
   vertical-align: middle;
   line-height: 0;
+  position: relative;
 }
 
 .new-users:hover > ul {
@@ -982,6 +1006,7 @@ input.show_on_edit {
   list-style: none;
   display: block;
   position: absolute;
+  top: 100%;
   background: white;
   border-radius: 0.4rem;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
@@ -1003,13 +1028,19 @@ input.show_on_edit {
 
 .users {
   padding: 1.6rem;
-  margin-top: 0.8rem;
+  position: absolute;
+  top: 100%;
 }
+
+.users > li > a:first-child {
+  margin-top: 0;
+}
+
 
 .users li {
   display: inline-block;
   width: 100%;
-  padding-bottom: 0.8rem;
+  padding-bottom: 1.6rem;
   margin: 0;
 }
 
@@ -1197,6 +1228,12 @@ input.show_on_edit {
 
 .row > ul {
   list-style: none;
+}
+
+/* PAGE VIEWER */
+
+#page {
+  height: auto;
 }
 
 /* Larger than mobile */

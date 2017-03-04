@@ -35,7 +35,6 @@
 
           <ul class="pages-list">
 
-
               <li class="card-general add-page">
                 <%= link_to new_page_path do%>
                   <div class="mini-card">
@@ -50,15 +49,17 @@
                 <% @category.pages.each do |page| %>
 
                   <li class="card-general">
-                    <div class="mini-card">
-                      <h2 class="title"><%= link_to page.versions.last.title, page_display_path(session[:current_team]['slug'],@category.slug,page.slug) %></h2>
-                      <p class="description"><%= page.versions.last.description %></p>
+                    <%= link_to page_display_path(session[:current_team]['slug'],@category.slug,page.slug) do %>
+                      <div class="mini-card">
+                        <h2 class="title"><%= page.versions.last.title %></h2>
+                        <p class="description"><%= page.versions.last.description %></p>
 
-                      <div class="mini-card-info">
-                        <p class="versions"><%= page.versions.length %> versions</p>
-                        <p class="commits"><%= page.commits.length %> commits</p>
+                        <div class="mini-card-info">
+                          <p class="versions"><%= page.versions.length %> versions</p>
+                          <p class="commits"><%= page.commits.length %> commits</p>
+                        </div>
                       </div>
-                    </div>
+                    <% end %>
                   </li>
 
                 <% end %>
