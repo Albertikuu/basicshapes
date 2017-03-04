@@ -22,7 +22,7 @@
 
             <div class="six columns breadcrumb info">
 
-              <%= "#{commit.created_at.to_time.strftime("%A ,%d %B %Y")}" %>
+              <%= "#{commit.created_at.to_time.strftime("%A , %d %B %Y")}" %>
 
             </div>
 
@@ -38,7 +38,7 @@
             <%= commit.message.html_safe %>
           </div>
 
-        </div>        
+        </div>
 
     <% end %>
     <% end %>

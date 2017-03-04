@@ -16,7 +16,9 @@
         </div>
 
         <div class="six columns category-title info--right">
-          <%= link_to 'Delete category', category_path(@category.title), method: :delete, class: "menu__text" %>
+          <%= link_to category_path(@category.title), method: :delete, class: "menu__text" do%>
+            <span class="icons"><%= render :partial => 'svg/bin' %></span>
+          <% end %>
         </div>
 
         <div class="twelve columns">
@@ -33,13 +35,17 @@
 
           <ul class="pages-list">
 
-            <li class="card-general add-page">
-              <div class="mini-card">
-                <h2 class="title">Add page</h2>
-                <p class="description"><%= link_to 'Create new pages', new_page_path %></p>
 
-              </div>
-            </li>
+              <li class="card-general add-page">
+                <%= link_to new_page_path do%>
+                  <div class="mini-card">
+                    <h2 class="title">Add page</h2>
+                    <p class="description">Create new page</p>
+                  </div>
+                <% end %>
+              </li>
+
+
             <% if @category.pages.length > 0 %>
                 <% @category.pages.each do |page| %>
 
@@ -61,8 +67,6 @@
 
         </div>
 
-
-
       </div>
 
 
@@ -71,10 +75,19 @@
 
       <div class="row">
 
+
         <ul class="users-list">
 
           <% @category.users.each do |u| %>
-          <li class="user"><%= link_to u.first_char, user_path(u) %></li>
+          <li class="user">
+            <% if u.avatar_file_name  %>
+              <%= link_to user_path(u) do %>
+                <%= image_tag u.avatar.url(:medium) %>
+              <% end %>
+            <% else %>
+              <%= link_to u.first_char, user_path(u), class: "link" %>
+            <% end %>
+          </li>
           <% end %>
 
         </ul>
@@ -96,6 +109,7 @@
           </div>
 
         <% end %>
+
       </div>
 
     </div>

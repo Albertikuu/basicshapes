@@ -570,6 +570,7 @@ p, a {
   height: 2.0rem;
   width: 2.0rem;
   margin-right: 1.6rem;
+
 }
 
 /* DIVIDER */
@@ -849,6 +850,13 @@ p, a {
 
 .info--right {
   text-align: right;
+  position: relative;;
+}
+
+.info--right > a > .icons {
+  margin: 0;
+  position: absolute;
+  right: 0;
 }
 
 /* COMMIT */
@@ -971,6 +979,7 @@ p, a {
 
 .users {
   padding: 1.6rem;
+  margin-top: 0.8rem;
 }
 
 .users li {
@@ -979,6 +988,15 @@ p, a {
   padding-bottom: 0.8rem;
   margin: 0;
 }
+
+.users li > a{
+  display: inline-block;
+  width: 100%;
+  line-height: 1;
+  margin-top: 0.8rem;
+}
+
+
 
 .users li:last-child {
   padding-bottom: 0;
@@ -1021,9 +1039,9 @@ p, a {
 }
 
 .pages-list > .add-page > .mini-card:hover {
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1), 0 0 0 1px #e6e6e6;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   background-color: #FFF;
-  border: none;
+  border: 1px solid #e6e6e6;
 }
 
 /*.pages-list > li:first-child {
@@ -1079,6 +1097,8 @@ p, a {
   list-style: none;
   margin: 0;
   display: inline-block;
+  vertical-align: middle;
+  align-items: center;
 }
 
 .user-list-info {
@@ -1094,15 +1114,31 @@ p, a {
   letter-spacing: -0.1rem;
   text-align: center;
   display: inline-block;
+  vertical-align: middle;
   background-color: #F7F7F7;
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
-  padding-top: 0.3rem;
   margin-bottom: 0;
-  margin-right: 0.4rem;
+  margin-right: 0.8rem;
   box-sizing: border-box;
-  border: 1px solid #e6e6e6;
+}
+
+.users-list > li > a > img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 0 1px #e6e6e6;
+}
+
+.users-list > .user > .link {
+  display: inline-block;
+  padding-top: 0.4rem;
 }
 
 /* USER */
@@ -1111,6 +1147,14 @@ p, a {
 .profile-image {
   display: inline-block;
   margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-image > img {
+  display: inline-block;
+  margin: 0;
+  border-radius: 50%;
 }
 
 .main-user-info h1 h3{
