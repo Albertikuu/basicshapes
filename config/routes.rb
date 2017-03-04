@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post '/categories/add_user/:title_slug/:user_id', as: 'category_add_user', to: 'categories#add_user'
   resources :teams, param: :team_slug, except: [:index, :show]
   resources :commits, except: [:index, :show, :new]
+
+  post '/pages/create_version', to: 'pages#create_version', as: 'new_version'
  
   get '/commits/:page_id/:version_id/new', to: 'commits#new', as: 'new_commit'
  

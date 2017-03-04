@@ -10,14 +10,20 @@
 
     <div class="eight columns frame main-container">
 
-      <div class="row" id=" page-content">
+      <div class="row" id="page">
 
         <h1 id="page_title" class="disappear_on_edit"><%= @page.title.capitalize %></h1>
         <input type="text" value="<%= @page.title.capitalize %>" class="show_on_edit" id="version_title" style="display: none">
+       
         <h4 id="page_description" class="disappear_on_edit"> <%= @page.description %></h4>
         <input type="text" value="<%= @page.description %>" class="show_on_edit" id="version_description" style="display: none">
-        <button id="edit-page">Edit</button>
+        <input type="hidden" value="<%= params[:page_slug] %>" id="page_slug">
 
+        <button id="edit-page" class="disappear_on_edit">Edit</button>
+        <button id="save-page" style="display: none" class="show_on_edit">Save</button>
+
+        <input type="hidden" value="<%= current_user.id %>" id="version_user">
+        
         <div class="fr-view" id="page_content">
             <%= @page.content.html_safe %>
         </div>

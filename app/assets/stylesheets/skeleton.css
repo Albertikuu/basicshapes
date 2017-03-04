@@ -562,23 +562,14 @@ p, a {
   border-radius: 3px;
 }
 
-input#page_title_edit {
+input.show_on_edit {
   width: 100%;
-  font-size: 5.0rem;
+  font-size: 3.0rem;
   line-height: 1.2;
   letter-spacing: -.1rem;
   margin-bottom: 12px;
   height: auto;
 }
-
-input#page_description_edit {
-  width:100%;
-  font-size: 3rem;
-  line-height: 1.35;
-  letter-spacing: -.08rem;
-  height: auto;
-}
-
 
 
 /* This is used to center card or pop-ups */

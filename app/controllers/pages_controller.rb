@@ -22,22 +22,28 @@ class PagesController < ApplicationController
 		@page = Page.create!(page_params)
 		@page.slug = @page.slug.downcase.gsub!(' ','-')
 		@page.save
+		session[:page] = @page
 		create_version(@page)
 		# @page.title = @version.title 
 		# @page.description = @version.description
 		#redirect to commit#new
 	end
 
-	def create_version(page)
+	def first_version(page)
 		version = page.versions.create!(version_params)
 		session[:linked_version] = version
 		redirect_to(new_commit_path(@page.id, version.id))
 	end
 
+	def create_version
+		page = Page.find_by(slug: params[:page_slug])
+		version = page.versions.create!(version_params)
+		redirect_to(:back)
+	end
+
 	def show
 		page = Page.find_by(slug: params[:page_slug])
 		@page = page.versions.last
-		binding.pry
 	end
 
 	private
