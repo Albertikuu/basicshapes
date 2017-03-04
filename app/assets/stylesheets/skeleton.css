@@ -452,6 +452,10 @@ body {
   color: #CC2836;
 }
 
+.fr-view {
+  height: 20rem;
+}
+
 /* NAVS */
 
 nav {
