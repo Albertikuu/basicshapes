@@ -41,6 +41,11 @@ class PagesController < ApplicationController
 		redirect_to(:back)
 	end
 
+	def destroy
+		Page.find_by(slug: params[:page_slug]).delete
+		redirect_to('/')
+	end
+
 	def show
 		page = Page.find_by(slug: params[:page_slug])
 		@page = page.versions.last
