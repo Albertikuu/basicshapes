@@ -9,6 +9,13 @@
 
 <!-- Main body -->
 
+    <% if flash[:alert] %>
+        <div class="eight columns frame main-container">
+          <p><b><%= flash[:alert] %> </b></p>
+        </div>
+    <% end %>
+    
+
     <div class="eight columns frame main-container">
 
       <div class="create-category-row">

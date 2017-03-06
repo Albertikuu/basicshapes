@@ -6,7 +6,8 @@ class Category < ApplicationRecord
 	has_many :versions, through: :pages
 
 
-	validates_presence_of :title
+  validates :title, uniqueness: { scope: :team_id,
+    message: "this category already exists", case_sensitive: false }
 
 #validates uniqueness of name within team.categories
 

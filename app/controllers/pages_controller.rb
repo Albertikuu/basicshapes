@@ -2,7 +2,6 @@ class PagesController < ApplicationController
 	skip_before_action :verify_authenticity_token, only: :create
 
 	def index
-		binding.pry
 		# format.html { redirect_to @company, notice: 'Company was successfully updated.' }
    		# format.json {}
    		team = Team.find_by(slug: params[:team_slug])
@@ -19,25 +18,26 @@ class PagesController < ApplicationController
 	end
 
 	def create
-		@page = Page.create!(page_params)
-		@page.slug = @page.slug.downcase.gsub!(' ','-')
-		@page.save
-		session[:page] = @page
-		create_version(@page)
-		# @page.title = @version.title 
-		# @page.description = @version.description
-		#redirect to commit#new
+		page = Page.new(page_params)
+		page.slug = page.slug.downcase.gsub!(' ','-') + "-#{Page.last.id + 1}"
+		page.save
+		session[:page] = page
+		first_version(page)
 	end
 
 	def first_version(page)
 		version = page.versions.create!(version_params)
 		session[:linked_version] = version
-		redirect_to(new_commit_path(@page.id, version.id))
+		redirect_to(new_commit_path(page.id, version.id))
 	end
 
 	def create_version
 		page = Page.find_by(slug: params[:page_slug])
-		version = page.versions.create!(version_params)
+		
+		unless page.versions.last.title == version_params['title'] && page.versions.last.description == version_params['description'] && page.versions.last.content == version_params['content']	
+			version = page.versions.create!(version_params)
+		end
+		
 		redirect_to(:back)
 	end
 

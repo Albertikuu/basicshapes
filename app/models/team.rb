@@ -10,6 +10,7 @@ class Team < ApplicationRecord
 
 
 	validates_presence_of :name
-	validates_uniqueness_of :name
+	validates_uniqueness_of :name, message: 'This team name is not available'
+
 
 end
