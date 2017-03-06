@@ -16,7 +16,9 @@
         </div>
 
         <div class="six columns category-title info--right">
-          <%= link_to 'Delete category', category_path(@category.slug), method: :delete, class: "menu__text" %>
+          <%= link_to category_path(@category.title), method: :delete, class: "menu__text" do%>
+            <span class="icons"><%= render :partial => 'svg/bin' %></span>
+          <% end %>
         </div>
 
         <div class="twelve columns">
@@ -33,26 +35,31 @@
 
           <ul class="pages-list">
 
-            <li class="card-general add-page">
-              <div class="mini-card">
-                <h2 class="title">Add page</h2>
-                <p class="description"><%= link_to 'Create new pages', new_page_path %></p>
+              <li class="card-general add-page">
+                <%= link_to new_page_path do%>
+                  <div class="mini-card">
+                    <h2 class="title">Add page</h2>
+                    <p class="description">Create new page</p>
+                  </div>
+                <% end %>
+              </li>
 
-              </div>
-            </li>
+
             <% if @category.pages.length > 0 %>
                 <% @category.pages.each do |page| %>
 
                   <li class="card-general">
-                    <div class="mini-card">
-                      <h2 class="title"><%= link_to page.versions.last.title, page_display_path(session[:current_team]['slug'],@category.slug,page.slug) %></h2>
-                      <p class="description"><%= page.versions.last.description %></p>
+                    <%= link_to page_display_path(session[:current_team]['slug'],@category.slug,page.slug) do %>
+                      <div class="mini-card">
+                        <h2 class="title"><%= page.versions.last.title %></h2>
+                        <p class="description" id="page-desc"><%= page.versions.last.description %></p>
 
-                      <div class="mini-card-info">
-                        <p class="versions"><%= page.versions.length %> versions</p>
-                        <p class="commits"><%= page.commits.length %> commits</p>
+                        <div class="mini-card-info">
+                          <p class="versions"><%= page.versions.length %> versions</p>
+                          <p class="commits"><%= page.commits.length %> commits</p>
+                        </div>
                       </div>
-                    </div>
+                    <% end %>
                   </li>
 
                 <% end %>
@@ -60,8 +67,6 @@
           </ul>
 
         </div>
-
-
 
       </div>
 
@@ -71,10 +76,19 @@
 
       <div class="row">
 
+
         <ul class="users-list">
 
           <% @category.users.each do |u| %>
-          <li class="user"><%= link_to u.first_char, user_path(u) %></li>
+          <li class="user">
+            <% if u.avatar_file_name  %>
+              <%= link_to user_path(u) do %>
+                <%= image_tag u.avatar.url(:medium) %>
+              <% end %>
+            <% else %>
+              <%= link_to u.first_char, user_path(u), class: "link" %>
+            <% end %>
+          </li>
           <% end %>
 
         </ul>
@@ -96,6 +110,7 @@
           </div>
 
         <% end %>
+
       </div>
 
     </div>
@@ -107,3 +122,9 @@
   </div>
 
 </div>
+
+<script type="text/javascript">
+  var content = $('#page-desc').text();
+  if(content.length > 40)
+    $("#page-desc").text(content.substring(0,32) + '...');
+</script>

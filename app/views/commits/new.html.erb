@@ -11,37 +11,42 @@
 
     <div class="eight columns frame main-container">
 
-    <div class="create-category-row">
-      <h6 class="breadcrumb">Commit the changes</h6>
-      <p class="description">Let your team know of the latest updates. Add a message and, optionally, a screenshot of the changes.</p>
-    </div>
+      <div class="create-category-row">
+        <h6 class="breadcrumb">Commit the changes</h6>
+        <p class="description">Let your team know of the latest updates. Add a message and, optionally, a screenshot of the changes.</p>
+      </div>
 
-	  <%= form_tag({ :class => "create-page"}, html: { multipart: true }) do %>
-	  <div>
+      <div class="row">
 
-	    <label for="Commit title" >Title</label>
-	    <input type="text" id="commit_title"
-	      class="form-control">
+    	  <%= form_tag({ :class => "create-page"}, html: { multipart: true }) do %>
+      	  <div>
 
-	  </div>
+      	    <label for="Commit title" >Title</label>
+      	    <input type="text" id="commit_title"
+      	      class="form-control">
+
+      	  </div>
 
 
           <input type="hidden" id="commit_user" value="<%= current_user.id %>">
           <input type="hidden" id="linked_version" value="<%= params[:version_id] %>">
           <input type="hidden" id="linked_page" value="<%= params[:page_id] %>">
-	    <div>
-	      <textarea class="froala"></textarea>
-	    </div>
 
-	    <div class="actions">
+    	    <div>
+    	      <textarea class="froala"></textarea>
+    	    </div>
 
-	      <button class="btn btn--primary btn--right btn-commit-js">
-	  	    Commit
-	  	  </button>
+    	    <div class="actions">
 
-	    </div>
+    	      <button class="btn btn--primary btn--right btn-commit-js">
+    	  	    Commit
+    	  	  </button>
 
-	<% end %>
+    	    </div>
+
+    	  <% end %>
+
+      </div>
 
     </div>
 

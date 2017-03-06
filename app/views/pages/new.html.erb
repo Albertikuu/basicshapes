@@ -12,42 +12,40 @@
 
     <div class="eight columns frame main-container">
 
-    <div class="create-category-row">
-      <h6 class="breadcrumb">Create page</h6>
-      <p class="description">Pages are the unit of your guides. Create a new page and let your team know by committing it!</p>
-    </div>
+      <div class="create-category-row">
+        <h6 class="breadcrumb">Create page</h6>
+        <p class="description">Pages are the unit of your guides. Create a new page and let your team know by committing it!</p>
+      </div>
 
-	  <%= form_tag({}, { :class => "create-page"}) do %>
-	  <div>
+      <div class="row">
+        <%= form_tag({}, { :class => "create-page"}) do %>
+      	  <div>
+      	    <label for="Version title" >Title</label>
+      	    <input type="text" id="version_title"
+      	      class="form-control">
+      	  </div>
 
-	    <label for="Version title" >Title</label>
-	    <input type="text" id="version_title"
-	      class="form-control">
+      	  <div>
+      	    <label for="Version description">Description</label>
+      	    <textarea type="text" id="version_description"
+      	      class="form-control"></textarea>
+      	  </div>
+                <input type="hidden" id="version_user" value="<%= current_user.id %>">
+                <input type="hidden" id="page_category" value="<%= session[:current_category]['id'] %>">
+          <div>
+            <textarea class="froala"></textarea>
+          </div>
 
-	  </div>
+          <div class="actions">
 
-	  <div>
-	    <label for="Version description">Description</label>
-	    <textarea type="text" id="version_description"
-	      class="form-control"></textarea>
-	  </div>
-          <input type="hidden" id="version_user" value="<%= current_user.id %>">
-          <input type="hidden" id="page_category" value="<%= session[:current_category]['id'] %>">
+            <button class="btn btn--primary btn--right btn-page-js">
+        	    Create Page & Commit
+        	  </button>
 
+          </div>
 
-    <div>
-      <textarea class="froala"></textarea>
-    </div>
-
-    <div class="actions">
-
-      <button class="btn btn--primary btn--right btn-page-js">
-  	    Create Page & Commit
-  	  </button>
-
-    </div>
-
-	<% end %>
+    	  <% end %>
+      </div>
 
     </div>
 

@@ -14,7 +14,7 @@
 
         <h1 id="page_title" class="disappear_on_edit"><%= @page.title.capitalize %></h1>
         <input type="text" value="<%= @page.title.capitalize %>" class="show_on_edit" id="version_title" style="display: none">
-       
+
         <h4 id="page_description" class="disappear_on_edit"> <%= @page.description %></h4>
         <input type="text" value="<%= @page.description %>" class="show_on_edit" id="version_description" style="display: none">
         <input type="hidden" value="<%= params[:page_slug] %>" id="page_slug">
@@ -24,7 +24,7 @@
         <%= link_to "Commit", new_commit_path(@page.page.id, @page.id), :class => 'disappear_on_edit' %>
 
         <input type="hidden" value="<%= current_user.id %>" id="version_user">
-        
+
         <div class="fr-view" id="page_content">
             <%= @page.content.html_safe %>
         </div>

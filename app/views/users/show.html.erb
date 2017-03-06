@@ -16,18 +16,20 @@
         </div>
         <% if current_user == @user %>
         <div class="six columns breadcrumb info--right">
-          <p><%= link_to 'Edit', edit_user_registration_path %></p>
+            <%= link_to edit_user_registration_path do%>
+            <span class="icons"><%= render :partial => 'svg/edit' %></span>
+            <% end %>
         </div>
         <% end %>
 
       </div>
 
-        <div class="row row-no-border">
+        <div class="row-no-border">
 
           <div class="three columns profile-image">
             <% if current_user.avatar %>
               <%= image_tag @user.avatar.url(:medium) %>
-            <% end %> 
+            <% end %>
           </div>
 
           <div class="eight columns main-user-info">
@@ -40,20 +42,22 @@
 
             <ul class="twelve columns user-list-info">
               <li><%= render :partial => 'svg/folder' %><%= @user.location %></li>
-              <li><img><%= @user.email %></li>
+              <li><%= render :partial => 'svg/folder' %><%= @user.email %></li>
               <li><%= render :partial => 'svg/calendar' %>Joined on <%= @user.created_at.to_time.strftime("%b %d, %Y") %></li>
             </ul>
 
         </div>
-              <% if current_user == @user %>
-                <hr />
-                  <label for="user" >Uplaod a new profile picture</label>
-                  <%= form_for @user, url: user_picture_path, html: { multipart: true } do |form| %>
-                    <%= form.file_field :avatar %>
-                    <%= form.submit "Save", class: "btn  btn--primary" %>
-                  <% end %>  
-                <hr />
+
+        <div class="row row-no-padding">
+          <% if current_user == @user %>
+              <label for="user" >Upload a new profile picture</label>
+              <%= form_for @user, url: user_picture_path, html: { multipart: true } do |form| %>
+                <%= form.file_field :avatar %>
+                <%= form.submit "Save", class: "btn  btn--primary" %>
               <% end %>
+          <% end %>
+        </div>
+
         <div class="row">
 
           <p><%= @user.first_name %> is active in:</p>

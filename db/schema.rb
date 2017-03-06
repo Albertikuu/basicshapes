@@ -27,16 +27,15 @@ ActiveRecord::Schema.define(version: 20170303164706) do
   create_table "categories", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.boolean  "is_public?",  default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "team_id"
     t.string   "slug"
   end
 
   create_table "commits", force: :cascade do |t|
     t.string   "title"
-    t.text     "message"
+    t.string   "message"
     t.integer  "user_id"
     t.integer  "page_id"
     t.integer  "version_id"

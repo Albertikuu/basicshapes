@@ -33,12 +33,12 @@
               <%= link_to 'My profile', user_path(current_user) %>
             </li>
             <li>
+              <%= link_to "Create team", new_team_path %>
+            </li>
+            <li>
               <%= link_to destroy_user_session_path, method: 'delete' do %>
               <span class="red-link">Logout</span>
               <% end %>
-            </li>
-            <li>
-              <%= link_to "Create team", new_team_path %>
             </li>
           </ul>
         </div>

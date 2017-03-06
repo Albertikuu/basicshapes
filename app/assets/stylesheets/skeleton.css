@@ -452,6 +452,12 @@ body {
   color: #CC2836;
 }
 
+.fr-wrapper {
+  height: 20rem;
+}
+
+
+
 /* NAVS */
 
 nav {
@@ -586,10 +592,14 @@ input.show_on_edit {
 /* ICONS */
 
 .icons {
-  margin-top: 0.1rem;
   height: 2.0rem;
   width: 2.0rem;
   margin-right: 1.6rem;
+
+}
+
+.icons svg {
+  margin-right: 0;
 }
 
 /* DIVIDER */
@@ -616,6 +626,24 @@ input.show_on_edit {
   color: #000F28;
   letter-spacing: normal;
 
+}
+
+.menu-options > .list > a > span {
+  line-height: normal;
+  position: absolute;
+  top: 4;
+}
+
+.category-left > .list > a {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+.category-left > .list > a > span {
+  line-height: normal;
+  position: absolute;
+  top: 0;
 }
 
 /* BREADCRUMB */
@@ -858,7 +886,7 @@ input.show_on_edit {
 }
 
 .title {
-  font-size: 2.8rem;
+  font-size: 2rem;
 }
 
 .info {
@@ -869,6 +897,13 @@ input.show_on_edit {
 
 .info--right {
   text-align: right;
+  position: relative;;
+}
+
+.info--right > a > .icons {
+  margin: 0;
+  position: absolute;
+  right: 0;
 }
 
 /* COMMIT */
@@ -891,7 +926,6 @@ input.show_on_edit {
 
 .main-container > .row {
   padding: 1.6rem;
-  border-bottom: 1px solid #E6E6E6;
 }
 
 .main-container > .guidelines-row {
@@ -911,15 +945,25 @@ input.show_on_edit {
   margin-bottom: 0;
 }
 
+.row > .twelve {
+  padding-bottom: 0;
+}
+
 .row.row-no-border {
   border-bottom: 0px;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
 }
 
+.row.row-no-padding {
+  padding-bottom: 0;
+}
+
 .row--dark {
   background-color: #F7F7F7;
   padding-bottom: 0;
+  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
 }
 
 .main-container > .row--dark > .row {
@@ -963,6 +1007,7 @@ input.show_on_edit {
   display: inline-block;
   vertical-align: middle;
   line-height: 0;
+  position: relative;
 }
 
 .new-users:hover > ul {
@@ -970,6 +1015,7 @@ input.show_on_edit {
   list-style: none;
   display: block;
   position: absolute;
+  top: 100%;
   background: white;
   border-radius: 0.4rem;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
@@ -991,14 +1037,30 @@ input.show_on_edit {
 
 .users {
   padding: 1.6rem;
+  position: absolute;
+  top: 100%;
 }
+
+.users > li > a:first-child {
+  margin-top: 0;
+}
+
 
 .users li {
   display: inline-block;
   width: 100%;
-  padding-bottom: 0.8rem;
+  padding-bottom: 1.6rem;
   margin: 0;
 }
+
+.users li > a{
+  display: inline-block;
+  width: 100%;
+  line-height: 1;
+  margin-top: 0.8rem;
+}
+
+
 
 .users li:last-child {
   padding-bottom: 0;
@@ -1041,9 +1103,9 @@ input.show_on_edit {
 }
 
 .pages-list > .add-page > .mini-card:hover {
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1), 0 0 0 1px #e6e6e6;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   background-color: #FFF;
-  border: none;
+  border: 1px solid #e6e6e6;
 }
 
 /*.pages-list > li:first-child {
@@ -1099,6 +1161,8 @@ input.show_on_edit {
   list-style: none;
   margin: 0;
   display: inline-block;
+  vertical-align: middle;
+  align-items: center;
 }
 
 .user-list-info {
@@ -1114,23 +1178,47 @@ input.show_on_edit {
   letter-spacing: -0.1rem;
   text-align: center;
   display: inline-block;
+  vertical-align: middle;
   background-color: #F7F7F7;
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
-  padding-top: 0.3rem;
   margin-bottom: 0;
-  margin-right: 0.4rem;
+  margin-right: 0.8rem;
   box-sizing: border-box;
-  border: 1px solid #e6e6e6;
+}
+
+.users-list > li > a > img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 0 1px #e6e6e6;
+}
+
+.users-list > .user > .link {
+  display: inline-block;
+  padding-top: 0.4rem;
 }
 
 /* USER */
 
 
 .profile-image {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1.6rem;
+}
+
+.profile-image > img {
   display: inline-block;
   margin: 0;
+  border-radius: 50%;
 }
 
 .main-user-info h1 h3{
@@ -1149,6 +1237,23 @@ input.show_on_edit {
 
 .row > ul {
   list-style: none;
+}
+
+.user_avatar {
+  vertical-align: middle;
+  line-height: 0;
+}
+
+/* PAGE VIEWER */
+
+#page {
+  height: auto;
+}
+
+/* CREATE TEAM */
+
+#team_logo {
+  margin-bottom: 0;
 }
 
 /* Larger than mobile */
