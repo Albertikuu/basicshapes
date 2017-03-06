@@ -13,7 +13,7 @@ function createPage(event){
 		console.log(error)
 	});
  	request.success(function(data){
- 		console.log('the category request was succesful', data)
+ 		console.log('the page request was succesful', data)
  	});
 };
 

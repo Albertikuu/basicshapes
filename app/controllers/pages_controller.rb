@@ -18,8 +18,8 @@ class PagesController < ApplicationController
 	end
 
 	def create
-		page = Page.create!(page_params)
-		page.slug = page.slug.downcase.gsub!(' ','-')
+		page = Page.new(page_params)
+		page.slug = page.slug.downcase.gsub!(' ','-') + "-#{Page.last.id + 1}"
 		page.save
 		session[:page] = page
 		first_version(page)

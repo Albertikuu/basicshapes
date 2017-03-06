@@ -29,7 +29,7 @@ skip_before_action :verify_authenticity_token, only: :create
 	def create
 		@category = current_user.categories.create!(category_params)
 		@category.slug = @category.title.gsub(' ','-')
-		@category.save
+		@category.save 
 	    session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])
 		redirect_to('/')
 	end

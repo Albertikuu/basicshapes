@@ -6,6 +6,10 @@ function removeMember(event){
             team_slug: event.currentTarget.dataset.team
         });
 
-	request.fail(console.log('the category request failed'));
- 	request.done(console.log('the category request was succesful'))
+	request.fail(function(error){
+		console.log(error)
+	});
+ 	request.success(function(data){
+ 		console.log('the team request was succesful', data)
+ 	});
 }

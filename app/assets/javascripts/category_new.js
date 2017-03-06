@@ -8,7 +8,8 @@ function createCategory(event){
         });
 
 	request.fail(function(error){
-		console.log('error')
+		console.log(error);
+		alert("The category already exists!");
 	});
  	request.success(function(data){
  		console.log('the category request was succesful', data)
