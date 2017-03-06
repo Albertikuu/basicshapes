@@ -9,57 +9,55 @@
 
 <!-- Main body -->
 
-    <div class="eight columns frame">
+    <div class="eight columns frame main-container">
 
-    <div>
-      <h6 class="breadcrumb">Create a new Team</h6>
-      <p class="description">Teams share categories, members and the Guidlines Control. To start using Basicshapes, create a Team and add your colleagues or friends to it to start working on your documentation.</p>
-    </div>
+      <div class="row">
 
-	  <%= form_tag({}, { :class => "create-team"}) do %>
-	  <div>
+        <div class="twelve columns">
+          <h6 class="breadcrumb">Create a new Team</h6>
+        </div>
 
-	    <label for="Team name" >Team</label>
-	    <input type="text" name="team[title]" id="team_name"
-	      class="form-control">
+        <div class="twelve columns">
+          <p class="categories-description">Teams share categories, members and the Guidlines Control. To start using Basicshapes, create a Team and add your colleagues or friends to it to start working on your documentation.</p>
+        </div>
 
-	  </div>
-<!--
-	  <div>
-	    <label for="Category description">Description</label>
-	    <input type="text" name="team[description]" id="category_description"
-	      class="form-control">
-	  </div>
+      </div>
 
-    <div>
-      <textarea class="froala"></textarea>
-    </div>
--->
+      <div class="row">
 
+    	  <%= form_tag({}, { :class => "create-team"}) do %>
+    	  <div>
 
-    <div>
-      <label for="participants">Invite Team Members</label>
-       <input type="text" name="participants" id="participants-invite-js" 
-       placeholder="Add one or more email addresses, separated by a comma"
-	   class="form-control">
+    	    <label for="Team name" >Team</label>
+    	    <input type="text" name="team[title]" id="team_name"
+    	      class="form-control">
 
-    </div>
+    	  </div>
 
-    <div>
-      <label for="logos">Upload a logo</label>
-      <%= form_for @team, url: teams_path, html: { multipart: true } do |form| %>
-        <%= form.file_field :logo %>
-      <% end %>
-    </div>
+        <div>
+          <label for="participants">Invite Team Members</label>
+           <input type="text" name="participants" id="participants-invite-js"
+           placeholder="Add one or more email addresses, separated by a comma"
+    	   class="form-control">
 
-    <div class="actions">
+        </div>
 
-      <button class="btn btn--primary btn--right btn-teams-js">
-  	    Save
-  	  </button>
+        <div>
+          <label for="logos">Upload a logo</label>
+          <%= form_for @team, url: teams_path, html: { multipart: true } do |form| %>
+            <%= form.file_field :logo %>
+          <% end %>
+        </div>
 
-    </div>
+        <div class="actions">
 
+          <button class="btn btn--primary btn--right btn-teams-js">
+      	    Save
+      	  </button>
+
+        </div>
+
+      </div>
 	<% end %>
 
     </div>
