@@ -67,6 +67,11 @@ before_action :select_team, except: [:create, :new]
 		@teams = Team.all
 	end
 
+	def update
+	    @team.update_attribute(:logo, params[:team][:logo])
+	    redirect_to(:back)
+  	end
+
 
 	private
 

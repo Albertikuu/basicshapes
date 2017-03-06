@@ -13,6 +13,10 @@
       <div class="row">
         <h1 id="team_name"><%= @team.name.capitalize %></h1>
 
+            <% if @team.logo %>
+              <%= image_tag @team.logo.url(:medium) %>
+            <% end %>
+
         <h4> Categories in this team </h4>
 
           <ul>
@@ -20,6 +24,15 @@
             <li><%= link_to c.title.capitalize, category_display_path(@team.name, c.title)%></li>
             <% end %>
           </ul>
+
+       <div class="row row-no-padding">
+              <label for="@team" >Upload a new logo</label>
+              <%= form_for @team, url: team_path(@team.slug), html: { multipart: true } do |form| %>
+                <%= form.file_field :logo %>
+                <%= form.submit "Save", class: "btn  btn--primary" %>
+              <% end %>
+        </div>
+
 
     <h4>Users in this team</h4>
       <ul>
