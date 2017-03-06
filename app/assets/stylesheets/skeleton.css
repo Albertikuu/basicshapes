@@ -453,7 +453,7 @@ body {
 }
 
 .fr-wrapper {
-  height: 20rem;
+  min-height: 20rem;
 }
 
 
