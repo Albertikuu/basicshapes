@@ -552,7 +552,7 @@ p, a {
 /* CARD */
 
 .frame {
-  margin-bottom: 3.2rem;
+  margin-bottom: 1.6rem;
   background-color: #FFF;
   border-radius: 4px;
   border: 1px solid #E6E6E6;
@@ -887,6 +887,8 @@ input.show_on_edit {
 
 .title {
   font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
 }
 
 .info {
@@ -956,7 +958,11 @@ input.show_on_edit {
 }
 
 .row.row-no-padding {
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
+}
+
+.row-no-padding-top {
+  padding-top: 0 !important;
 }
 
 .row--dark {
@@ -1244,6 +1250,8 @@ input.show_on_edit {
   line-height: 0;
 }
 
+
+
 /* PAGE VIEWER */
 
 #page {
@@ -1254,6 +1262,17 @@ input.show_on_edit {
 
 #team_logo {
   margin-bottom: 0;
+}
+
+/* TEAM DETAILS */
+
+.team_name {
+  padding: 0;
+}
+
+.category-list {
+  margin-bottom: 0;
+  list-style: none;
 }
 
 /* Larger than mobile */

@@ -25,36 +25,43 @@
 
       <div class="row">
 
-    	  <%= form_tag({}, { :class => "create-team"}) do %>
-    	  <div>
+        <div class="twelve columns">
 
-    	    <label for="Team name" >Team</label>
-    	    <input type="text" name="team[title]" id="team_name"
-    	      class="form-control">
+          <%= form_tag({}, { :class => "create-team"}) do %>
+      	  <div>
 
-    	  </div>
+      	    <label for="Team name" >Team</label>
+      	    <input type="text" name="team[title]" id="team_name"
+      	      class="form-control">
 
-        <div>
-          <label for="participants">Invite Team Members</label>
-           <input type="text" name="participants" id="participants-invite-js"
-           placeholder="Add one or more email addresses, separated by a comma"
-    	   class="form-control">
+      	  </div>
+
+          <div>
+            <label for="participants">Invite Team Members</label>
+             <input type="text" name="participants" id="participants-invite-js"
+             placeholder="Add one or more email addresses, separated by a comma"
+      	   class="form-control">
+
+          </div>
+
+          <div>
+            <label for="logos">Upload a logo</label>
+            <%= form_for @team, url: teams_path, html: { multipart: true } do |form| %>
+              <%= form.file_field :logo %>
+            <% end %>
+          </div>
 
         </div>
 
-        <div>
-          <label for="logos">Upload a logo</label>
-          <%= form_for @team, url: teams_path, html: { multipart: true } do |form| %>
-            <%= form.file_field :logo %>
-          <% end %>
-        </div>
+        <div class="twelve columns">
+          
+          <div class="actions">
 
-        <div class="actions">
+            <button class="btn btn--primary btn--right btn-teams-js">
+        	    Save
+        	  </button>
 
-          <button class="btn btn--primary btn--right btn-teams-js">
-      	    Save
-      	  </button>
-
+          </div>
         </div>
 
       </div>
