@@ -49,6 +49,9 @@ class PagesController < ApplicationController
 	def show
 		page = Page.find_by(slug: params[:page_slug])
 		@page = page.versions.last
+		@edit_commit_list = page.versions + page.commits
+		@edit_commit_list.sort_by(&:created_at).reverse
+
 	end
 
 	private

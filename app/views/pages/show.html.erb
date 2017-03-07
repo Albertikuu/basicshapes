@@ -35,6 +35,16 @@
         </div>
 
         <hr/>
+          <ul>
+          <% @edit_commit_list.each do |element| %>
+            <% if element.class == Commit %>
+              <li class="commit-list">Commit: <%= element.title + ", " + element.created_at.to_time.strftime("%a, %d %B %Y") %></li>
+            <% else %>
+              <li class="edit-list">Edit: <%= element.title + ", " + element.created_at.to_time.strftime("%a, %d %B %Y") %></li>
+            <% end %>
+          <% end %>  
+          </ul>
+        <hr/>
           <%= link_to page_path(@page.page.slug), method: :delete, class: "menu__text" do%>
             <span class="icons"><%= render :partial => 'svg/bin' %></span>
           <% end %>
