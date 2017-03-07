@@ -649,15 +649,6 @@ input.show_on_edit {
 /* BREADCRUMB */
 
 .create-category-row > .breadcrumb {
-  margin: 0;
-  margin-top: 0.8rem;
-  margin-bottom: 0.8rem;
-  padding: 0;
-}
-
-.row > .breadcrumb {
-  margin: 0;
-  margin-top: 0.8rem;
   margin-bottom: 0.8rem;
   padding: 0;
 }
@@ -665,7 +656,6 @@ input.show_on_edit {
 .breadcrumb {
   color: #636A71;
   font-size: 1.4rem;
-  margin: 0;
 }
 
 /* DESCRIPTION */
@@ -904,8 +894,6 @@ input.show_on_edit {
 
 .info--right > a > .icons {
   margin: 0;
-  position: absolute;
-  right: 0;
 }
 
 /* COMMIT */
@@ -917,7 +905,8 @@ input.show_on_edit {
 }
 
 .commit__description {
-  margin-top: 1.6rem;
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
 }
 
 /* CONTAINER */
@@ -995,7 +984,6 @@ input.show_on_edit {
 .category-title {
   color: #636A71;
   font-size: 1.4rem;
-  margin: 0;
 }
 
 .categories-options {

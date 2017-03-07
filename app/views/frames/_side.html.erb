@@ -37,7 +37,7 @@
           <div class="list">
 
             <%= link_to show_team_path(session[:current_team]['slug']) do %>
-              <%= render :partial => 'svg/guidelines'%>
+              <%= render :partial => 'svg/details'%>
               <span>Team details</span>
             <% end %>
           </div>
@@ -45,7 +45,7 @@
           <div class="list">
 
             <%= link_to root_path do %>
-              <%= render :partial => 'svg/guidelines' %>
+              <%= render :partial => 'svg/commit' %>
               <span>Commits</span>
             <% end %>
           </div>

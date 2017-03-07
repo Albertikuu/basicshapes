@@ -23,7 +23,7 @@
               </div>
 
               <div class="six columns breadcrumb info--right">
-                  <%= "#{commit.created_at.to_time.strftime("%a , %d %B %Y")}" %>
+                  <%= "#{commit.created_at.to_time.strftime("%a, %d %B %Y")}" %>
               </div>
 
             </div>
@@ -49,26 +49,31 @@
 
         <div class="frame main-container">
 
-          <div class="guidelines-row">
+          <div class="row row-no-padding">
 
-            <p class="title">Welcome to Basic Shapes</p>
-
-            <div class="six columns breadcrumb info">
-
-                <span class="icons"><%= render :partial => 'svg/calendar' %></span><%= "#{session[:current_team]['created_at'].to_time.strftime("%A ,%d %B %Y")}" %>
-
+            <div class="six columns">
+              <span>Albert Ramirez created the team</span>
             </div>
 
-            <div class="six columns info info--right">
-              <%= link_to ("#{session[:current_team]['name']}").capitalize, "/#{session[:current_team]['slug']}" %>
+            <div class="six columns breadcrumb info--right">
+                <%= "#{session[:current_team]['created_at'].to_time.strftime("%a, %d %B %Y")}" %>
             </div>
 
           </div>
 
-          <div class="row">
+          <div class="guidelines-row">
+
+            <p class="title">Welcome to Basic Shapes</p>
+
+          </div>
+
+          <div class="row row-no-padding-top">
+
+            <p class="commit__description">Basicshapes offers a new way to create documentation for any type of business, ofering a seamless collaboration between teams.</p>
+
             <img src="<%= asset_path('welcome.png')%>" alt="" class="commit__image">
 
-            <p class="commit__description">Basic shapes offers a new way to create documentation for design and marketing, ofering a seamless collaboration between teams.</p>
+            <p class="commit__description">While using Basicshapes...</p>
           </div>
 
         </div>
