@@ -9,6 +9,9 @@ $('.btn-category-js').on('click', createCategory);
 $('.btn-page-js').on('click', createPage);
 $('.btn-commit-js').on('click', createCommit);
 
+$('.edit-category-name').on('click', editCategory);
+$('.edit-category-save').on('click', updateCategory);
+
 $('#addusers-js').on('click', function(event){
 event.preventDefault();
 $('#list-js').toggle();

@@ -13,6 +13,7 @@
 
         <div class="six columns">
           <h6 class="category-title"><%= @category.title.capitalize %></h6>
+          <input type="text" style="display: none" id="category-title" value="<%= @category.title.capitalize %>">
         </div>
 
         <div class="six columns category-title info--right">
@@ -31,7 +32,7 @@
 
       <div class="main-container row--dark">
 
-        <div class="row">
+        <div class="row category-bottom">
 
           <ul class="pages-list">
 
@@ -65,7 +66,7 @@
                 <% end %>
             <% end %>
           </ul>
-
+          
         </div>
 
       </div>
@@ -111,6 +112,10 @@
 
         <% end %>
 
+          <div class="category-edits">
+              <button class="btn btn--primary edit-category-name disappear_on_edit">Edit category</button>
+              <button class="btn btn--primary edit-category-save show_on_edit" style="display: none" name="<%= @category.slug %>">Save changes</button>
+          </div>
       </div>
 
     </div>

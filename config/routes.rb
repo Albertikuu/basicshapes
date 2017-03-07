@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   resources :users
   patch '/users/:id', to: 'users#update', as: 'user_picture'
   resources :pages, param: :page_slug, except: [:index, :show]
-  resources :categories, param: :title_slug, except: [:index, :show]
+  resources :categories, param: :title_slug, except: [:index, :show, :update]
   post '/categories/add_user/:title_slug/:user_id', as: 'category_add_user', to: 'categories#add_user'
+  post '/categories/update', to: 'categories#update', as:'update_category'
   resources :teams, param: :team_slug, except: [:index, :show]
   resources :commits, except: [:index, :show, :new]
 

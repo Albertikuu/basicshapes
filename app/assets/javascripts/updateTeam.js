@@ -1,6 +1,5 @@
 function removeMember(event){
 	event.preventDefault;
-	debugger;
     request = $.post("/teams/remove_member", {
             user_id: event.currentTarget.id,
             team_slug: event.currentTarget.dataset.team
