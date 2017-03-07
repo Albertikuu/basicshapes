@@ -22,12 +22,22 @@
         <button id="edit-page" class="disappear_on_edit">Edit</button>
         <button id="save-page" style="display: none" class="show_on_edit">Save</button>
         <%= link_to "Commit", new_commit_path(@page.page.id, @page.id), :class => 'disappear_on_edit' %>
+            
+          <div class="[put_name_here]">
+            <p class="versions"><%= @page.page.versions.length %> edit<% if @page.page.versions.length > 1%>s<% end%></p>
+            <p class="commits"><%= @page.page.commits.length %> commit<% if @page.page.versions.length > 1%>s<% end%></p>
+          </div>
 
         <input type="hidden" value="<%= current_user.id %>" id="version_user">
 
         <div class="fr-view" id="page_content">
             <%= @page.content.html_safe %>
         </div>
+
+        <hr/>
+          <%= link_to page_path(@page.page.slug), method: :delete, class: "menu__text" do%>
+            <span class="icons"><%= render :partial => 'svg/bin' %></span>
+          <% end %>
 
       </div>
 

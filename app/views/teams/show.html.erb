@@ -13,7 +13,12 @@
       <div class="row row-no-padding">
 
         <div class="six columns">
-          <h1 class="title team_name"><%= @team.name.capitalize %></h1>
+          <h1 class="title team_name">
+            <% if @team.logo %>
+              <%= image_tag @team.logo.url(:medium) %>
+              <%= @team.name.capitalize %>
+            <% end %>
+          </h1>
         </div>
 
         <div class="six columns info--right">
@@ -28,38 +33,48 @@
 
         <div class="twelve columns">
 
-          <h4> Categories in this team </h4>
+        <h4> Categories in this team </h4>
 
             <ul class="category-list">
               <% @team.categories.each do |c| %>
-              <li><%= link_to c.title.capitalize, category_display_path(@team.name, c.title)%></li>
+              <li>
+                  <%= link_to c.title.capitalize, category_display_path(@team.name, c.title)%>
+              </li>
               <% end %>
             </ul>
+
+            <div class="row row-no-padding">
+                   <label for="@team" >Upload a new logo</label>
+                   <%= form_for @team, url: team_path(@team.slug), html: { multipart: true } do |form| %>
+                     <%= form.file_field :logo %>
+                     <%= form.submit "Save", class: "btn  btn--primary" %>
+                   <% end %>
+             </div>
 
         </div>
 
       </div>
 
       <div class="row">
-
-        <div class="twelve columns">
+          <!-- USERS -->
 
           <h4>Users in this team</h4>
 
-          <ul class="users-list">
-            <% @team.users.each do |u| %>
-              <li class="user">
-                <% if u.avatar_file_name %>
-                  <%= link_to user_path(u) do %>
-                    <%= image_tag u.avatar.url(:medium) %>
+            <ul class="users-list">
+              <% @team.users.each do |u| %>
+                <li class="user">
+                  <% if u.avatar_file_name %>
+                    <%= link_to user_path(u) do %>
+                      <%= image_tag u.avatar.url(:medium) %>
+                    <% end %>
+                  <% else %>
+                      <%= link_to u.first_char, user_path(u), class: "link" %>
                   <% end %>
-                <% else %>
-                    <%= link_to u.first_char, user_path(u), class: "link" %>
-                <% end %>
-                <a class="remove-member-js" id="<%= u.id %>" data-team="<%= @team.slug %>" >(x)</a>
-              </li>
-            <% end %>
-          </ul>
+                  <a class="remove-member-js" id="<%= u.id %>" data-team="<%= @team.slug %>" >(x)</a>
+                </li>
+              <% end %>
+            </ul>
+
 
           <% if flash %>
             <em><%= flash[:error] %></em>

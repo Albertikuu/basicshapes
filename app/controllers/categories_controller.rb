@@ -2,12 +2,12 @@ class CategoriesController < ApplicationController
 before_action :authenticate_user!
 before_action :find_teams
 include Find_teams
-skip_before_action :verify_authenticity_token, only: :create
+skip_before_action :verify_authenticity_token, only: [:create, :update]
 
 
 	def show
 		current_team = Team.find_by(id: session[:current_team]["id"])
-		@category = Category.find_by(slug: params[:title_slug])
+		@category = current_team.categories.find_by(slug: params[:title_slug])
 		@team_users = current_team.users.select {|user| user.categories.exclude?(@category)}
 		session[:current_category] = @category
 		unless @category.users.include?(current_user)
@@ -38,6 +38,13 @@ skip_before_action :verify_authenticity_token, only: :create
 		Category.find_by(slug: params[:title_slug]).delete
 	    session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])
 		redirect_to('/')
+	end
+
+	def update
+		category = Category.find_by(slug: params[:title_slug])
+		category.update_attribute(:title, params[:title])
+		session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])
+		redirect_to(:back)
 	end
 
 	def add_user

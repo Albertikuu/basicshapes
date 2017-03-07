@@ -27,16 +27,23 @@ before_action :select_team, except: [:create, :new]
 	end
 
 	def create
-		@team = current_user.teams.create!(team_params)
-		session[:current_team] = @team
-		session[:categories] = []
-		params[:members].each do |email|
-			member = User.find_by(email: email)
-			@team.users << member
+		@team = Team.new(team_params)
+		if @team.valid?
+			session[:current_team] = @team
+			session[:categories] = []
+			params[:members].each do |email|
+				member = User.find_by(email: email)
+				@team.users << member
+			end
+			@team.slug = @team.name.gsub(' ','-')
+			@team.users << current_user
+			@team.save
+			redirect_to('/')
+		else
+			flash[:alert] = @team.errors.messages[:name][0]
+			@team.delete
+			redirect_to(:back)
 		end
-		@team.slug = @team.name.gsub(' ','-')
-		@team.save
-		redirect_to('/')
 	end
 
 	def destroy
@@ -59,6 +66,11 @@ before_action :select_team, except: [:create, :new]
 	def find
 		@teams = Team.all
 	end
+
+	def update
+	    @team.update_attribute(:logo, params[:team][:logo])
+	    redirect_to(:back)
+  	end
 
 
 	private

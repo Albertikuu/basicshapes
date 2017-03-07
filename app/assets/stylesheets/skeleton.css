@@ -426,6 +426,10 @@ there.
   border-radius: 5px;
 }
 
+.category-edits {
+  float: right;
+}
+
 /* END PROVISIONAL STYLES */
 
 .empty {
@@ -453,7 +457,7 @@ body {
 }
 
 .fr-wrapper {
-  height: 20rem;
+  min-height: 20rem;
 }
 
 
