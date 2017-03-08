@@ -4,6 +4,7 @@ class Category < ApplicationRecord
 	belongs_to :team
 	has_many :pages
 	has_many :versions, through: :pages
+	has_many :documents, as: :documentable
 
 
   validates :title, uniqueness: { scope: :team_id,

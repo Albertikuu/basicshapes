@@ -3,7 +3,7 @@ event.preventDefault();
 
 	var newTitle = $('#category-title').val()
 
-    request = $.post("/categories/update", {
+    request = $.post("/categories/change_title", {
             title: newTitle.toLowerCase(),
             title_slug: $('edit-category-save').context.activeElement.name
         });
