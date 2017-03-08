@@ -71,7 +71,7 @@ class PagesController < ApplicationController
 	end
 
 	def document_params
-		params.require(:document).permit(:content_type, :headers, :original_filename, :tempfile)
+		params.require(:document).permit(:file)
 	end
 	
 end
