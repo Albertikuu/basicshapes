@@ -12,7 +12,7 @@
 
       <div class="row" id="page">
 
-        <h1 id="page_title" class="disappear_on_edit"><%= @page.title.capitalize %></h1>
+        <h1 id="page_title" class="disappear_on_edit"><%= @page.title %></h1>
         <input type="text" value="<%= @page.title.capitalize %>" class="show_on_edit" id="version_title" style="display: none">
 
         <h4 id="page_description" class="disappear_on_edit"> <%= @page.description %></h4>
@@ -22,11 +22,17 @@
         <button id="edit-page" class="disappear_on_edit">Edit</button>
         <button id="save-page" style="display: none" class="show_on_edit">Save</button>
         <%= link_to "Commit", new_commit_path(@page.page.id, @page.id), :class => 'disappear_on_edit' %>
-            
-          <div class="[put_name_here]">
-            <p class="versions"><%= @page.page.versions.length %> edit<% if @page.page.versions.length > 1%>s<% end%></p>
-            <p class="commits"><%= @page.page.commits.length %> commit<% if @page.page.versions.length > 1%>s<% end%></p>
+        
+<!-- PROVISIONAL FILES, COMMIT AND EDIT INFO ON TOP, TO BE STYLED -->            
+          <div class="[put_name_here]" id="eclink">
+          <a id="eclink">
+              <p class="versions"><%= @page.page.versions.length %> edit<% if @page.page.versions.length > 1%>s<% end%> - <%= @page.page.commits.length %> commit<% if @page.page.commits.length > 1%>s<% end%></p>
+          </a>    
+            <% if @files.length > 0 %>
+              <a id="file-link"><p class="files"><%= @files.length %> file<% if @files.length > 1%>s<%end%> attached</p></a>
+            <% end %>  
           </div>
+<!-- END PROVISIONAL FILES, COMMIT AND EDIT INFO ON TOP, TO BE STYLED -->            
 
         <input type="hidden" value="<%= current_user.id %>" id="version_user">
 
@@ -34,28 +40,69 @@
             <%= @page.content.html_safe %>
         </div>
 
+<!-- EDIT AND COMMITS LIST, TO BE STYLED -->
         <hr/>
+          <ul id="edit-commit-list">
+          <% @edit_commit_list.each do |element| %>
+            <% if element.class == Commit %>
+              <li class="commit-list">Commit: <%= element.title + ", " + element.created_at.to_time.strftime("%a, %d %B %Y") %></li>
+            <% else %>
+              <li class="edit-list">Edit: <%= element.title + ", " + element.created_at.to_time.strftime("%a, %d %B %Y") %></li>
+            <% end %>
+          <% end %>  
+          </ul>
+        <hr/>
+<!-- END EDIT AND COMMITS LIST, TO BE STYLED -->
+
           <%= link_to page_path(@page.page.slug), method: :delete, class: "menu__text" do%>
             <span class="icons"><%= render :partial => 'svg/bin' %></span>
           <% end %>
+          
+<!-- ADD FILES, TO BE STYLED -->
+           <p>Attach a file to this page</p>
+          <%= form_for Document.new, url: add_file_to_page_path, html: { id: 'edit_page', multipart: true } do |form| %>
+              <%= form.file_field :file %>
+          <% end %>
+<!-- END ADD FILES -->
+      </div> <!-- end row -->
 
-      </div>
+<!-- TEMPORARY FILE DISPLAY -->
+
+      <% if @files.length > 0 %>
+        
+        
+        <div class="main-container row--dark" id="#file-list">
+
+          <div class="row category-bottom">
+
+            <h4>Files</h4>
+            <ul class="pages-list">
+
+
+                  <% @files.each do |file| %>
+
+                    <li class="card-general">
+                      <%= link_to file.file.url do %>
+                        <div class="mini-card">
+                          <h2 class="title"><%= file.file_file_name %></h2>
+                          <p class="description" id="page-desc"><%= file.file_content_type %></p>
+                        </div>
+                      <% end %>
+                    </li>
+
+                  <% end %>
+            </ul>
+            
+          </div>
+
+        </div>
+      <% end %>
+
+<!-- END TEMPORARY FILE DISPLAY -->
+
 
     </div>
 
   </div>
 
 </div>
-
-
-<!-- <script>
-
-  $('#edit-page').on('click', function(){
-      $('div.fr-view').froalaEditor({
-      toolbarInline: true,
-      charCounterCount: false,
-      toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'color', 'emoticons', '-', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'indent', 'outdent', '-', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo']
-    })
-  })
-
-</script> -->

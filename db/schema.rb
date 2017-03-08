@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303164706) do
+ActiveRecord::Schema.define(version: 20170308140532) do
 
   create_table "cat_users", force: :cascade do |t|
     t.integer  "user_id"
@@ -43,6 +43,20 @@ ActiveRecord::Schema.define(version: 20170303164706) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "documentable_type"
+    t.integer  "documentable_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.index ["documentable_type", "documentable_id"], name: "index_documents_on_documentable_type_and_documentable_id", using: :btree
   end
 
   create_table "pages", force: :cascade do |t|

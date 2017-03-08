@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
 before_action :authenticate_user!
 before_action :find_teams
 include Find_teams
-skip_before_action :verify_authenticity_token, only: [:create, :update]
+skip_before_action :verify_authenticity_token, only: [:create, :change_title]
 
 
 	def show
@@ -40,7 +40,7 @@ skip_before_action :verify_authenticity_token, only: [:create, :update]
 		redirect_to('/')
 	end
 
-	def update
+	def change_title
 		category = Category.find_by(slug: params[:title_slug])
 		category.update_attribute(:title, params[:title])
 		session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])
@@ -53,16 +53,20 @@ skip_before_action :verify_authenticity_token, only: [:create, :update]
 		redirect_to(:back)
 	end
 
-	# def toggle_public
-	# 	category = Category.find_by(slug: params[:title_slug])
-	#     if category.is_public? = false
-	#     	category.update_attribute(:is_public?, true)
-	#     		toggle_pages(category)
-	#     else
-	#     	category.update_attribute(:is_public?, false)
-	#     		toggle_pages(category)
-	#     end
-	# end
+	def toggle_public
+		category = Category.find_by(slug: params[:title_slug])
+	    if category.is_public? == false
+	    	category.update_attribute(:is_public?, true)
+	    
+	    else
+	    	category.update_attribute(:is_public?, false)
+	    end
+	end
+
+	def add_file
+		Category.find_by(slug: session[:current_category][:slug]).documents.create!(document_params)
+		redirect_to(:back)
+	end
 
 
 
@@ -71,6 +75,11 @@ skip_before_action :verify_authenticity_token, only: [:create, :update]
 
 	def category_params
 		params.permit(:title, :description, :team_id)
+	end
+
+	
+	def document_params
+		params.require(:document).permit(:file)
 	end
 
 end

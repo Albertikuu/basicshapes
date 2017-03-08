@@ -57,7 +57,7 @@
 
                         <div class="mini-card-info">
                           <p class="versions"><%= page.versions.length %> edit<% if page.versions.length > 1%>s<% end%></p>
-                          <p class="commits"><%= page.commits.length %> commit<% if page.versions.length > 1%>s<% end%></p>
+                          <p class="commits"><%= page.commits.length %> commit<% if page.commits.length > 1%>s<% end%></p>
                         </div>
                       </div>
                     <% end %>
@@ -113,10 +113,17 @@
         <% end %>
 
           <div class="category-edits">
-              <button class="btn btn--primary edit-category-name disappear_on_edit">Edit category</button>
+              <button class="btn btn--primary edit-category-name disappear_on_edit">Change name</button>
               <button class="btn btn--primary edit-category-save show_on_edit" style="display: none" name="<%= @category.slug %>">Save changes</button>
           </div>
       </div>
+
+      <!-- ADD FILES, TO BE STYLED AND POSITIONED ON THE PAGE-->
+           <p>Attach a file to this category</p>
+          <%= form_for Document.new, url: add_file_to_category_path, html: { id: 'edit_page', multipart: true } do |form| %>
+              <%= form.file_field :file %>
+          <% end %>
+      <!-- END ADD FILES -->
 
     </div>
 <!-- Empty Column -->
