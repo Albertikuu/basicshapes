@@ -23,6 +23,10 @@ $('#eclink').on('click',function(){
   document.querySelector('#edit-commit-list').scrollIntoView({ behavior: 'smooth' });
 });
 
+$('#file-link').on('click',function(){
+  document.querySelector('#file-list').scrollIntoView({ behavior: 'smooth' });
+});
+
 document.getElementById("document_file").onchange = function() {
     document.getElementById("edit_page").submit();
 };
