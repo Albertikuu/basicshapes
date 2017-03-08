@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   end
   resources :users
   patch '/users/:id', to: 'users#update', as: 'user_picture'
+  post 'pages/add_file', to: 'pages#add_file', as: 'add_file_to_page'
   resources :pages, param: :page_slug, except: [:index, :show]
   resources :categories, param: :title_slug, except: [:index, :show, :update]
   post '/categories/add_user/:title_slug/:user_id', as: 'category_add_user', to: 'categories#add_user'
-  post '/categories/update', to: 'categories#update', as:'update_category'
+  post '/categories/change_title', to: 'categories#change_title', as:'update_category_title'
   resources :teams, param: :team_slug, except: [:index, :show]
   resources :commits, except: [:index, :show, :new]
 

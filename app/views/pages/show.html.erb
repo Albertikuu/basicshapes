@@ -12,7 +12,7 @@
 
       <div class="row" id="page">
 
-        <h1 id="page_title" class="disappear_on_edit"><%= @page.title.capitalize %></h1>
+        <h1 id="page_title" class="disappear_on_edit"><%= @page.title %></h1>
         <input type="text" value="<%= @page.title.capitalize %>" class="show_on_edit" id="version_title" style="display: none">
 
         <h4 id="page_description" class="disappear_on_edit"> <%= @page.description %></h4>
@@ -23,9 +23,9 @@
         <button id="save-page" style="display: none" class="show_on_edit">Save</button>
         <%= link_to "Commit", new_commit_path(@page.page.id, @page.id), :class => 'disappear_on_edit' %>
             
-          <div class="[put_name_here]">
-            <p class="versions"><%= @page.page.versions.length %> edit<% if @page.page.versions.length > 1%>s<% end%></p>
-            <p class="commits"><%= @page.page.commits.length %> commit<% if @page.page.versions.length > 1%>s<% end%></p>
+          <div class="[put_name_here]" id="eclink">
+              <p class="versions"><%= @page.page.versions.length %> edit<% if @page.page.versions.length > 1%>s<% end%></p>
+              <p class="commits"><%= @page.page.commits.length %> commit<% if @page.page.commits.length > 1%>s<% end%></p>
           </div>
 
         <input type="hidden" value="<%= current_user.id %>" id="version_user">
@@ -35,7 +35,7 @@
         </div>
 
         <hr/>
-          <ul>
+          <ul id="edit-commit-list">
           <% @edit_commit_list.each do |element| %>
             <% if element.class == Commit %>
               <li class="commit-list">Commit: <%= element.title + ", " + element.created_at.to_time.strftime("%a, %d %B %Y") %></li>
@@ -48,7 +48,9 @@
           <%= link_to page_path(@page.page.slug), method: :delete, class: "menu__text" do%>
             <span class="icons"><%= render :partial => 'svg/bin' %></span>
           <% end %>
-
+          <%= form_for Document.new, url: add_file_to_page_path, html: { id: 'edit_page', multipart: true } do |form| %>
+              <%= form.file_field :file %>
+          <% end %>
       </div>
 
     </div>
@@ -56,16 +58,3 @@
   </div>
 
 </div>
-
-
-<!-- <script>
-
-  $('#edit-page').on('click', function(){
-      $('div.fr-view').froalaEditor({
-      toolbarInline: true,
-      charCounterCount: false,
-      toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'color', 'emoticons', '-', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'indent', 'outdent', '-', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo']
-    })
-  })
-
-</script> -->

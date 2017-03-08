@@ -19,6 +19,13 @@ $('#list-js').toggle();
 
 $('.remove-member-js').on('click', removeMember)
 
+$('#eclink').on('click',function(){
+  document.querySelector('#edit-commit-list').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById("document_file").onchange = function() {
+    document.getElementById("edit_page").submit();
+};
 
 });
 

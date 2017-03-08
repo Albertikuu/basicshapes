@@ -19,7 +19,7 @@ class PagesController < ApplicationController
 
 	def create
 		page = Page.new(page_params)
-		page.slug = page.slug.downcase.gsub!(' ','-') + "-#{Page.last.id + 1}"
+		page.slug = page.slug.downcase.gsub(' ','-') + "-#{Page.last.id + 1}"
 		page.save
 		session[:page] = page
 		first_version(page)
@@ -50,7 +50,14 @@ class PagesController < ApplicationController
 		page = Page.find_by(slug: params[:page_slug])
 		@page = page.versions.last
 		@edit_commit_list = (page.versions + page.commits).sort_by(&:created_at).reverse
+		session[:page] = page
+	end
 
+	def add_file
+		# binding.pry
+		Page.find_by(slug: session[:page][:slug]).documents.create!(document_params)
+		# binding.pry
+		redirect_to(:back)
 	end
 
 	private
@@ -61,6 +68,10 @@ class PagesController < ApplicationController
 
 	def version_params
 		params.permit(:title, :description, :content, :user_id, :page_id)
+	end
+
+	def document_params
+		params.require(:document).permit(:file)
 	end
 	
 end
