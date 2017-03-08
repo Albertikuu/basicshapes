@@ -55,9 +55,7 @@ class PagesController < ApplicationController
 	end
 
 	def add_file
-		# binding.pry
 		Page.find_by(slug: session[:page][:slug]).documents.create!(document_params)
-		# binding.pry
 		redirect_to(:back)
 	end
 
