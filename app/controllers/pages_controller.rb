@@ -48,9 +48,10 @@ class PagesController < ApplicationController
 
 	def show
 		page = Page.find_by(slug: params[:page_slug])
+		session[:page] = page
 		@page = page.versions.last
 		@edit_commit_list = (page.versions + page.commits).sort_by(&:created_at).reverse
-		session[:page] = page
+		@files = page.documents
 	end
 
 	def add_file
