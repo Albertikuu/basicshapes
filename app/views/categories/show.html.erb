@@ -53,7 +53,7 @@
                     <%= link_to page_display_path(session[:current_team]['slug'],@category.slug,page.slug) do %>
                       <div class="mini-card">
                         <h2 class="title"><%= page.versions.last.title %></h2>
-                        <p class="description" id="page-desc"><%= page.versions.last.description %></p>
+                        <p class="description page-desc"><%= page.versions.last.description %></p>
 
                         <div class="mini-card-info">
                           <p class="versions"><%= page.versions.length %> edit<% if page.versions.length > 1%>s<% end%></p>
@@ -136,7 +136,7 @@
 </div>
 
 <script type="text/javascript">
-  var content = $('#page-desc').text();
+  var content = $('.page-desc').text();
   if(content.length > 40)
-    $("#page-desc").text(content.substring(0,32) + '...');
+    $(".page-desc").text(content.substring(0,32) + '...');
 </script>

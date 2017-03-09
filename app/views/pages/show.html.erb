@@ -12,36 +12,45 @@
     <div class="frame main-container">
 
       <div class="row row-no-padding">
-        <div class="eleven columns">
+        <div class="nine columns">
           <p>
             <span style="font-weight: 500;">Last change:</span>
             <%= @edit_commit_list.last.title %>
             <%= @edit_commit_list.last.created_at.to_time.strftime("%a, %d %B %Y") %>
           </p>
         </div>
-        <div class="one columns info--right">
-          <%= link_to page_path(@page.page.slug), method: :delete, class: "menu__text" do%>
+        <div class="three columns info--right">
+          <div id="page-edited">
+              <button id="save-page" style="display: none" class="show_on_edit btn--primary btn">Save</button>
+          </div>
+          <%= link_to page_path(@page.page.slug), method: :delete, class: "menu__text disappear_on_edit" do%>
             <span><%= render :partial => 'svg/bin' %></span>
           <% end %>
+
         </div>
       </div>
 
         <div class="row">
           <div class="twelve columns">
             <h1 id="page_title" class="disappear_on_edit title"><%= @page.title %></h1>
+
+            <label style="display: none" class="show_on_edit">Title</label>
             <input type="text" value="<%= @page.title.capitalize %>" class="show_on_edit" id="version_title" style="display: none">
+
           </div>
         </div>
 
         <div class="row row-no-padding-top">
           <div class="twelve columns">
             <p id="page_description" class="disappear_on_edit description"> <%= @page.description %></p>
+
+            <label style="display: none" class="show_on_edit">Description</label>
             <input type="text" value="<%= @page.description %>" class="show_on_edit" id="version_description" style="display: none">
             <input type="hidden" value="<%= params[:page_slug] %>" id="page_slug">
           </div>
         </div>
 
-        <div class="row page-summary row-no-padding-top">
+        <div class="row page-summary row-no-padding-top disappear_on_edit">
 
           <div class="six columns">
             <div class="basic-info" id="eclink">
@@ -56,7 +65,7 @@
               <% if @files.length > 0 %>
                 <a id="file-link">
                   <span class="number"><%= @files.length %></span>
-                  <span class="link-icon"><%= render :partial => 'svg/folder' %></span>
+                  <span class="link-icon"><%= render :partial => 'svg/attach' %></span>
                 </a>
               <% end %>
             </div>
@@ -64,7 +73,6 @@
 
         <div id="page" class="six columns info--right">
           <button id="edit-page" class="disappear_on_edit btn btn--secondary btn">Edit</button>
-          <button id="save-page" style="display: none" class="show_on_edit btn--primary btn">Save</button>
           <%= link_to "New commit", new_commit_path(@page.page.id, @page.id), :class => 'disappear_on_edit btn--primary btn create btn--separation' %>
         </div>
 
@@ -85,7 +93,7 @@
 
 <!-- EDIT AND COMMITS LIST, TO BE STYLED -->
 
-      <div class="row">
+      <div class="row disappear_on_edit">
 
         <div class="twelve columns">
 
@@ -111,13 +119,11 @@
 
     </div>
 
-      <div class="frame main-container">
+      <div class="frame main-container disappear_on_edit">
 
           <div class="row">
             <h4 class="title">Files</h4>
           </div>
-
-            <% if @files.length > 0 %>
 
               <div class="main-container row--dark" id="#file-list">
 
@@ -148,8 +154,6 @@
                   </ul>
                 </div>
               </div>
-
-            <% end %>
       </div>
     </div>
 

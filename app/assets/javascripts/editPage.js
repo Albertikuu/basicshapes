@@ -5,4 +5,5 @@ function editPage(){
     $('div.fr-view').froalaEditor({
       initOnClick: true
     });
+    $('.fr-element').focus();
 }
