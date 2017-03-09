@@ -27,10 +27,13 @@ $('#file-link').on('click',function(){
   document.querySelector('#file-list').scrollIntoView({ behavior: 'smooth' });
 });
 
+document.querySelector(".add-file").onclick = function(e) {
+    e.preventDefault();
+    document.getElementById("document_file").click();
+};
+
 document.getElementById("document_file").onchange = function() {
     document.getElementById("edit_page").submit();
 };
 
 });
-
-

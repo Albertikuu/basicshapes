@@ -7,32 +7,73 @@
   <%= render "frames/side" %>
 
 <!-- Main body -->
+    <div class="eight columns">
 
-    <div class="eight columns frame main-container">
+    <div class="frame main-container">
 
-      <div class="row" id="page">
+      <div class="row row-no-padding">
+        <div class="eleven columns">
+          <p>
+            <span style="font-weight: 500;">Last change:</span>
+            <%= @edit_commit_list.last.title %>
+            <%= @edit_commit_list.last.created_at.to_time.strftime("%a, %d %B %Y") %>
+          </p>
+        </div>
+        <div class="one columns info--right">
+          <%= link_to page_path(@page.page.slug), method: :delete, class: "menu__text" do%>
+            <span><%= render :partial => 'svg/bin' %></span>
+          <% end %>
+        </div>
+      </div>
 
-        <h1 id="page_title" class="disappear_on_edit"><%= @page.title %></h1>
-        <input type="text" value="<%= @page.title.capitalize %>" class="show_on_edit" id="version_title" style="display: none">
-
-        <h4 id="page_description" class="disappear_on_edit"> <%= @page.description %></h4>
-        <input type="text" value="<%= @page.description %>" class="show_on_edit" id="version_description" style="display: none">
-        <input type="hidden" value="<%= params[:page_slug] %>" id="page_slug">
-
-        <button id="edit-page" class="disappear_on_edit">Edit</button>
-        <button id="save-page" style="display: none" class="show_on_edit">Save</button>
-        <%= link_to "Commit", new_commit_path(@page.page.id, @page.id), :class => 'disappear_on_edit' %>
-        
-<!-- PROVISIONAL FILES, COMMIT AND EDIT INFO ON TOP, TO BE STYLED -->            
-          <div class="[put_name_here]" id="eclink">
-          <a id="eclink">
-              <p class="versions"><%= @page.page.versions.length %> edit<% if @page.page.versions.length > 1%>s<% end%> - <%= @page.page.commits.length %> commit<% if @page.page.commits.length > 1%>s<% end%></p>
-          </a>    
-            <% if @files.length > 0 %>
-              <a id="file-link"><p class="files"><%= @files.length %> file<% if @files.length > 1%>s<%end%> attached</p></a>
-            <% end %>  
+        <div class="row">
+          <div class="twelve columns">
+            <h1 id="page_title" class="disappear_on_edit title"><%= @page.title %></h1>
+            <input type="text" value="<%= @page.title.capitalize %>" class="show_on_edit" id="version_title" style="display: none">
           </div>
-<!-- END PROVISIONAL FILES, COMMIT AND EDIT INFO ON TOP, TO BE STYLED -->            
+        </div>
+
+        <div class="row row-no-padding-top">
+          <div class="twelve columns">
+            <p id="page_description" class="disappear_on_edit description"> <%= @page.description %></p>
+            <input type="text" value="<%= @page.description %>" class="show_on_edit" id="version_description" style="display: none">
+            <input type="hidden" value="<%= params[:page_slug] %>" id="page_slug">
+          </div>
+        </div>
+
+        <div class="row page-summary row-no-padding-top">
+
+          <div class="six columns">
+            <div class="basic-info" id="eclink">
+              <a id="eclink-link">
+                  <span class="number"><%= @page.page.versions.length %></span>
+                  <span class="link-icon"><%= render :partial => 'svg/edit' %></span>
+              </a>
+              <a id="eclink-link">
+                <span class="number"><%= @page.page.commits.length %></span>
+                <span class="link-icon"><%= render :partial => 'svg/commit' %></span>
+              </a>
+              <% if @files.length > 0 %>
+                <a id="file-link">
+                  <span class="number"><%= @files.length %></span>
+                  <span class="link-icon"><%= render :partial => 'svg/folder' %></span>
+                </a>
+              <% end %>
+            </div>
+        </div>
+
+        <div id="page" class="six columns info--right">
+          <button id="edit-page" class="disappear_on_edit btn btn--secondary btn">Edit</button>
+          <button id="save-page" style="display: none" class="show_on_edit btn--primary btn">Save</button>
+          <%= link_to "New commit", new_commit_path(@page.page.id, @page.id), :class => 'disappear_on_edit btn--primary btn create btn--separation' %>
+        </div>
+
+        </div>
+
+
+
+      <div class="row row-border">
+<!-- END PROVISIONAL FILES, COMMIT AND EDIT INFO ON TOP, TO BE STYLED -->
 
         <input type="hidden" value="<%= current_user.id %>" id="version_user">
 
@@ -40,67 +81,76 @@
             <%= @page.content.html_safe %>
         </div>
 
+      </div>
+
 <!-- EDIT AND COMMITS LIST, TO BE STYLED -->
-        <hr/>
+
+      <div class="row">
+
+        <div class="twelve columns">
+
+          <h1 class="changes">Changes</h1>
+
           <ul id="edit-commit-list">
           <% @edit_commit_list.each do |element| %>
             <% if element.class == Commit %>
-              <li class="commit-list">Commit: <%= element.title + ", " + element.created_at.to_time.strftime("%a, %d %B %Y") %></li>
+              <li class="commit-list">
+                <span><%= render :partial => 'svg/commit' %></span>
+                <%= element.title + ", " + element.created_at.to_time.strftime("%a, %d %B %Y") %>
+              </li>
             <% else %>
-              <li class="edit-list">Edit: <%= element.title + ", " + element.created_at.to_time.strftime("%a, %d %B %Y") %></li>
+              <li class="edit-list">
+                <span><%= render :partial => 'svg/edit' %></span>
+                <%= element.title + ", " + element.created_at.to_time.strftime("%a, %d %B %Y") %>
+              </li>
             <% end %>
-          <% end %>  
+          <% end %>
           </ul>
-        <hr/>
-<!-- END EDIT AND COMMITS LIST, TO BE STYLED -->
+        </div>
+      </div>
 
-          <%= link_to page_path(@page.page.slug), method: :delete, class: "menu__text" do%>
-            <span class="icons"><%= render :partial => 'svg/bin' %></span>
-          <% end %>
-          
-<!-- ADD FILES, TO BE STYLED -->
-           <p>Attach a file to this page</p>
-          <%= form_for Document.new, url: add_file_to_page_path, html: { id: 'edit_page', multipart: true } do |form| %>
-              <%= form.file_field :file %>
-          <% end %>
-<!-- END ADD FILES -->
-      </div> <!-- end row -->
+    </div>
 
-<!-- TEMPORARY FILE DISPLAY -->
+      <div class="frame main-container">
 
-      <% if @files.length > 0 %>
-        
-        
-        <div class="main-container row--dark" id="#file-list">
-
-          <div class="row category-bottom">
-
-            <h4>Files</h4>
-            <ul class="pages-list">
-
-
-                  <% @files.each do |file| %>
-
-                    <li class="card-general">
-                      <%= link_to file.file.url do %>
-                        <div class="mini-card">
-                          <h2 class="title"><%= file.file_file_name %></h2>
-                          <p class="description" id="page-desc"><%= file.file_content_type %></p>
-                        </div>
-                      <% end %>
-                    </li>
-
-                  <% end %>
-            </ul>
-            
+          <div class="row">
+            <h4 class="title">Files</h4>
           </div>
 
-        </div>
-      <% end %>
+            <% if @files.length > 0 %>
 
-<!-- END TEMPORARY FILE DISPLAY -->
+              <div class="main-container row--dark" id="#file-list">
 
+                <div class="row category-bottom">
+                  <ul class="pages-list">
 
+                    <li class="card-general">
+                        <%= form_for Document.new, url: add_file_to_page_path, html: { id: 'edit_page', multipart: true } do |form| %>
+                            <%= form.file_field :file %>
+                        <% end %>
+                        <a href="#" class="add-file">
+                          <div class="mini-card mini-card-trigger">
+                            <h2 class="title">Attach a file</h2>
+                          </div>
+                        </a>
+                    </li>
+
+                      <% @files.each do |file| %>
+                          <li class="card-general">
+                            <%= link_to file.file.url do %>
+                              <div class="mini-card">
+                                <h2 class="title"><%= file.file_file_name %></h2>
+                                <p class="description" id="page-desc"><%= file.file_content_type %></p>
+                              </div>
+                            <% end %>
+                          </li>
+                        <% end %>
+                  </ul>
+                </div>
+              </div>
+
+            <% end %>
+      </div>
     </div>
 
   </div>
