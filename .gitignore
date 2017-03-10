@@ -43,3 +43,4 @@ Thumbs.db
 /public/system/users
 /public/system/commits
 /public/system/teams
+.env

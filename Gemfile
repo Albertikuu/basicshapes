@@ -38,6 +38,8 @@ gem "paperclip", "~> 5.0.0"
 gem 'font-awesome-rails'
 gem "wysiwyg-rails"
 gem 'inline_svg'
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 # heroku static
 gem 'rails_12factor', group: :production
