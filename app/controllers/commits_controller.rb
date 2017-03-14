@@ -17,11 +17,12 @@ class CommitsController < ApplicationController
 
 	def create
 		@commit = Commit.create!(commit_params)
-		pretext= "#{current_user.full_name} has made a new commit"
+		pretext= "#{current_user.full_name} has made a new commit in the category #{@commit.page.category.title.capitalize}"
 		title = "#{@commit.title}"
 		title_link = "https://basicshapes.herokuapp.com/bs/#{@commit.page.category.slug}/#{@commit.page.slug}"
 		footer = "with love by Basicshapes"
         footer_icon = "https://avatars.slack-edge.com/2017-03-14/154308508964_76b45d8ff0cb5f68a8dd_72.jpg"
+        # add user icon: path & current_user.avatar_file_name
 		@client.chat_postMessage(channel: '#general', as_user: true, attachments: [{
 			pretext: pretext, 
 			title: title, 
