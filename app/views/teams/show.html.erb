@@ -70,7 +70,17 @@
                   <% else %>
                       <%= link_to u.first_char, user_path(u), class: "link" %>
                   <% end %>
-                  <a class="remove-member-js" id="<%= u.id %>" data-team="<%= @team.slug %>" >(x)</a>
+
+                  <div class="users-actions">
+                    <ul>
+                      <li class="manage-users">
+                        <%= link_to user_path(u) do %>
+                        <p>View profile</p>
+                        <% end %>
+                        <a class="remove-member-js red-link" id="<%= u.id %>" data-team="<%= @team.slug %>" >Remove user</a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
               <% end %>
             </ul>

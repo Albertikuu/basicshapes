@@ -7,30 +7,32 @@
 
 <!-- Main body -->
 
-    <div class="eight columns frame main-container">
+    <div class="eight columns">
 
-      <div class="row category-header">
+      <div class="frame main-container">
 
-        <div class="six columns">
-          <h6 class="category-title"><%= @category.title.capitalize %></h6>
-          <input type="text" style="display: none" id="category-title" value="<%= @category.title.capitalize %>">
+        <div class="row category-header">
+
+          <div class="six columns">
+            <h6 class="category-title"><%= @category.title.capitalize %></h6>
+            <input type="text" style="display: none" id="category-title" value="<%= @category.title.capitalize %>">
+          </div>
+
+          <div class="six columns category-title info--right">
+            <%= link_to category_path(@category.slug), method: :delete, class: "menu__text" do%>
+              <span class="icons"><%= render :partial => 'svg/bin' %></span>
+            <% end %>
+          </div>
+
+          <div class="twelve columns">
+
+            <p class="categories-description"><%= @category.description %></p>
+
+          </div>
+
         </div>
 
-        <div class="six columns category-title info--right">
-          <%= link_to category_path(@category.slug), method: :delete, class: "menu__text" do%>
-            <span class="icons"><%= render :partial => 'svg/bin' %></span>
-          <% end %>
-        </div>
-
-        <div class="twelve columns">
-
-          <p class="categories-description"><%= @category.description %></p>
-
-        </div>
-
-      </div>
-
-      <div class="main-container row--dark">
+        <div class="main-container row--dark">
 
         <div class="row category-bottom">
 
@@ -117,15 +119,37 @@
               <button class="btn btn--primary edit-category-save show_on_edit" style="display: none" name="<%= @category.slug %>">Save changes</button>
           </div>
       </div>
-
-      <!-- ADD FILES, TO BE STYLED AND POSITIONED ON THE PAGE-->
-           <p>Attach a file to this category</p>
-          <%= form_for Document.new, url: add_file_to_category_path, html: { id: 'edit_page', multipart: true } do |form| %>
-              <%= form.file_field :file %>
-          <% end %>
       <!-- END ADD FILES -->
 
     </div>
+
+      <div  class="frame main-container">
+
+        <div class="row">
+          <h4 class="title">Files</h4>
+        </div>
+
+            <div class="main-container row--dark" id="#file-list">
+
+              <div class="row category-bottom">
+                <ul class="pages-list">
+
+                  <li class="card-general">
+                    <%= form_for Document.new, url: add_file_to_category_path, html: { id: 'edit_page', multipart: true } do |form| %>
+                        <%= form.file_field :file %>
+                      <% end %>
+                      <a href="#" class="add-file">
+                        <div class="mini-card mini-card-trigger">
+                          <h2 class="title">Attach a file</h2>
+                        </div>
+                      </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+    </div>
+
 <!-- Empty Column -->
 
     <div class="one column empty"> Empty Column </div>

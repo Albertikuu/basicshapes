@@ -1,4 +1,5 @@
 function updateCategory(event){
+debugger
 event.preventDefault();
 
 	var newTitle = $('#category-title').val()
@@ -17,4 +18,3 @@ event.preventDefault();
  	});
 	$('.category-title').text(newTitle);
 };
-
