@@ -34,19 +34,10 @@ class PagesController < ApplicationController
 	def create_version
 		page = Page.find_by(slug: params[:page_slug])
 
-		Slack.configure do |config|
-		  config.token = ENV['SLACK_API_TOKEN']
-		  fail 'Missing ENV[SLACK_API_TOKEN]!' unless config.token
-		end
-		client = Slack::Web::Client.new
-
 		unless page.versions.last.title == version_params['title'] && page.versions.last.description == version_params['description'] && page.versions.last.content == version_params['content']
 			version = page.versions.create!(version_params)
 		end
 
-		text = "New version of #{version_params['title']} saved."
-
-		client.chat_postMessage(channel: '#general', text: text)
 		redirect_to(:back)
 	end
 
