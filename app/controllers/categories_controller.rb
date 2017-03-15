@@ -20,7 +20,7 @@ skip_before_action :verify_authenticity_token, only: [:create, :change_title]
    		team = Team.find_by(slug: params[:team_slug])
 
 			# format.html { redirect_to @company, notice: 'Company was successfully updated.' }
-       		# format.json {}
+   			# format.json {}
       	render json: team.categories
 	end
 

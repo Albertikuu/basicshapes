@@ -11,7 +11,7 @@ event.preventDefault();
 
 	request.fail(function(error){
 		console.log(error);
-		alert("Something went wrong! Make sure that the category name is unique");
+		alert(error.message);
 	});
  	request.success(function(data){
  		console.log('the category request was succesful', data)

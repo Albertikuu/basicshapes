@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
   get '/bs/:team_slug/:title_slug', to: 'categories#show', as: 'category_display'
   get '/bs/:team_slug/:title_slug/:page_slug', to: 'pages#show', as: 'page_display'
+  get '/bs/:team_slug/:title_slug/:page_slug/:version_id', to: 'versions#show', as: 'version_display'
  
   root 'frames#index'
 

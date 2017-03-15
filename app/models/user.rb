@@ -19,8 +19,14 @@ class User < ApplicationRecord
 		self.first_name + ' ' + self.last_name
 	end
 
-  def first_char
-    self.first_name.chars.first + ' ' + self.last_name.chars.first
-  end
+	def first_char
+	    self.first_name.chars.first + ' ' + self.last_name.chars.first
+	end
+
+	def commits 
+  		Commit.where(user_id: self.id).reverse
+  	end
+
+
 
 end
