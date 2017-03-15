@@ -1,39 +1,39 @@
 document.addEventListener("turbolinks:load", function() {
 
-$('.fr-element').attr('id', 'page_content');
+	$('.fr-element').attr('id', 'page_content');
 
-$('#page').on('click', '#edit-page', editPage);
-$('#page-edited').on('click', '#save-page', savePage);
+	$('#page').on('click', '#edit-page', editPage);
+	$('#page-edited').on('click', '#save-page', savePage);
 
-$('.btn-category-js').on('click', createCategory);
-$('.btn-page-js').on('click', createPage);
-$('.btn-commit-js').on('click', createCommit);
+	$('.btn-category-js').on('click', createCategory);
+	$('.btn-page-js').on('click', createPage);
+	$('.btn-commit-js').on('click', createCommit);
 
-$('.edit-category-name').on('click', editCategory);
-$('.edit-category-save').on('click', updateCategory);
+	$('.edit-category-name').on('click', editCategory);
+	$('.edit-category-save').on('click', updateCategory);
 
-$('#addusers-js').on('click', function(event){
-event.preventDefault();
-$('#list-js').toggle();
-})
+	$('#addusers-js').on('click', function(event){
+	event.preventDefault();
+	$('#list-js').toggle();
+	})
 
-$('.remove-member-js').on('click', removeMember)
+	$('.remove-member-js').on('click', removeMember)
 
-$('#eclink').on('click',function(){
-  document.querySelector('#edit-commit-list').scrollIntoView({ behavior: 'smooth' });
-});
+	$('#eclink').on('click',function(){
+	  document.querySelector('#edit-commit-list').scrollIntoView({ behavior: 'smooth' });
+	});
 
-$('#file-link').on('click',function(){
-  document.querySelector('#file-list').scrollIntoView({ behavior: 'smooth' });
-});
+	$('#file-link').on('click',function(){
+	  document.querySelector('#file-list').scrollIntoView({ behavior: 'smooth' });
+	});
 
-document.querySelector(".add-file").onclick = function(e) {
-    e.preventDefault();
-    document.getElementById("document_file").click();
-};
+	$('.add-file').on('click', function(e) {
+		e.preventDefault();
+	    $("#document_file").trigger('click');
+	});
 
-document.getElementById("document_file").onchange = function() {
-    document.getElementById("edit_page").submit();
-};
+	$('#document_file').on('change', function(){
+		$('#edit_page').trigger('submit');
+	});
 
 });
