@@ -59,14 +59,24 @@
         </div>
 
         <div class="row">
+          
+          <div class="user-commits">
+            
+            <h5>Latest commits</h5>
+            <ul>
+            <% @user.commits.each do |c| %>
+              <li><b><%= link_to c.title, c.link_to_page %></b><br/>
+                  <em><%= c.created_at.to_time.strftime("%b %d, %Y") %></em>
+              </li>
+            <% end %>
+            </ul>    
 
-          <p><%= @user.first_name %> is active in:</p>
-          <ul>
-          <% @user.categories.each do |category| %>
-          <li><%= link_to "#{category.title.capitalize}, in #{category.team["name"].capitalize}", category_display_path(category.team["name"], category['title']) %></li>
-          <% end %>
-          </ul>
-            <p><a href="#" id="addusers-js">Add this user to a category</a></p>
+          </div>
+
+
+          <hr/>
+
+            <p><a href="#" id="addusers-js">Invite this user to a category</a></p>
 
             <div id="list-js" style="display: none">
                 <ul>

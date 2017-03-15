@@ -35,7 +35,7 @@
             <h1 id="page_title" class="disappear_on_edit title"><%= @page.title %></h1>
 
             <label style="display: none" class="show_on_edit">Title</label>
-            <input type="text" value="<%= @page.title.capitalize %>" class="show_on_edit" id="version_title" style="display: none">
+            <input type="text" value="<%= @page.title %>" class="show_on_edit" id="version_title" style="display: none">
 
           </div>
         </div>
@@ -109,7 +109,7 @@
             <% else %>
               <li class="edit-list">
                 <span><%= render :partial => 'svg/edit' %></span>
-                <%= element.title + ", " + element.created_at.to_time.strftime("%a, %d %B %Y") %>
+                <%= link_to element.created_at.to_time.strftime("%a, %d %B %Y"), version_display_path(element.page.category.team.slug, element.page.category.slug, element.page.slug, element.id) %>
               </li>
             <% end %>
           <% end %>

@@ -19,7 +19,7 @@
             <div class="row row-no-padding">
 
               <div class="six columns">
-                <span><%= commit.user.full_name %> in category X</span>
+                <span><%= commit.user.full_name %> in category <%= commit.page.category.title.capitalize %></span>
               </div>
 
               <div class="six columns breadcrumb info--right">
