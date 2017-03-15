@@ -14,10 +14,10 @@
 
         <div class="six columns">
           <h1 class="title team_name">
-            <% if @team.logo %>
-              <%= image_tag @team.logo.url(:medium) %>
-              <%= @team.name.capitalize %>
+            <% if @team.logo_file_name.present? %>
+              <%= image_tag @team.logo.url(:medium), class: "image-nav image-category" %>
             <% end %>
+              <span><%= @team.name.capitalize %></span>
           </h1>
         </div>
 

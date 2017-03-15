@@ -17,11 +17,22 @@
             <h6 class="category-title"><%= @category.title.capitalize %></h6>
             <input type="text" style="display: none" id="category-title" value="<%= @category.title.capitalize %>">
           </div>
+          <div class="six columns  info--right">
 
-          <div class="six columns category-title info--right">
-            <%= link_to category_path(@category.slug), method: :delete, class: "menu__text" do%>
-              <span class="icons"><%= render :partial => 'svg/bin' %></span>
-            <% end %>
+            <div class="category-title">
+              <a href="#" class="edit-category-name disappear_on_edit menu__text">
+                <span><%= render :partial => 'svg/edit' %></span>
+              </a>
+              <%= link_to category_path(@category.slug), method: :delete, class: "menu__text" do%>
+                <span><%= render :partial => 'svg/bin' %></span>
+              <% end %>
+            </div>
+
+            <div class="category-edits">
+                <button class="btn btn--primary edit-category-save show_on_edit" style="display: none" name="<%= @category.slug %>">Save changes</button>
+            </div>
+
+
           </div>
 
           <div class="twelve columns">
@@ -114,10 +125,7 @@
 
         <% end %>
 
-          <div class="category-edits">
-              <button class="btn btn--primary edit-category-name disappear_on_edit">Change name</button>
-              <button class="btn btn--primary edit-category-save show_on_edit" style="display: none" name="<%= @category.slug %>">Save changes</button>
-          </div>
+
       </div>
       <!-- END ADD FILES -->
 
@@ -144,6 +152,17 @@
                         </div>
                       </a>
                   </li>
+
+                  <% @files.each do |file| %>
+                      <li class="card-general">
+                        <%= link_to file.file.url do %>
+                          <div class="mini-card">
+                            <h2 class="title"><%= file.file_file_name %></h2>
+                            <p class="description" id="page-desc"><%= file.file_content_type %></p>
+                          </div>
+                        <% end %>
+                      </li>
+                    <% end %>
                 </ul>
               </div>
             </div>
