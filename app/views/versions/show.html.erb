@@ -1,0 +1,79 @@
+<div class="container">
+
+  <div class="row">
+
+
+<!-- Left Column -->
+  <%= render "frames/side" %>
+
+<!-- Main body -->
+    <div class="eight columns">
+
+    <div class="frame main-container">
+
+      <div class="row row-no-padding">
+        <div class="nine columns">
+          <p>
+            <!-- <span style="font-weight: 500;">Last change:</span> -->
+            Date: <%= @version.created_at.to_time.strftime("%a, %d %B %Y") %>
+          </p>
+        </div>
+        <div class="three columns info--right">
+          <div id="page-edited">
+              <button id="save-page" style="display: none" class="show_on_edit btn--primary btn">Save</button>
+          </div>
+        </div>
+      </div>
+
+        <div class="row">
+          <div class="twelve columns">
+            <h1 id="page_title" class="disappear_on_edit title"><%= @version.title %></h1>
+          </div>
+        </div>
+
+        <div class="row row-no-padding-top">
+          <div class="twelve columns">
+            <p id="page_description" class="disappear_on_edit description"> <%= @version.description %></p>
+          </div>
+        </div>
+
+
+
+      <div class="row row-border">
+
+        <input type="hidden" value="<%= current_user.id %>" id="version_user">
+
+        <div class="fr-view" id="page_content">
+            <%= @version.content.html_safe %>
+        </div>
+
+      </div>
+
+
+      <div class="row disappear_on_edit">
+
+        <div class="twelve columns">
+
+          <h1 class="changes">Edits</h1>
+
+          <ul id="edit-commit-list">
+          <% @edit_commit_list.each do |element| %>
+
+              <li class="edit-list">
+                <span><%= render :partial => 'svg/edit' %></span>
+   					<%= link_to element.created_at.to_time.strftime("%a, %d %B %Y"), version_display_path(element.page.category.team.slug, element.page.category.slug, element.page.slug, element.id) %>
+                     </li>
+
+          <% end %>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+
+    </div>
+
+  </div>
+
+</div>
