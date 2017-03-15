@@ -120,9 +120,9 @@
 
       <!-- ADD FILES, TO BE STYLED AND POSITIONED ON THE PAGE-->
            <p>Attach a file to this category</p>
-          <%= form_for Document.new, url: add_file_to_category_path, html: { id: 'edit_page', multipart: true } do |form| %>
-              <%= form.file_field :file %>
-          <% end %>
+              <%= form_for Document.new, url: add_file_to_category_path, html: { id: 'edit_page', multipart: true } do |form| %>
+                  <%= form.file_field :file %>
+              <% end %>
       <!-- END ADD FILES -->
 
     </div>
