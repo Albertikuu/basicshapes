@@ -6,7 +6,7 @@ event.preventDefault();
 
     request = $.post("/categories/change_title", {
             title: newTitle.toLowerCase(),
-            title_slug: $('edit-category-save').context.activeElement.name
+            title_slug: $('.edit-category-save').data('slug')
         });
 
 	request.fail(function(error){
