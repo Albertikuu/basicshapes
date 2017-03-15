@@ -3,7 +3,8 @@ class VersionsController < ApplicationController
 
 	def show
 		@version = Version.find_by(id: params[:version_id])
-		@edit_commit_list = (@version.page.versions + @version.page.commits).sort_by(&:created_at).reverse
+		@edit_commit_list = (@version.page.versions).sort_by(&:created_at).reverse
+		# binding.pry
 	end
 
 	def version_params

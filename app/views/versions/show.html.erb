@@ -13,16 +13,16 @@
 
       <div class="row row-no-padding">
         <div class="nine columns">
+        <h5>Edits Controller </h5>
           <p>
             <!-- <span style="font-weight: 500;">Last change:</span> -->
-            Date: <%= @version.created_at.to_time.strftime("%a, %d %B %Y") %>
+            Date: <%= @version.created_at.to_time.strftime("%a, %d %B %Y") %><br/>
+            Author: <%= @version.user.full_name %><br/>
+            <%= link_to "Go to current version", page_display_path(@version.page.category.team.slug, @version.page.category.slug, @version.page.slug) %>
+
           </p>
         </div>
-        <div class="three columns info--right">
-          <div id="page-edited">
-              <button id="save-page" style="display: none" class="show_on_edit btn--primary btn">Save</button>
-          </div>
-        </div>
+
       </div>
 
         <div class="row">
@@ -61,7 +61,7 @@
 
               <li class="edit-list">
                 <span><%= render :partial => 'svg/edit' %></span>
-   					<%= link_to element.created_at.to_time.strftime("%a, %d %B %Y"), version_display_path(element.page.category.team.slug, element.page.category.slug, element.page.slug, element.id) %>
+   					<%= link_to "#{element.created_at.to_time.strftime("%a, %d %B %Y")}, by #{element.user.full_name}", version_display_path(element.page.category.team.slug, element.page.category.slug, element.page.slug, element.id) %>
                      </li>
 
           <% end %>
