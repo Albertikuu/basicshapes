@@ -109,8 +109,8 @@
             <% else %>
               <li class="edit-list">
                 <span><%= render :partial => 'svg/edit' %></span>
-                <%= link_to element.created_at.to_time.strftime("%a, %d %B %Y"), version_display_path(element.page.category.team.slug, element.page.category.slug, element.page.slug, element.id) %>
-              </li>
+                   <%= link_to "#{element.created_at.to_time.strftime("%a, %d %B %Y")}, by #{element.user.full_name}", version_display_path(element.page.category.team.slug, element.page.category.slug, element.page.slug, element.id) %>
+                 </li>
             <% end %>
           <% end %>
           </ul>
