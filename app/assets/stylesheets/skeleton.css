@@ -1418,6 +1418,7 @@ input.show_on_edit {
 .category-list {
   margin-bottom: 0;
   list-style: none;
+  margin-bottom: 2.4rem;
 }
 
 .image-category {

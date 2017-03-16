@@ -33,18 +33,19 @@
 
         <div class="twelve columns">
 
-        <h4> Categories in this team </h4>
+        <h4 class="category-title"> Categories in this team </h4>
 
             <ul class="category-list">
               <% @team.categories.each do |c| %>
               <li>
+                <span><%= render :partial => 'svg/folder' %></span>
                   <%= link_to c.title.capitalize, category_display_path(@team.name, c.title)%>
               </li>
               <% end %>
             </ul>
 
             <div class="row row-no-padding">
-                   <label for="@team" >Upload a new logo</label>
+                   <label for="@team" class="category-title">Upload a new logo</label>
                    <%= form_for @team, url: team_path(@team.slug), html: { multipart: true } do |form| %>
                      <%= form.file_field :logo %>
                      <%= form.submit "Save", class: "btn  btn--primary" %>
@@ -58,37 +59,41 @@
       <div class="row">
           <!-- USERS -->
 
-          <h4>Users in this team</h4>
+          <div class="twelve columns">
 
-            <ul class="users-list">
-              <% @team.users.each do |u| %>
-                <li class="user">
-                  <% if u.avatar_file_name %>
-                    <%= link_to user_path(u) do %>
-                      <%= image_tag u.avatar.url(:medium) %>
+            <h4 class="category-title">Users in this team</h4>
+
+              <ul class="users-list">
+                <% @team.users.each do |u| %>
+                  <li class="user">
+                    <% if u.avatar_file_name %>
+                      <%= link_to user_path(u) do %>
+                        <%= image_tag u.avatar.url(:medium) %>
+                      <% end %>
+                    <% else %>
+                        <%= link_to u.first_char, user_path(u), class: "link" %>
                     <% end %>
-                  <% else %>
-                      <%= link_to u.first_char, user_path(u), class: "link" %>
-                  <% end %>
 
-                  <div class="users-actions">
-                    <ul>
-                      <li class="manage-users">
-                        <%= link_to user_path(u) do %>
-                        <p>View profile</p>
-                        <% end %>
-                        <a class="remove-member-js red-link" id="<%= u.id %>" data-team="<%= @team.slug %>" >Remove user</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              <% end %>
-            </ul>
+                    <div class="users-actions">
+                      <ul>
+                        <li class="manage-users">
+                          <%= link_to user_path(u) do %>
+                          <p>View profile</p>
+                          <% end %>
+                          <a class="remove-member-js red-link" id="<%= u.id %>" data-team="<%= @team.slug %>" >Remove user</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
 
 
-          <% if flash %>
-            <em><%= flash[:error] %></em>
-          <% end %>
+            <% if flash %>
+              <em><%= flash[:error] %></em>
+            <% end %>
+
+          </div>
 
         </div>
 
