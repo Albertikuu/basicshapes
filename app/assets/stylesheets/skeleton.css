@@ -670,6 +670,10 @@ input.show_on_edit {
   font-size: 1.4rem;
 }
 
+.author-holder {
+  padding-left: 0px;
+}
+
 /* DESCRIPTION */
 
 .description {
