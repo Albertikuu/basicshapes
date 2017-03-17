@@ -36,4 +36,13 @@ document.addEventListener("turbolinks:load", function() {
 		$('#edit_page').trigger('submit');
 	});
 
+	$('#add_avatar').on('click', function(e) {
+	e.preventDefault();
+    	$("#user_avatar").trigger('click');
+	});
+
+	$('#user_avatar').on('change', function(){
+		$('#upload_avatar').trigger('submit');
+	});
+
 });

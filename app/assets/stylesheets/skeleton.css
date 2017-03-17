@@ -1319,7 +1319,7 @@ input.show_on_edit {
   height: auto;
 }
 
-#edit_page {
+#edit_page, #upload_avatar {
   display: none;
 }
 

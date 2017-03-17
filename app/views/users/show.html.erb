@@ -50,11 +50,10 @@
 
         <div class="row row-no-padding">
           <% if current_user == @user %>
-              <label for="user" >Upload a new profile picture</label>
-              <%= form_for @user, url: user_picture_path, html: { multipart: true } do |form| %>
+              <%= form_for @user, url: user_picture_path, html: { id: 'upload_avatar', multipart: true } do |form| %>
                 <%= form.file_field :avatar %>
-                <%= form.submit "Save", class: "btn  btn--primary" %>
               <% end %>
+              <button id="add_avatar">Upload a profile picture</button>
           <% end %>
         </div>
 
