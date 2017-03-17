@@ -20,7 +20,6 @@ class CommitsController < ApplicationController
 		pretext= "#{current_user.full_name} has made a new commit in the category #{@commit.page.category.title.capitalize}"
 		title = "#{@commit.title}"
 		title_link = "https://basicshapes.herokuapp.com/" + @commit.link_to_page
-		binding.pry
 		footer = "with love by Basicshapes"
         footer_icon = "https://avatars.slack-edge.com/2017-03-14/154308508964_76b45d8ff0cb5f68a8dd_72.jpg"
         # TODO add user icon: path & current_user.avatar_file_name
