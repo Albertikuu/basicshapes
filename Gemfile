@@ -39,6 +39,7 @@ gem 'font-awesome-rails'
 gem "wysiwyg-rails"
 gem 'inline_svg'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'slack-ruby-client'
 
 
 # heroku static

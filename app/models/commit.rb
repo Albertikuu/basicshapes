@@ -10,4 +10,9 @@ belongs_to :version
 		"/bs/#{self.page.category.team.slug}/#{self.page.category.slug}/#{self.page.slug}"
 	end
 
+
+def team
+	self.page.category.team
+end
+
 end
