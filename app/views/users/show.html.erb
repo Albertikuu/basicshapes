@@ -50,6 +50,7 @@
 
         <div class="row row-no-padding">
           <% if current_user == @user %>
+              <label for="user" class="category-title" >Upload a new profile picture</label>
               <%= form_for @user, url: user_picture_path, html: { id: 'upload_avatar', multipart: true } do |form| %>
                 <%= form.file_field :avatar %>
               <% end %>
@@ -58,17 +59,17 @@
         </div>
 
         <div class="row">
-          
+
           <div class="user-commits">
-            
-            <h5>Latest commits</h5>
+
+            <h5 class="category-title">Latest commits</h5>
             <ul>
             <% @user.commits.each do |c| %>
               <li><b><%= link_to c.title, c.link_to_page %></b><br/>
                   <em><%= c.created_at.to_time.strftime("%b %d, %Y") %></em>
               </li>
             <% end %>
-            </ul>    
+            </ul>
 
           </div>
 

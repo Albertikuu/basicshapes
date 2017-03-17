@@ -11,16 +11,21 @@
 
     <div class="frame main-container">
 
-      <div class="row row-no-padding">
-        <div class="nine columns">
-        <h5>Edits Controller </h5>
-          <p>
-            <!-- <span style="font-weight: 500;">Last change:</span> -->
-            Date: <%= @version.created_at.to_time.strftime("%a, %d %B %Y") %><br/>
-            Author: <%= @version.user.full_name %><br/>
-            <%= link_to "Go to current version", page_display_path(@version.page.category.team.slug, @version.page.category.slug, @version.page.slug) %>
+      <div class="row category-header">
 
-          </p>
+        <div class="six columns">
+          <p class="breadcrumb">Version Controller </p>
+        </div>
+
+        <div class="six columns info--right">
+            <%= link_to "Go to current version", page_display_path(@version.page.category.team.slug, @version.page.category.slug, @version.page.slug), class: "breadcrumb" %>
+        </div>
+
+        <div class="twelve columns row-no-padding">
+          <ul class="version-info">
+            <li><span>Date:</span> <%= @version.created_at.to_time.strftime("%a, %d %B %Y") %></li>
+            <li><span>Author:</span> <%= @version.user.full_name %></li>
+          </ul>
         </div>
 
       </div>
@@ -71,6 +76,8 @@
 
     </div>
 
+
+    </div>
 
     </div>
 
