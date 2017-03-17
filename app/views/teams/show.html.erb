@@ -14,10 +14,10 @@
 
         <div class="six columns">
           <h1 class="title team_name">
-            <% if @team.logo %>
-              <%= image_tag @team.logo.url(:medium) %>
-              <%= @team.name.capitalize %>
+            <% if @team.logo_file_name.present? %>
+              <%= image_tag @team.logo.url(:medium), class: "image-nav image-category" %>
             <% end %>
+              <span><%= @team.name.capitalize %></span>
           </h1>
         </div>
 
@@ -70,7 +70,17 @@
                   <% else %>
                       <%= link_to u.first_char, user_path(u), class: "link" %>
                   <% end %>
-                  <a class="remove-member-js" id="<%= u.id %>" data-team="<%= @team.slug %>" >(x)</a>
+
+                  <div class="users-actions">
+                    <ul>
+                      <li class="manage-users">
+                        <%= link_to user_path(u) do %>
+                        <p>View profile</p>
+                        <% end %>
+                        <a class="remove-member-js red-link" id="<%= u.id %>" data-team="<%= @team.slug %>" >Remove user</a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
               <% end %>
             </ul>

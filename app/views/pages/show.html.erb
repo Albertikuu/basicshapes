@@ -15,7 +15,7 @@
         <div class="nine columns">
           <p>
             <span style="font-weight: 500;">Last change:</span>
-            <%= @edit_commit_list.last.title %>
+            
             <%= @edit_commit_list.last.created_at.to_time.strftime("%a, %d %B %Y") %>
           </p>
         </div>
@@ -104,13 +104,13 @@
             <% if element.class == Commit %>
               <li class="commit-list">
                 <span><%= render :partial => 'svg/commit' %></span>
-                <%= element.title + ", " + element.created_at.to_time.strftime("%a, %d %B %Y") %>
+                <%= element.title + ", " + element.user.full_name + " on " + element.created_at.to_time.strftime("%a %d %B %Y") %>
               </li>
             <% else %>
               <li class="edit-list">
                 <span><%= render :partial => 'svg/edit' %></span>
-                <%= link_to element.created_at.to_time.strftime("%a, %d %B %Y"), version_display_path(element.page.category.team.slug, element.page.category.slug, element.page.slug, element.id) %>
-              </li>
+                   <%= link_to "#{element.created_at.to_time.strftime("%a %d %B %Y")}, #{element.user.full_name}", version_display_path(element.page.category.team.slug, element.page.category.slug, element.page.slug, element.id) %>
+                 </li>
             <% end %>
           <% end %>
           </ul>

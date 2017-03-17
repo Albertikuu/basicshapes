@@ -31,10 +31,13 @@ before_action :select_team, except: [:create, :new]
 		if @team.valid?
 			session[:current_team] = @team
 			session[:categories] = []
-			params[:members].each do |email|
-				member = User.find_by(email: email)
-				@team.users << member
+			if params[:members][0] != ""
+				params[:members].each do |email|
+					member = User.find_by(email: email)
+					@team.users << member
+				end
 			end
+			# binding.pry
 			@team.slug = @team.name.gsub(' ','-')
 			@team.users << current_user
 			@team.save

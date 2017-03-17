@@ -13,13 +13,14 @@ skip_before_action :verify_authenticity_token, only: [:create, :change_title]
 		unless @category.users.include?(current_user)
 			redirect_to('/')
 		end
+		@files = @category.documents
 	end
 
 	def index
    		team = Team.find_by(slug: params[:team_slug])
 
 			# format.html { redirect_to @company, notice: 'Company was successfully updated.' }
-       		# format.json {}
+   			# format.json {}
       	render json: team.categories
 	end
 
@@ -29,7 +30,7 @@ skip_before_action :verify_authenticity_token, only: [:create, :change_title]
 	def create
 		@category = current_user.categories.create!(category_params)
 		@category.slug = @category.title.gsub(' ','-')
-		@category.save 
+		@category.save
 	    session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])
 		redirect_to('/')
 	end
@@ -57,7 +58,7 @@ skip_before_action :verify_authenticity_token, only: [:create, :change_title]
 		category = Category.find_by(slug: params[:title_slug])
 	    if category.is_public? == false
 	    	category.update_attribute(:is_public?, true)
-	    
+
 	    else
 	    	category.update_attribute(:is_public?, false)
 	    end
@@ -77,7 +78,7 @@ skip_before_action :verify_authenticity_token, only: [:create, :change_title]
 		params.permit(:title, :description, :team_id)
 	end
 
-	
+
 	def document_params
 		params.require(:document).permit(:file)
 	end
