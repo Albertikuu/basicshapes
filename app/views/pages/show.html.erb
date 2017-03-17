@@ -102,9 +102,10 @@
           <ul id="edit-commit-list">
           <% @edit_commit_list.each do |element| %>
             <% if element.class == Commit %>
-              <li class="commit-list">
+              <li class="commit-list" data-id="<%=element.id%>">
                 <span><%= render :partial => 'svg/commit' %></span>
-                <%= element.title + ", " + element.user.full_name + " on " + element.created_at.to_time.strftime("%a %d %B %Y") %>
+                <%= link_to element.title + ", " + element.user.full_name + " on " + element.created_at.to_time.strftime("%a %d %B %Y"),
+                root_url + '#' + element.id.to_s %>
               </li>
             <% else %>
               <li class="edit-list">

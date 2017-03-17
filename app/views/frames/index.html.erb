@@ -14,7 +14,7 @@
     <% if @commits %>
       <% @commits.each do |commit| %>
 
-          <div class="frame main-container">
+          <div class="frame main-container" id="<%= commit.id %>">
 
             <div class="row row-no-padding">
 
