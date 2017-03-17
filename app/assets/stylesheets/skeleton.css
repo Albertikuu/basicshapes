@@ -1425,6 +1425,22 @@ input.show_on_edit {
   margin-right: 1.6rem;
 }
 
+/* VERSION CONTROL */
+
+.version-info {
+  margin-bottom: 0;
+}
+
+.version-info > li {
+  margin: 0;
+  display: inline-block;
+  padding-right: 2.4rem;
+}
+
+.version-info > li > span {
+  font-weight: 500;
+}
+
 /* Larger than mobile */
 @media (min-width: 400px) {}
 
