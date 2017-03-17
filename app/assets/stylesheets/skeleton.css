@@ -560,6 +560,10 @@ p, a {
   border: 1px solid #E6E6E6;
 }
 
+.page-field {
+  margin-bottom: 1.6rem;
+}
+
 
 /* EDIT */
 
@@ -1125,6 +1129,9 @@ input.show_on_edit {
   border: 1px solid #e6e6e6;
 }
 
+.mini-card{
+    word-wrap: break-word;
+}
 
 .add-file > .mini-card-trigger  {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0), 0 0 0 1px transparent;

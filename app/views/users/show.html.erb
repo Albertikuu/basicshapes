@@ -54,7 +54,7 @@
               <%= form_for @user, url: user_picture_path, html: { id: 'upload_avatar', multipart: true } do |form| %>
                 <%= form.file_field :avatar %>
               <% end %>
-              <button id="add_avatar">Upload</button>
+              <button class="btn btn--secondary" id="add_avatar">Upload</button>
           <% end %>
         </div>
 

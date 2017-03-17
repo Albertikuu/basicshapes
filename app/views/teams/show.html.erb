@@ -39,7 +39,7 @@
               <% @team.categories.each do |c| %>
               <li>
                 <span><%= render :partial => 'svg/folder' %></span>
-                  <%= link_to c.title.capitalize, category_display_path(@team.name, c.title)%>
+                  <%= link_to c.title.capitalize, category_display_path(@team.slug, c.slug)%>
               </li>
               <% end %>
             </ul>
