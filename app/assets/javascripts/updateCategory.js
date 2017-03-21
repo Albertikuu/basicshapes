@@ -1,5 +1,4 @@
 function updateCategory(event){
-debugger
 event.preventDefault();
 
 	var newTitle = $('#category-title').val()
@@ -17,4 +16,5 @@ event.preventDefault();
  		console.log('the category request was succesful', data)
  	});
 	$('.category-title').text(newTitle);
+	
 };

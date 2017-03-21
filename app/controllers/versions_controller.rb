@@ -1,5 +1,5 @@
 class VersionsController < ApplicationController
-# before_action :current_page
+	before_action :authenticate_user!
 
 	def show
 		@version = Version.find_by(id: params[:version_id])
