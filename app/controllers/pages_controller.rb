@@ -48,6 +48,11 @@ class PagesController < ApplicationController
 	end
 
 	def show
+   		team = Team.find_by(slug: params[:team_slug])
+		unless team.users.include?(current_user)
+			flash[:alert] = "You are not part of this group"
+			redirect_to('/')
+		end
 		page = Page.find_by(slug: params[:page_slug])
 		session[:page] = page
 		@page = page.versions.last

@@ -37,7 +37,6 @@ class TeamsController < ApplicationController
 					@team.users << member
 				end
 			end
-			# binding.pry
 			@team.slug = @team.name.gsub(' ','-')
 			@team.users << current_user
 			@team.save

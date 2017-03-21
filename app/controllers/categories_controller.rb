@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
 before_action :authenticate_user!
 before_action :find_teams
-before_action :signed?
 include Find_teams
 skip_before_action :verify_authenticity_token, only: [:create, :change_title]
 

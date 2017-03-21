@@ -34,7 +34,7 @@ Rails.application.routes.draw do
  
   get '/api/teams', to: 'teams#index'
   get '/api/categories', to: 'categories#index', as: 'category_api'
-  get '/api/pages', to: 'pages#index', as: 'pages_api'
+  get '/api/pages/:team_slug', to: 'pages#index', as: 'pages_api'
   get '/api/commits', to: 'commits#index', as: 'commits_api'
 
   get '/bs/:team_slug/:title_slug', to: 'categories#show', as: 'category_display'
