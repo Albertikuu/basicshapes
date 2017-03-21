@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
 	skip_before_action :verify_authenticity_token, only: :create
 	before_action :authenticate_user!
+	before_action :find_teams
+	include Find_teams
 
 	def index
 		# format.html { redirect_to @company, notice: 'Company was successfully updated.' }
