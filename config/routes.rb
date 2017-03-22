@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get '/api/commits', to: 'commits#index', as: 'commits_api'
 
   get '/bs/:team_slug/:title_slug', to: 'categories#show', as: 'category_display'
+  get '/bs/:team_slug/:title_slug/sort', to: 'categories#sort', as: 'category_sort'
   get '/bs/:team_slug/:title_slug/:page_slug', to: 'pages#show', as: 'page_display'
   get '/bs/:team_slug/:title_slug/:page_slug/:version_id', to: 'versions#show', as: 'version_display'
  

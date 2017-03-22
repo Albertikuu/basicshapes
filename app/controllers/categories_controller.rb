@@ -16,6 +16,18 @@ skip_before_action :verify_authenticity_token, only: [:create, :change_title]
 		@files = @category.documents
 	end
 
+	def sort
+		current_team = Team.find_by(id: session[:current_team]["id"])
+		@category = current_team.categories.find_by(slug: params[:title_slug])
+		@team_users = current_team.users.select {|user| user.categories.exclude?(@category)}
+		session[:current_category] = @category
+		unless @category.users.include?(current_user)
+			redirect_to('/')
+		end
+		@files = @category.documents
+
+	end
+
 	def index
    		team = Team.find_by(slug: params[:team_slug])
 
