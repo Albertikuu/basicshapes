@@ -1110,7 +1110,7 @@ input.show_on_edit {
   flex-direction: row;
 }
 
-.pages-list > li {
+.pages-list > li, .pages-list > span {
   padding: 0;
   margin-bottom: 1.6rem;
   padding-right: 0.8rem;

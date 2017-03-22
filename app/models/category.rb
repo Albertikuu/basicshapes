@@ -11,8 +11,8 @@ class Category < ApplicationRecord
     message: "this category already exists", case_sensitive: false }
 
     def sort_pages
-    	if self.pages > 0
-    		self.pages.order_by(:position)
+    	if self.pages.length > 0
+    		self.pages.order(:position)
     	end
     end
 
