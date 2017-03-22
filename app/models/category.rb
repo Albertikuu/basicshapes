@@ -10,6 +10,10 @@ class Category < ApplicationRecord
   validates :title, uniqueness: { scope: :team_id,
     message: "this category already exists", case_sensitive: false }
 
-#validates uniqueness of name within team.categories
+    def sort_pages
+    	if self.pages > 0
+    		self.pages.order_by(:position)
+    	end
+    end
 
 end
