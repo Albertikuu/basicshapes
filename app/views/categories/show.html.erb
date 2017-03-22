@@ -47,7 +47,7 @@
 
         <div class="row category-bottom">
 
-          <ul class="pages-list" id="pages-sortable">
+          <ul class="pages-list" id="pages-sortable" data-slug="<%= @category.slug %>">
 
               <span class="card-general add-page">
                 <%= link_to new_page_path do%>
@@ -61,7 +61,7 @@
             <% if @category.pages.length > 0 %>
                 <% @category.sort_pages.each do |page| %>
 
-                  <li class="card-general" data-position="<%=page.position%>">
+                  <li class="card-general card-page" data-position="<%= page.position %>" data-id="<%= page.id %>">
                     <%= link_to page_display_path(session[:current_team]['slug'],@category.slug,page.slug) do %>
                       <div class="mini-card">
                         <h2 class="title"><%= page.versions.last.title %></h2>
@@ -185,6 +185,7 @@
 <script>
 var el = document.getElementById('pages-sortable');
 var sortable = Sortable.create(el, {
-  animation: 200
+  animation: 200,
+  onEnd: orderPages()
 });
  </script>

@@ -22,6 +22,7 @@ class PagesController < ApplicationController
 
 	def create
 		page = Page.new(page_params)
+		page.position = 9999
 		page.slug = page.slug.downcase.gsub(' ','-') + "-#{Page.last.id + 1}"
 		page.save
 		session[:page] = page

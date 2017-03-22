@@ -5,6 +5,10 @@ include Find_teams
 skip_before_action :verify_authenticity_token, only: [:create, :change_title]
 
 
+	def order_pages
+		binding.pry
+	end
+
 	def show
 		current_team = Team.find_by(id: session[:current_team]["id"])
 		@category = current_team.categories.find_by(slug: params[:title_slug])

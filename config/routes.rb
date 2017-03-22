@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post 'categories/add_file', to: 'categories#add_file', as: 'add_file_to_category'
   post '/categories/add_user/:title_slug/:user_id', as: 'category_add_user', to: 'categories#add_user'
   post '/categories/change_title', to: 'categories#change_title', as:'update_category_title'
+  post '/categories/order_pages', to: 'categories#order_pages', as:'change_pages_order'
+
  
   resources :teams, param: :team_slug, except: [:index, :show]
   resources :commits, except: [:index, :show, :new]
