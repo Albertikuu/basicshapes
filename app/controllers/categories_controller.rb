@@ -2,11 +2,16 @@ class CategoriesController < ApplicationController
 before_action :authenticate_user!
 before_action :find_teams
 include Find_teams
-skip_before_action :verify_authenticity_token, only: [:create, :change_title]
+skip_before_action :verify_authenticity_token, only: [:create, :change_title, :order_pages]
 
 
 	def order_pages
-		binding.pry
+		
+		# params[:list].each {|id, pos| binding.pry Page.find_by(id: id).update_attribute(:position, pos)}
+		params[:list].each do |id, pos|
+			page = Page.find_by(id: id)
+			page.update_attribute(:position, pos)
+		end
 	end
 
 	def show

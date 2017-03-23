@@ -183,9 +183,11 @@
 </script>
 
 <script>
-var el = document.getElementById('pages-sortable');
-var sortable = Sortable.create(el, {
-  animation: 200,
-  onEnd: orderPages()
-});
+  var el = document.getElementById('pages-sortable');
+  var sortable = new Sortable(el, {
+    animation: 200,
+    onEnd: function() {
+      orderPages()
+    }
+  });
  </script>
