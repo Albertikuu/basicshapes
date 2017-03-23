@@ -5,15 +5,6 @@ include Find_teams
 skip_before_action :verify_authenticity_token, only: [:create, :change_title, :order_pages]
 
 
-	def order_pages
-		
-		# params[:list].each {|id, pos| binding.pry Page.find_by(id: id).update_attribute(:position, pos)}
-		params[:list].each do |id, pos|
-			page = Page.find_by(id: id)
-			page.update_attribute(:position, pos)
-		end
-	end
-
 	def show
 		current_team = Team.find_by(id: session[:current_team]["id"])
 		@category = current_team.categories.find_by(slug: params[:title_slug])
@@ -90,7 +81,9 @@ skip_before_action :verify_authenticity_token, only: [:create, :change_title, :o
 		redirect_to(:back)
 	end
 
-
+	def order_pages	
+		params[:list].each {|id, pos| Page.find_by(id: id).update_attribute(:position, pos)}
+	end
 
 
 	private

@@ -36,11 +36,8 @@ Participation.create!(user_id: '1', team_id: '2')
 Participation.create!(user_id: '2', team_id: '2')
 
 Page.create!(category_id: '1', slug: 'first_page', position: '0')
-Page.create!(category_id: '1', slug: 'second_page', position: '1')
 
 Version.create!(user_id: '1', page_id: '1', title: 'First page', description: 'This is the first version', content:'<p>Content in HTML format</p>')
 Version.create!(user_id: '2', page_id: '1', title: 'First page', description: 'This is the second version', content:'<p>Content in HTML format</p>')
-Version.create!(user_id: '1', page_id: '2', title: 'Second page', description: 'This is the first version', content:'<p>Content in HTML format</p>')
 
 Commit.create!(user_id: '1', page_id: '1', version_id: '1', title:'First commit for first page', message:'Hi people, I have created the page First Page')
-Commit.create!(user_id: '1', page_id: '2', version_id: '3', title:'First commit for second page', message:'Hi people, I have created the page First Page')
