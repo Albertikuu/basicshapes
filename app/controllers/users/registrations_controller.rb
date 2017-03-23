@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
  
+  def new
     super
   end
 
@@ -18,6 +19,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password, :job_title, :location, :avatar)
   end
   
-#http://jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html
-
 end 
