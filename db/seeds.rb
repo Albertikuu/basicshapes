@@ -15,10 +15,10 @@ Team.create!(name: 'iron hackers', slug: 'iron-hackers')
 digital, brand = Category.create! ([{title: 'digital', description: 'Guidelines for digital products', team_id: 2, slug: 'digital'}, {title: 'brand', description: 'Brand identity and logos', team_id: 1, slug: 'brand'}])
 
 albert, lorenzo = User.create!([
-	{first_name: 'Albert', last_name: 'Ramirez', email: 'albert.ramirez.canalias@gmail.com', job_title: 'Designer', location: 'Barcelona', password: 'ironhack', password_confirmation: 'ironhack'},
-	{first_name: 'Lorenzo', last_name: 'Marini', email: 'lorenzo.ita@gmail.com', job_title: 'Web Coordinator', location: 'Barcelona', password: 'ironhack', password_confirmation: 'ironhack'},
-	{first_name: 'Pato', last_name: 'Donald', email: 'pato@donald.com', job_title: 'Duck', location: 'Paperopoli', password: 'ironhack', password_confirmation: 'ironhack'},
-	{first_name: 'Mickey', last_name: 'Mouse', email: 'mickey@gmail.com', job_title: 'Rata', location: 'Rome', password: 'ironhack', password_confirmation: 'ironhack'}
+	{first_name: 'Albert', last_name: 'Ramirez', email: 'albert.ramirez.canalias@gmail.com', job_title: 'Designer', location: 'Barcelona', password: 'ironhack', password_confirmation: 'ironhack', :confirmed_at => Time.now},
+	{first_name: 'Lorenzo', last_name: 'Marini', email: 'lorenzo.ita@gmail.com', job_title: 'Web Coordinator', location: 'Barcelona', password: 'ironhack', password_confirmation: 'ironhack', :confirmed_at => Time.now},
+	{first_name: 'Pato', last_name: 'Donald', email: 'pato@donald.com', job_title: 'Duck', location: 'Paperopoli', password: 'ironhack', password_confirmation: 'ironhack', :confirmed_at => Time.now},
+	{first_name: 'Mickey', last_name: 'Mouse', email: 'mickey@gmail.com', job_title: 'Rata', location: 'Rome', password: 'ironhack', password_confirmation: 'ironhack', :confirmed_at => Time.now}
 	])
 
 CatUser.create!(user_id: '1', category_id:'1')
