@@ -13,16 +13,15 @@
 
     <h1>Find Teams</h1>
 
-   			<p>Here we have to think of a function for looking for teams and ask to join. How do we make the notification afterwards? Only email or also notitification system? Probably need both</p>
-			<hr />
-   			<ul>
-   				<% @teams.each do |team| %>
-   				<li><%= team.name %></li>
-   				<% end %>
-   			</ul>
+      <label>Look for an existing team</label>
+      <input type="text" id="team_name"><button class="btn btn--secondary" id="search_team">Search</button>
 
     </div>
 
   </div>
 
 </div>
+
+<script>
+  $('#search_team').on('click', searchTeam)
+</script>

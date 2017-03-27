@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-	before_action :authenticate_user!
+	before_action :authenticate_user!, except: [:index]
 	skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
 	before_action :select_team, except: [:create, :new]
 
