@@ -7,6 +7,7 @@ module Find_teams
 		elsif user_signed_in? && current_user.teams.size != 0
 			unless session[:current_team] 
 				session[:current_team] = current_user.teams.first
+				session[:categories] = session[:current_team].categories
 			end
 		end
 			
