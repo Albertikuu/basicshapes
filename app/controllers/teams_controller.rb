@@ -87,7 +87,6 @@ class TeamsController < ApplicationController
   		@token = params[:invite_token]
         team_slug =  Invitation.find_by_token(@token).team_slug 
         team = Team.find_by(slug: team_slug)
-        binding.pry
         team.users << Invitation.find_by_token(@token).recipient
         session[:current_team] = team
   		redirect_to root_path
