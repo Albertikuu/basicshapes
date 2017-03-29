@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
 	before_action :authenticate_user!, except: [:index]
-	skip_before_action :verify_authenticity_token, only: [:create, :remove_member]
+	skip_before_action :verify_authenticity_token, only: [:create, :remove_member, :invite_users]
 	before_action :select_team, except: [:create, :new]
 
 
@@ -32,9 +32,8 @@ class TeamsController < ApplicationController
 			session[:current_team] = @team
 			session[:categories] = []
 			if params[:members][0] != ""
-				params[:members].each do |email|
-					member = User.find_by(email: email)
-					@team.users << member
+				params[:members].each do |email_address|
+					invite_email(email_address)
 				end
 			end
 			@team.slug = @team.name.gsub(' ','-')
@@ -65,6 +64,15 @@ class TeamsController < ApplicationController
 		redirect_to(:back)
 	end
 
+	def invite_users
+		if params[:members][0] != ""
+			params[:members].each do |email_address|
+				invite_email(email_address)
+			end
+		end
+		redirect_to(:back)
+	end
+
 	def find
 		@teams = Team.all
 	end
@@ -83,6 +91,15 @@ class TeamsController < ApplicationController
 
 	def select_team
 		@team = Team.find_by(slug: params[:team_slug])
+	end
+
+	def invite_email(email_address)
+		if User.exists?(email: email_address)
+			member = User.find_by(email: email_address)
+			TeamMailer.invite_user_email(member, @team, current_user).deliver_now
+		else
+			TeamMailer.invite_email(email_address, @team, current_user).deliver_now
+		end
 	end
 
 

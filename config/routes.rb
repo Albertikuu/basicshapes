@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get '/commits/:page_id/:version_id/new', to: 'commits#new', as: 'new_commit'
  
   post '/teams/remove_member', to: 'teams#remove_member'
+  post '/teams/invite_users', to: 'teams#invite_users'
   get '/teams/find', to: 'teams#find'
  
   get '/bs/:team_slug', to: 'teams#show', as: 'show_team'

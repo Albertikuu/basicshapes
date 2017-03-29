@@ -156,8 +156,8 @@
   font-family:'DINPro';
   src: url('DINPro-Italic.eot');
   src: url('DINPro-Italic.eot?#iefix') format('embedded-opentype'),
-  url('DINPro-Italic.woff2') format('woff2'),
-  url('DINPro-Italic.woff') format('woff'),
+  /*url('DINPro-Italic.woff2') format('woff2'),*/
+  /*url('DINPro-Italic.woff') format('woff'),*/
   url('DINPro-Italic.svg#DINPro-Italic') format('svg');
   font-weight: 400;
   font-style: italic;

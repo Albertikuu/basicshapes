@@ -1,0 +1,3 @@
+<p>Hi, <%= @user.first_name.capitalize %>.</p>
+<p>You have been invited to join the team <b><%= @team.name.capitalize %></b> on Basicshapes</p>
+<p>Please click <a href=<%=ENV['SENDGRID_DOMAIN']%>>here</a> to accept the invitation</p>

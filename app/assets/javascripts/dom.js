@@ -12,6 +12,10 @@ document.addEventListener("turbolinks:load", function() {
 	$('.edit-category-name').on('click', editCategory);
 	$('.edit-category-save').on('click', updateCategory);
 
+	$('.btn-teams-js').on('click', createTeam)
+	$('.invite-users-js').on('click', addUserToTeam)
+
+
 	$('#addusers-js').on('click', function(event){
 	event.preventDefault();
 	$('#list-js').toggle();
