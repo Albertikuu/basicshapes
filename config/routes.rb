@@ -23,6 +23,7 @@ Rails.application.routes.draw do
  
   resources :teams, param: :team_slug, except: [:index, :show]
   resources :commits, except: [:index, :show, :new]
+  resources :invitations
 
   post '/pages/create_version', to: 'pages#create_version', as: 'new_version'
  
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
   post '/teams/remove_member', to: 'teams#remove_member'
   post '/teams/invite_users', to: 'teams#invite_users'
   get '/teams/find', to: 'teams#find'
+  get '/teams/added_to_team', to: 'teams#added_to_team', as: 'added_to_team'
  
   get '/bs/:team_slug', to: 'teams#show', as: 'show_team'
   post '/bs/:team_slug', to: 'teams#change_session', as: 'change_session'

@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 	before_action :authenticate_user!, except: [:index]
 	skip_before_action :verify_authenticity_token, only: [:create, :remove_member, :invite_users]
-	before_action :select_team, except: [:create, :new]
+	before_action :select_team, except: [:create, :new, :added_to_team]
 
 
 	def index
@@ -70,6 +70,7 @@ class TeamsController < ApplicationController
 				invite_email(email_address)
 			end
 		end
+		flash[:notice] = "Invitations sent"
 		redirect_to(:back)
 	end
 
@@ -80,6 +81,16 @@ class TeamsController < ApplicationController
 	def update
 	    @team.update_attribute(:logo, params[:team][:logo])
 	    redirect_to(:back)
+  	end
+
+  	def added_to_team
+  		@token = params[:invite_token]
+        team_slug =  Invitation.find_by_token(@token).team_slug 
+        team = Team.find_by(slug: team_slug)
+        binding.pry
+        team.users << Invitation.find_by_token(@token).recipient
+        session[:current_team] = team
+  		redirect_to root_path
   	end
 
 
@@ -94,13 +105,19 @@ class TeamsController < ApplicationController
 	end
 
 	def invite_email(email_address)
-		if User.exists?(email: email_address)
-			member = User.find_by(email: email_address)
-			TeamMailer.invite_user_email(member, @team, current_user).deliver_now
-		else
-			TeamMailer.invite_email(email_address, @team, current_user).deliver_now
+		@invite = Invitation.new(:email => email_address)
+	    @invite.sender_id = current_user.id
+	    @invite.team_slug = @team.slug
+	    if @invite.save
+			if User.exists?(email: email_address)
+			   		member = User.find_by(email: email_address)
+			   		@invite.recipient_id = member.id
+			   		@invite.save
+		     		TeamMailer.invite_user_email(@team, current_user, member, added_to_team_path(:invite_token => @invite.token)).deliver_now
+			    else    
+			     	TeamMailer.invite_email(@team, current_user, email_address, new_user_registration_path(:invite_token => @invite.token)).deliver_now
+			end
 		end
 	end
-
 
 end

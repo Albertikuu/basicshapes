@@ -1,13 +1,26 @@
 class Users::RegistrationsController < Devise::RegistrationsController
  
   def new
+    @token = params[:invite_token]
     super
   end
 
   def create
-    super
+    @token = params[:invite_token]
+    if @token != nil
+    @newUser = build_resource(sign_up_params)
+    @newUser.save
+    @token = params[:invite_token]
+       team_slug =  Invitation.find_by_token(@token).team_slug 
+       team = Team.find_by(slug: team_slug)
+       team.users << @newUser 
+       redirect_to root_path
+    else
+      super
+    end
     session[:categories] = []
   end
+
 
   private
 

@@ -15,6 +15,9 @@ class User < ApplicationRecord
 	has_many :categories, through: :cat_users
 	has_many :teams, through: :participations
 
+    has_many :invites, :class_name => "Invitation", :foreign_key => 'recipient_id'
+    has_many :sent_invites, :class_name => "Invitation", :foreign_key => 'sender_id'
+
 	def full_name
 		self.first_name + ' ' + self.last_name
 	end

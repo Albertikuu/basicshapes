@@ -109,6 +109,10 @@
               <button class="btn btn--secondary invite-users-js" data-team="<%= @team.slug %>">Invite</button>
           </div>
 
+          <% if flash[:notice] %>
+          <p><b><%= flash[:notice] %></b></p>
+          <% end %>
+
         </div>
 
       </div>
