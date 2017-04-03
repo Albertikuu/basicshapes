@@ -42,7 +42,7 @@ class PagesController < ApplicationController
 			version = page.versions.create!(version_params)
 		end
 
-		redirect_to(:back)
+		redirect_back(fallback_location: root_path)
 	end
 
 	def destroy
@@ -65,7 +65,7 @@ class PagesController < ApplicationController
 
 	def add_file
 		Page.find_by(slug: session[:page][:slug]).documents.create!(document_params)
-		redirect_to(:back)
+		redirect_back(fallback_location: root_path)
 	end
 
 	private
