@@ -43,7 +43,7 @@ class TeamsController < ApplicationController
 		else
 			flash[:alert] = @team.errors.messages[:name][0]
 			@team.delete
-			redirect_to(:back)
+			redirect_back(fallback_location: root_path)
 		end
 	end
 
@@ -61,7 +61,7 @@ class TeamsController < ApplicationController
 			participation = @team.participations.where(user_id: params[:user_id])
 			Participation.delete(participation[0].id)
 		end
-		redirect_to(:back)
+		redirect_back(fallback_location: root_path)
 	end
 
 	def invite_users
@@ -80,7 +80,7 @@ class TeamsController < ApplicationController
 
 	def update
 	    @team.update_attribute(:logo, params[:team][:logo])
-	    redirect_to(:back)
+	    redirect_back(fallback_location: root_path)
   	end
 
   	def added_to_team

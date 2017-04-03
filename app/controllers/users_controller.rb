@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 	def update
 	    user = current_user
 	    user.update_attribute(:avatar, params[:user][:avatar])
-	    redirect_to(:back)
+	    redirect_back(fallback_location: root_path)
   	end
 
 

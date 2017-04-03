@@ -57,13 +57,13 @@ skip_before_action :verify_authenticity_token, only: [:create, :change_title, :o
 		category = Category.find_by(slug: params[:title_slug])
 		category.update_attribute(:title, params[:title])
 		session[:categories] = current_user.categories.where(team_id: session[:current_team]["id"])
-		redirect_to(:back)
+		redirect_back(fallback_location: root_path)
 	end
 
 	def add_user
 		user = User.find_by(id: params[:user_id])
 		Category.find_by(slug: params[:title_slug]).users << user
-		redirect_to(:back)
+		redirect_back(fallback_location: root_path)
 	end
 
 	def toggle_public
@@ -78,7 +78,7 @@ skip_before_action :verify_authenticity_token, only: [:create, :change_title, :o
 
 	def add_file
 		Category.find_by(slug: session[:current_category][:slug]).documents.create!(document_params)
-		redirect_to(:back)
+		redirect_back(fallback_location: root_path)
 	end
 
 	def order_pages	
