@@ -14,7 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       team_slug =  Invitation.find_by(token: @token).team_slug 
       team = Team.find_by(slug: team_slug)
       team.users << @newUser 
-      redirect_to root_path
+      after_inactive_sign_up_path_for(resource)
     else
       build_resource(sign_up_params)
       resource.save
