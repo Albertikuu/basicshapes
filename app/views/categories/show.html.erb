@@ -177,9 +177,11 @@
 </div>
 
 <script type="text/javascript">
-  var content = $('.page-desc').text();
-  if(content.length > 40)
-    $('.page-desc').text(content.substring(0,32) + '...');
+  $('.page-desc').each(function(){
+    var content = $(this).text()
+    if(content.length > 60){
+      $(this).text(content.substring(0,52) + '...');
+  }});
 </script>
 
 <script>
