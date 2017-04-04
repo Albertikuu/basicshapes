@@ -120,8 +120,8 @@
   font-family:'DINPro';
   src: url('DINPro.eot');
   src: url('DINPro.eot?#iefix') format('embedded-opentype'),
-  url('DINPro.woff2') format('woff2'),
-  url('DINPro.woff') format('woff'),
+/*  url('DINPro.woff2') format('woff2'),
+  url('DINPro.woff') format('woff'),*/
   url('DINPro.svg#DINPro') format('svg');
   font-weight: 400;
   font-style: normal;
@@ -132,8 +132,8 @@
   font-family:'DINPro';
   src: url('DINPro-Medium.eot');
   src: url('DINPro-Medium.eot?#iefix') format('embedded-opentype'),
-  url('DINPro-Medium.woff2') format('woff2'),
-  url('DINPro-Medium.woff') format('woff'),
+/*  url('DINPro-Medium.woff2') format('woff2'),
+  url('DINPro-Medium.woff') format('woff'),*/
   url('DINPro-Medium.svg#DINPro-Medium') format('svg');
   font-weight: 500;
   font-style: normal;
@@ -144,8 +144,8 @@
   font-family:'DINPro';
   src: url('DINPro-Light.eot');
   src: url('DINPro-Light.eot?#iefix') format('embedded-opentype'),
-  url('DINPro-Light.woff2') format('woff2'),
-  url('DINPro-Light.woff') format('woff'),
+/*  url('DINPro-Light.woff2') format('woff2'),
+  url('DINPro-Light.woff') format('woff'),*/
   url('DINPro-Light.svg#DINPro-Light') format('svg');
   font-weight: 300;
   font-style: normal;
@@ -168,8 +168,8 @@
   font-family:'DINPro';
   src: url('DINPro-Bold.eot');
   src: url('DINPro-Bold.eot?#iefix') format('embedded-opentype'),
-  url('DINPro-Bold.woff2') format('woff2'),
-  url('DINPro-Bold.woff') format('woff'),
+/*  url('DINPro-Bold.woff2') format('woff2'),
+  url('DINPro-Bold.woff') format('woff'),*/
   url('DINPro-Bold.svg#DINPro-Bold') format('svg');
   font-weight: 700;
   font-style: normal;

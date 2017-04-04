@@ -12,7 +12,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @newUser.save
     @token = params[:invite_token]
        team_slug =  Invitation.find_by_token(@token).team_slug 
+        binding.pry
        team = Team.find_by(slug: team_slug)
+        binding.pry
        team.users << @newUser 
        redirect_to root_path
     else
