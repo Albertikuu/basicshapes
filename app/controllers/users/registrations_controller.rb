@@ -39,7 +39,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_inactive_sign_up_path_for(resource)
-      binding.pry
       session[:name] = resource.first_name
       redirect_to thanks_url
   end

@@ -19,6 +19,6 @@
         } else {
             $('#find-team-alert').html('Is this the team you are looking for?');
             $('#found-team').show();
-            $('#found-team').append("<p><a>" + selectedTeam.name.toUpperCase() + "</a></p>");
+            $('#found-team').append("<p><a>" + selectedTeam.name + "</a></p>");
         }
     }
