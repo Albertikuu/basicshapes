@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   namespace :assets do
     :assets
   end
+
+  get '/thanks', to: 'frames#thanks'
   
   resources :users
   patch '/users/:id', to: 'users#update', as: 'user_picture'
   
-  post 'pages/add_file', to: 'pages#add_file', as: 'add_file_to_page'  
+  post '/pages/add_file', to: 'pages#add_file', as: 'add_file_to_page'  
   resources :pages, param: :page_slug, except: [:index, :show]
   
   resources :categories, param: :title_slug, except: [:index, :show, :update] 
