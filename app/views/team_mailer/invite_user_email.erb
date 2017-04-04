@@ -1,3 +1,5 @@
 <p>Hi, <%= @recipient.first_name.capitalize %>.</p>
+
 <p><%= @sender.full_name %> has invited you to join the team <b><%= @team.name.capitalize %></b> on Basicshapes</p>
-<p>Please click <a href="<%=ENV['SENDGRID_DOMAIN']%><%= @url %>">here</a> to accept the invitation</p>
+
+<p>Please click <%= link_to 'here', "<%=ENV['SENDGRID_DOMAIN']%><%= @url %>" %> to sign up and accept the invitation</p>
