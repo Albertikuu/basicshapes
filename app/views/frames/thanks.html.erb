@@ -8,7 +8,9 @@
 
           <h2>Thanks for signing up</h2>
 
-          <p><%= @name.capitalize %>, we have sent a confirmation email to your inbox. It could take a couple of minutes to be delivered, thanks for your patience!</p>
+          <p><%= @user.first_name.capitalize %>, we have sent a confirmation email to your inbox. It could take a couple of minutes to be delivered, thanks for your patience!</p>
+
+          <p><%= button_to "Resend confirmation", user_confirmation_path(@user), class: "btn btn--secondary create" %></p>
 
         </div>
 

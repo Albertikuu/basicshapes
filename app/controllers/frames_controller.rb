@@ -9,7 +9,7 @@ include Find_teams
 	end
 
 	def thanks
-		@name = session[:name]
+		@user = User.find_by(id: session[:user_id])
 	end
 
 
