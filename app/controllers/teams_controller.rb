@@ -71,7 +71,7 @@ class TeamsController < ApplicationController
 			end
 		end
 		flash[:notice] = "Invitations sent"
-		redirect_to(:back)
+		redirect_back(fallback_location: root_path)
 	end
 
 	def find
@@ -107,14 +107,15 @@ class TeamsController < ApplicationController
 		@invite = Invitation.new(:email => email_address)
 	    @invite.sender_id = current_user.id
 	    @invite.team_slug = @team.slug
+	    message = params[:message]
 	    if @invite.save
 			if User.exists?(email: email_address)
 			   		member = User.find_by(email: email_address)
 			   		@invite.recipient_id = member.id
 			   		@invite.save
-		     		TeamMailer.invite_user_email(@team, current_user, member, added_to_team_path(:invite_token => @invite.token)).deliver_now
+		     		TeamMailer.invite_user_email(@team, message, current_user, member, added_to_team_path(:invite_token => @invite.token)).deliver_now
 			    else    
-			     	TeamMailer.invite_email(@team, current_user, email_address, new_user_registration_path(:invite_token => @invite.token)).deliver_now
+			     	TeamMailer.invite_email(@team, message, current_user, email_address, new_user_registration_path(:invite_token => @invite.token)).deliver_now
 			end
 		end
 	end

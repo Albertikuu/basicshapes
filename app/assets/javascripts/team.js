@@ -25,7 +25,8 @@ function addUserToTeam(event){
 	participants = $('#participants-invite-js').val().split(',');
     request = $.post("/teams/invite_users", {
             members: participants,
-            team_slug: $('.invite-users-js').data('team')
+            team_slug: $('.invite-users-js').data('team'),
+            message: $('#custom-message').val()
         });
 
 	request.fail(function(error){

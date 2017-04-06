@@ -3,3 +3,5 @@
 <p><%= @sender.full_name %> has invited you to join the team <b><%= @team.name.capitalize %></b> on Basicshapes</p>
 
 <p>Please click <%= link_to 'here', ENV['SENDGRID_DOMAIN'] + @url %> to sign up and accept the invitation</p>
+
+<%= raw(@message) %>
