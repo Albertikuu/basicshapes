@@ -2,9 +2,9 @@ class TeamMailer < ApplicationMailer
 	default from: "teams@basicshap.es"
 
 	def invite_user_email(team, message, sender, recipient, url)
-		binding.pry
 		@recipient = recipient
-		if message
+		binding.pry
+		if message != ""
 			@message = "<hr/><p>#{sender.full_name} says:</p><p><em>#{message}</em></p>"
 		end
 		@team = team
@@ -15,7 +15,7 @@ class TeamMailer < ApplicationMailer
 
 	def invite_email (team, message, sender, email, url)
 		@team = team
-		if message
+		if message != ""
 			@message = "<hr/><p>#{sender.full_name} says:</p><p><em>#{message}</em></p>"
 		end		
 		@sender = sender
