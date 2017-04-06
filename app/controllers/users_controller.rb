@@ -14,5 +14,10 @@ class UsersController < ApplicationController
 	    redirect_back(fallback_location: root_path)
   	end
 
+  	def resend_confirmation
+  		user = User.find_by(id: params[:user_id])
+		user.send_confirmation_instructions	
+  	end
+
 
 end

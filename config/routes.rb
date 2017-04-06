@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   get '/thanks', to: 'frames#thanks'
+  post '/resend_confirmation', to: 'users#resend_confirmation', as: 'resend_confirmation'
   
   resources :users
   patch '/users/:id', to: 'users#update', as: 'user_picture'
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   resources :pages, param: :page_slug, except: [:index, :show]
   
   resources :categories, param: :title_slug, except: [:index, :show, :update] 
-  post 'categories/add_file', to: 'categories#add_file', as: 'add_file_to_category'
+  post '/categories/add_file', to: 'categories#add_file', as: 'add_file_to_category'
   post '/categories/add_user/:title_slug/:user_id', as: 'category_add_user', to: 'categories#add_user'
   post '/categories/change_title', to: 'categories#change_title', as:'update_category_title'
   post '/categories/order_pages', to: 'categories#order_pages', as:'change_pages_order'
