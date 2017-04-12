@@ -10,6 +10,11 @@ class TeamsController < ApplicationController
 	end
 
 	def show
+		binding.pry
+		if @team == nil
+			not_found
+		end
+
 		unless @team.users.include?(current_user)
 			flash[:alert] = "You are not part of this group"
 			redirect_to('/')
