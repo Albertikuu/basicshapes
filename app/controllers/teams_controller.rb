@@ -10,7 +10,6 @@ class TeamsController < ApplicationController
 	end
 
 	def show
-		binding.pry
 		if @team == nil
 			not_found
 		end
